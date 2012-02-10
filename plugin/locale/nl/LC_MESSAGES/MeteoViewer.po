@@ -1,0 +1,304 @@
+# German translations for enigma package.
+# Copyright (C) 2009 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma 2 MeteoViewer Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-16 23:05+0100\n"
+"PO-Revision-Date: 2011-06-30 13:17+0100\n"
+"Last-Translator: ims\n"
+"Language-Team: ims\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+
+#
+msgid "Downloaded interval"
+msgstr "Downloaded interval"
+
+#
+msgid "Slideshow's step"
+msgstr "Stapgrootte diavoorstelling"
+
+#
+msgid "Download info on plugin's start"
+msgstr "Download info tijdens het starten van de plugin"
+
+#
+msgid "Frames info"
+msgstr "Frames info"
+
+#
+msgid "Local time in info"
+msgstr "Toon lokale tijd"
+
+#
+msgid "Delete old files before download"
+msgstr "Verwijder oude bestanden voor de download"
+
+#
+msgid "Type of meteo info on start"
+msgstr "Type meteo-info bij starten"
+
+#
+msgid "Download"
+msgstr "Download"
+
+#
+msgid "Slideshow"
+msgstr "Diavoorstelling"
+
+#
+msgid "Options"
+msgstr "Opties"
+
+#
+msgid "Stop show"
+msgstr "Stop voorstelling"
+
+#
+msgid "Abort"
+msgstr "Breek af"
+
+#
+msgid "Start download: %d of %d"
+msgstr "Download: %d van %d"
+
+#
+msgid "No files found!"
+msgstr "Geen bestanden gevonden!"
+
+#
+msgid "Stop slideshow, please!"
+msgstr "Stop aub de diavoorstelling"
+
+#
+msgid "Download pictures, please!"
+msgstr "Download aub afbeeldingen"
+
+#
+msgid "Prepare..."
+msgstr "Voorbereiden"
+
+#
+msgid "viewer of meteo pictures"
+msgstr "toon meteo-afbeeldingen"
+
+#
+msgid "view czech storm pictures"
+msgstr "toon Czech storm afbeeldingen"
+
+#
+msgid "%s of %s  -  %s"
+msgstr "%s van %s  -  %s"
+
+#
+msgid "LT"
+msgstr "Lokale tijd"
+
+#
+msgid "UTC"
+msgstr "GMT"
+
+#
+msgid "Parallels and meridians"
+msgstr "Parallellen en meridianen"
+
+#
+msgid "On exit delete files"
+msgstr "Verwijder bestanden bij afsluiten"
+
+#
+msgid "Directory for download"
+msgstr "Download map"
+
+#
+msgid "MeteoViewer Setup"
+msgstr "MeteoViewer Instellingen"
+
+#
+msgid "MeteoViewer"
+msgstr "MeteoViewer"
+
+#
+msgid "Location for MeteoViewer"
+msgstr "Lokatie voor MeteoViewer"
+
+#
+msgid "Synaptic"
+msgstr "Synoptisch"
+
+#
+msgid "Save"
+msgstr "Opslaan"
+
+#
+msgid "Cancel"
+msgstr "Annuleer"
+
+#
+msgid "Download:"
+msgstr "Download:"
+
+#
+msgid "Buienradar interval"
+msgstr "Buienradar interval"
+
+#
+msgid "Delay of last frame on Buienradar (min)"
+msgstr "Vertraging laatste beeld van Buienradar (min)"
+
+#
+msgid "After download \"All\" switch to"
+msgstr "Na download \"All\" ga naar"
+
+#
+msgid "last"
+msgstr "laatste"
+
+#
+msgid "Select wanted meteo type:"
+msgstr "Selecteer gewenste meteo-informatie"
+
+#
+msgid "Erase files..."
+msgstr "Verwijder bestanden..."
+
+#
+msgid "Display"
+msgstr "Vertoon"
+
+#
+msgid "Slideshow begins from"
+msgstr "Diavoorstelling begint vanaf"
+
+#
+msgid "begin"
+msgstr "begin"
+
+#
+msgid "actual position"
+msgstr "aktuele positie"
+
+#
+msgid "downloaded interval"
+msgstr "download interval"
+
+#
+msgid "all frames"
+msgstr "alle afbeeldingen"
+
+#
+msgid "none"
+msgstr "geen"
+
+#
+msgid "no"
+msgstr "nee"
+
+#
+msgid "current type"
+msgstr "huidige type"
+
+#
+msgid "all types"
+msgstr "alle types"
+
+#
+msgid "older than downloaded interval"
+msgstr "ouder dan download interval"
+
+#
+msgid "older than max. interval"
+msgstr "ouder dan max. interval"
+
+#
+msgid "info"
+msgstr "info"
+
+#
+msgid "info and progress bar"
+msgstr "info en voortgangsbalk"
+
+#
+msgid "progress bar"
+msgstr "voortgangsbalk"
+
+#
+msgid "Select destination:"
+msgstr "Kies bestemming"
+
+#
+msgid "Are You sure delete this frame?"
+msgstr "Deze afbeelding verwijderen?"
+
+#
+msgid "exit plugin"
+msgstr "verlaat plugin"
+
+#
+msgid "play/stop slideshow"
+msgstr "speel/stop diavoorstelling"
+
+#
+msgid "run/abort download"
+msgstr "start/stop download"
+
+#
+msgid "options"
+msgstr "opties"
+
+#
+msgid "go to last frame"
+msgstr "ga naar laatste afbeelding"
+
+#
+msgid "go to next frame"
+msgstr "ga naar volgende afbeelding"
+
+#
+msgid "go to previous frame"
+msgstr "ga naar vorige afbeelding"
+
+#
+msgid "switch to next meteo type"
+msgstr "naar het volgende meteo-type"
+
+#
+msgid "switch to previous meteo type"
+msgstr "naar het vorige meteo-type"
+
+#
+msgid "stop slideshow/synaptic map"
+msgstr "stop diavoorstelling/synoptische kaart"
+
+#
+msgid "menu"
+msgstr "menu"
+
+#
+msgid "delete current frame"
+msgstr "verwijder aktuele opname"
+
+#
+msgid "go to first downloaded frame"
+msgstr "ga naar de eerste afbeelding"
+
+#
+msgid "go to last downloaded frame"
+msgstr "ga naar de laatste  afbeelding"
+
+#
+msgid "Refresh slideshow"
+msgstr "Diavoorstelling verversen"
+
+#
+msgid "refresh..."
+msgstr "ververs..."
+
