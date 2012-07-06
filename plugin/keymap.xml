@@ -1,0 +1,24 @@
+<keymap>
+<map context="MeteoViewerActions">
+	<key id="KEY_MENU" mapto="menu" flags="m" />
+	<key id="KEY_SPACE" mapto="menu" flags="m" />
+
+	<key id="KEY_UP" mapto="up" flags="mr" />
+	<key id="KEY_DOWN" mapto="down" flags="mr" />
+	<key id="KEY_LEFT" mapto="left" flags="mr" />
+	<key id="KEY_RIGHT" mapto="right" flags="mr" />
+
+	<key id="KEY_TV" mapto="stop" flags="b" />
+
+	<key id="KEY_RED" mapto="red" flags="m" />
+	<key id="KEY_GREEN" mapto="green" flags="m" />
+	<key id="KEY_YELLOW" mapto="yellow" flags="m" />
+	<key id="KEY_BLUE" mapto="blue" flags="m" />
+
+	<key id="KEY_8" mapto="8" flags="m" />
+	<key id="KEY_PREVIOUS" mapto="previous" flags="m" />
+	<key id="KEY_NEXT" mapto="next" flags="m" />
+		
+	<key id="KEY_1" mapto="1" flags="m" />
+</map>
+</keymap>

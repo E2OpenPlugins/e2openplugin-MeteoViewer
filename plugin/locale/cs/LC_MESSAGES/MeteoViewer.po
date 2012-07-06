@@ -1,0 +1,304 @@
+# German translations for enigma package.
+# Copyright (C) 2009 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma 2 MeteoViewer Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-16 23:05+0100\n"
+"PO-Revision-Date: 2011-06-29 19:41+0100\n"
+"Last-Translator: ims\n"
+"Language-Team: ims\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+
+#
+msgid "Downloaded interval"
+msgstr "Stahovaný interval"
+
+#
+msgid "Slideshow's step"
+msgstr "Krok prezentace"
+
+#
+msgid "Download info on plugin's start"
+msgstr "Stahovat informace po spuštění pluginu"
+
+#
+msgid "Frames info"
+msgstr "Zobrazovat informace o snímku"
+
+#
+msgid "Local time in info"
+msgstr "Místní čas v info"
+
+#
+msgid "Delete old files before download"
+msgstr "Před stahováním odstranit soubory"
+
+#
+msgid "Type of meteo info on start"
+msgstr "Typ meteo informací po startu"
+
+#
+msgid "Download"
+msgstr "Stáhnout"
+
+#
+msgid "Slideshow"
+msgstr "Prezentace"
+
+#
+msgid "Options"
+msgstr "Možnosti"
+
+#
+msgid "Stop show"
+msgstr "Zastavit show"
+
+#
+msgid "Abort"
+msgstr "Přerušit"
+
+#
+msgid "Start download: %d of %d"
+msgstr "Stahování začalo: %d z %d"
+
+#
+msgid "No files found!"
+msgstr "Nebyly nalezeny žádné soubory!"
+
+#
+msgid "Stop slideshow, please!"
+msgstr "Zastavte prezentaci, prosím!"
+
+#
+msgid "Download pictures, please!"
+msgstr "Stahněte soubory, prosím!"
+
+#
+msgid "Prepare..."
+msgstr "Příprava..."
+
+#
+msgid "viewer of meteo pictures"
+msgstr "prohlížeč meteo informací "
+
+#
+msgid "view czech storm pictures"
+msgstr "prohlížeč české detekce blesků"
+
+#
+msgid "%s of %s  -  %s"
+msgstr "%s z %s  -  %s"
+
+#
+msgid "LT"
+msgstr "(místní čas)"
+
+#
+msgid "UTC"
+msgstr "UTC"
+
+#
+msgid "Parallels and meridians"
+msgstr "Zobrazovat rovnoběžky a poledníky"
+
+#
+msgid "On exit delete files"
+msgstr "Smazat soubory po ukončení"
+
+#
+msgid "Directory for download"
+msgstr "Adresář pro ukládání"
+
+#
+msgid "MeteoViewer Setup"
+msgstr "MeteoViewer nastavení"
+
+#
+msgid "MeteoViewer"
+msgstr "MeteoViewer "
+
+#
+msgid "Location for MeteoViewer"
+msgstr "Umístění pro MeteoViewer"
+
+#
+msgid "Synaptic"
+msgstr "Synaptická mapa"
+
+#
+msgid "Save"
+msgstr "Uložit"
+
+#
+msgid "Cancel"
+msgstr "Zavřít"
+
+#
+msgid "Download:"
+msgstr "Stahování:"
+
+#
+msgid "Buienradar interval"
+msgstr "Buienradar interval"
+
+#
+msgid "Delay of last frame on Buienradar (min)"
+msgstr "Zpoždění aktuálního snímku na Buienradar (min)"
+
+#
+msgid "After download \"All\" switch to"
+msgstr "Po stažení \"All\" přepnout do"
+
+#
+msgid "last"
+msgstr "poslední"
+
+#
+msgid "Select wanted meteo type:"
+msgstr "Zvolte požadované meteo informace:"
+
+#
+msgid "Erase files..."
+msgstr "Mazání souborů..."
+
+#
+msgid "Display"
+msgstr "Zobrazovat"
+
+#
+msgid "Slideshow begins from"
+msgstr "Prezentace začíná od"
+
+#
+msgid "begin"
+msgstr "začátku"
+
+#
+msgid "actual position"
+msgstr "aktuální pozice"
+
+#
+msgid "downloaded interval"
+msgstr "stahovaný interval"
+
+#
+msgid "all frames"
+msgstr "všechny snímky"
+
+#
+msgid "none"
+msgstr "žádné"
+
+#
+msgid "no"
+msgstr "ne"
+
+#
+msgid "current type"
+msgstr "aktuální typ"
+
+#
+msgid "all types"
+msgstr "všechny typy"
+
+#
+msgid "older than downloaded interval"
+msgstr "starší než stahovaný interval"
+
+#
+msgid "older than max. interval"
+msgstr "starší než max. interval"
+
+#
+msgid "info"
+msgstr "informace"
+
+#
+msgid "info and progress bar"
+msgstr "info a průběh prezentace"
+
+#
+msgid "progress bar"
+msgstr "průběh prezentace"
+
+#
+msgid "Select destination:"
+msgstr "Zvolte destinaci:"
+
+#
+msgid "Are You sure delete this frame?"
+msgstr "Chcete opravdu smazat tento snímek?"
+
+#
+msgid "exit plugin"
+msgstr "ukončit plugin"
+
+#
+msgid "play/stop slideshow"
+msgstr "přehrát/zastavit prezentaci"
+
+#
+msgid "run/abort download"
+msgstr "spustit/přerušit stahování"
+
+#
+msgid "options"
+msgstr "nastavení"
+
+#
+msgid "go to last frame"
+msgstr "přejít na poslední snímek"
+
+#
+msgid "go to next frame"
+msgstr "následující snímek"
+
+#
+msgid "go to previous frame"
+msgstr "předchozí snímek"
+
+#
+msgid "switch to next meteo type"
+msgstr "přepnout na další meteo typ"
+
+#
+msgid "switch to previous meteo type"
+msgstr "přepnout na předchozí meteo typ"
+
+#
+msgid "stop slideshow/synaptic map"
+msgstr "zastavit prezentaci/synaptická mapa"
+
+#
+msgid "menu"
+msgstr "výběr meteo informací"
+
+#
+msgid "delete current frame"
+msgstr "odstranit aktuální snímek"
+
+#
+msgid "go to first downloaded frame"
+msgstr "na první stažený snímek"
+
+#
+msgid "go to last downloaded frame"
+msgstr "na poslední stažený snímek"
+
+#
+msgid "Refresh slideshow"
+msgstr "Aktualizace prezentace"
+
+#
+msgid "refresh..."
+msgstr "refresh..."
+
