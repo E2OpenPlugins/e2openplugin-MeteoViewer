@@ -3,7 +3,7 @@ import setup_translate
 
 pkg = 'Extensions.MeteoViewer'
 setup (name = 'enigma2-plugin-extensions-meteoviewer',
-       version = '1.68',
+       version = '1.70',
        description = 'meteo pictures viewer',
        packages = [pkg],
        package_dir = {pkg: 'plugin'},

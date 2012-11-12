@@ -110,13 +110,15 @@ if getDesktop(0).size().width() >= 1280:
 	HD = True
 
 # position of BACKGROUND and MER must be equal as position of SUBDIR and TYPE. For unused item use e.png
-BACKGROUND = [ "bg.png", "2bg.png", "2bg.png", "2bg.png","e.png"]
-for i in range(5,last_item + 1):
+BACKGROUND = [ "bg.png", "2bg.png", "2bg.png", "2bg.png","e.png", "radar.png"]
+for i in range(6,last_item + 1):
 	BACKGROUND.append("e.png")
 MER = [ "merce.png", "mercz.png", "mercz.png", "mercz.png","e.png"]
 for i in range(5,last_item +1):
 	MER.append("e.png")
 EMPTYFRAME = "e.jpg"
+
+RADAR_MM = "radar_mm.png"
 
 del last_item
 
@@ -130,17 +132,12 @@ config.plugins.meteoviewer.refresh = ConfigSelection(default = "0", choices = [(
 config.plugins.meteoviewer.slidetype = ConfigSelection(default = "0", choices = [("0",_("begin")),("1",_("actual position"))])
 config.plugins.meteoviewer.download = ConfigYesNo(default = False)
 # CHOICES FOR OPTIONS:
-config.plugins.meteoviewer.type = ConfigSelection(default = "29", choices = [("0",INFO[0]),("1",INFO[1]),("2",INFO[2]),("3",INFO[3]),("4",INFO[4]),("5",INFO[5]),("6",INFO[6]),("7",INFO[7]),
-										("8",INFO[8]),("9",INFO[9]),("10",INFO[10]),("11",INFO[11]),("12",INFO[12]),("13",INFO[13]),("14",INFO[14]),("15",INFO[15]),
-										("16",INFO[16]),("17",INFO[17]),("18",INFO[18]),("19",INFO[19]),("20",INFO[20]),("21",INFO[21]),("22",INFO[22]),("23",INFO[23]),
-										("24",INFO[24]),("25",INFO[25]),("26",INFO[26]),("27",INFO[27]),("28",INFO[28]),("29",INFO[29]),("30",INFO[30]),("31",INFO[31]),
-										("32",INFO[32]),("33",INFO[33]),("34",INFO[34]),("35",INFO[35]),("36",INFO[36]),("37",INFO[37]),("38",INFO[38]),("39",INFO[39]),
-										("40",INFO[40]),("41",INFO[41]),("42",INFO[42]),("43",INFO[43]),("44",INFO[44]),("45",INFO[45]),("46",INFO[46]),("47",INFO[47]),
-										("48",INFO[48]),("49",INFO[49]),("50",INFO[50]),("51",INFO[51]),("52",INFO[52]),("53",INFO[53]),("54",INFO[54]),("55",INFO[55]),
-										("56",INFO[56]),("57",INFO[57]),("58",INFO[58]),("59",INFO[59]),("60",INFO[60]),("61",INFO[61]),("62",INFO[62]),("63",INFO[63]),
-										("64",INFO[64]),("65",INFO[65]),("66",INFO[66]),("67",INFO[67]),("68",INFO[68]),("69",INFO[69]),("70",INFO[70]),("71",INFO[71]),
-										("72",INFO[72]),
-										("73",_("all"))])
+choicelist = []
+for i in (0, 73):
+	choicelist.append(("%d" % i, "%s" % INFO[i]))
+choicelist.append(("73",_("all")))
+config.plugins.meteoviewer.type = ConfigSelection(default = "29", choices = choicelist)
+
 # CHOICES FOR AFTER "ALL" (WITHOUT "ALL"):
 config.plugins.meteoviewer.typeafterall = ConfigSelection(default = "29", choices = config.plugins.meteoviewer.type.choices[:-1])
 config.plugins.meteoviewer.display =  ConfigSelection(default = "3", choices = [("0",_("none")),("1",_("info")),("2",_("progress bar")),("3",_("info and progress bar"))])
@@ -684,18 +681,24 @@ class meteoViewer(Screen, HelpableScreen):
 	def redrawFrame(self):
 		path = self.getDir(self.typ) + self.frame[self.idx] + self.EXT
 		if fileExists(path):
-			self.picload.startDecode(path)
+			self.displayFrame(path)
 			self.displayInfo(self.idx+1,self.maxFrames,self.frame[self.idx])
 			if cfg.display.value > "1":
 				self["slide"].show()
 
 	def setExtension(self):
-		if BUIEN.count(TYPE[self.typ]) or BUIENIR.count(TYPE[self.typ]) or TYPE[self.typ] in ("nla","dea","uka","nla1","csr","ausi","ausv"):
+		if BUIEN.count(TYPE[self.typ]) or BUIENIR.count(TYPE[self.typ]) or TYPE[self.typ] in ("nla","dea","uka","nla1","ausi","ausv"):
 			self.EXT = ".gif"
-		elif TYPE[self.typ] == "storm":
+		elif TYPE[self.typ] in ("storm", "csr"):
 			self.EXT = ".png"
 		else:
 			self.EXT = ".jpg"
+
+	def displayFrame(self, path):
+		if TYPE[self.typ] == "csr":
+			self.borderLoad.startDecode(path)
+		else:
+			self.picload.startDecode(path)
 
 	def firstFrame(self):
 		if self.isSynaptic:
@@ -707,7 +710,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if not self.isShow:
 				path = self.getDir(self.typ) + self.frame[self.startIdx] + self.EXT
 				if fileExists(path):
-					self.picload.startDecode(path)
+					self.displayFrame(path)
 					if cfg.display.value > "1":
 						self["slide"].setValue(100)
 						self["slide"].show()
@@ -729,7 +732,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if not self.isShow:
 				path = self.getDir(self.typ) + self.frame[self.maxFrames-1] + self.EXT
 				if fileExists(path):
-					self.picload.startDecode(path)
+					self.displayFrame(path)
 					if cfg.display.value > "1":
 						self["slide"].setValue(100)
 						self["slide"].show()
@@ -752,7 +755,7 @@ class meteoViewer(Screen, HelpableScreen):
 					self.idx = self.startIdx
 				path = self.getDir(self.typ) + self.frame[self.idx] + self.EXT
 				if fileExists(path):
-					self.picload.startDecode(path)
+					self.displayFrame(path)
 					self.displayInfo(self.idx+1,self.maxFrames,self.frame[self.idx])
 			else:
 				self.displayMsg(_("Stop slideshow, please!"))
@@ -772,7 +775,7 @@ class meteoViewer(Screen, HelpableScreen):
 					self.idx = self.maxFrames-1
 				path = self.getDir(self.typ) + self.frame[self.idx] + self.EXT
 				if fileExists(path):
-					self.picload.startDecode(path)
+					self.displayFrame(path)
 					self.displayInfo(self.idx+1,self.maxFrames,self.frame[self.idx])
 			else:
 				self.displayMsg(_("Stop slideshow, please!"))
@@ -785,11 +788,15 @@ class meteoViewer(Screen, HelpableScreen):
 			self.borderLoad.startDecode(PPATH + MER[len(TYPE)-1])
 			self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
 		else:
-			self.borderLoad.startDecode(PPATH + BACKGROUND[self.typ])
-			if cfg.mer.value:
-				self.merLoad.startDecode(PPATH + MER[self.typ])
+			if TYPE[self.typ] == "csr":
+				self.picload.startDecode(PPATH + BACKGROUND[self.typ])
+				self.merLoad.startDecode(PPATH + RADAR_MM)
 			else:
-				self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
+				self.borderLoad.startDecode(PPATH + BACKGROUND[self.typ])
+				if cfg.mer.value:
+					self.merLoad.startDecode(PPATH + MER[self.typ])
+				else:
+					self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
 
 	def slideShow(self):
 		self.isSynaptic = False
@@ -849,7 +856,7 @@ class meteoViewer(Screen, HelpableScreen):
 				if self.idx < self.maxFrames:
 					path = self.getDir(self.typ) + self.frame[self.idx] + self.EXT
 					if fileExists(path):
-						self.picload.startDecode(path)
+						self.displayFrame(path)
 						self.displayInfo(self.idx+1,self.maxFrames,self.frame[self.idx])
 						self.idx += 1
 					self.slideShowTimer.start(int(cfg.time.value), True)
@@ -889,7 +896,7 @@ class meteoViewer(Screen, HelpableScreen):
 			self.isSynaptic = True			
 			path = TMPDIR + SUBDIR + "/" +  self.map[self.midx] + ".gif"
 			if fileExists(path):
-				self.picload.startDecode(path)
+				self.displayFrame(path)
 				#self.displayInfo(self.midx+1,self.maxMap,self.frame[self.midx])
 			if self.midx < (self.maxMap-1):
 				self.midx += 1
@@ -908,7 +915,7 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def emptyFrame(self):
 		if fileExists(PPATH + EMPTYFRAME):
-			self.picload.startDecode(PPATH + EMPTYFRAME)
+			self.displayFrame(PPATH + EMPTYFRAME)
 		
 
 	def deleteFrame(self):
@@ -1113,8 +1120,9 @@ class meteoViewer(Screen, HelpableScreen):
 				if not self.downloadFrame(url,path):
 					break
 			if typ == "csr" or typ == "all":
-				url = "http://www.chmi.cz/files/portal/docs/meteo/rad/data/%s%s.gif" % (frDate[2:], frTime)
-				path= "%s%s%s.gif" % (self.getDir(TYPE.index("csr")), frDate, frTime)
+				url = "http://portal.chmi.cz/files/portal/docs/meteo/rad/data_tr_png_1km/pacz23.z_max3d.%s.%s.0.png" % (frDate, frTime)
+				#url = "http://www.chmi.cz/files/portal/docs/meteo/rad/data/%s%s.gif" % (frDate[2:], frTime)
+				path= "%s%s%s.png" % (self.getDir(TYPE.index("csr")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
 
@@ -1548,7 +1556,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
 		self["description"] = Label("")
-		self["statusbar"] = Label("ims (c) 2011. v1.68")
+		self["statusbar"] = Label("ims (c) 2012. v1.70")
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"green": self.save,
