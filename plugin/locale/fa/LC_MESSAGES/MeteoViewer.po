@@ -1,0 +1,298 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: meteo viewer Persian Translation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-16 23:05+0100\n"
+"PO-Revision-Date: 2012-07-28 22:35+0330\n"
+"Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
+"Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Persian\n"
+"X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
+
+#
+msgid "Downloaded interval"
+msgstr "بارگذاری بازه زمانی"
+
+#
+msgid "Slideshow's step"
+msgstr "مراحل نمایش اسلایدها"
+
+#
+msgid "Download info on plugin's start"
+msgstr "بارگذاری اطلاعات بروی پلاگین"
+
+#
+msgid "Frames info"
+msgstr "فریم اطلاعات"
+
+#
+msgid "Local time in info"
+msgstr "نمایش زمان محلی در نوار اطلاعات"
+
+#
+msgid "Delete old files before download"
+msgstr "حذف فایل های قدیمی قبل از بارگذاری"
+
+#
+msgid "Type of meteo info on start"
+msgstr "در شروع کار meteo نوع اطلاعات"
+
+#
+msgid "Download"
+msgstr "بارگذاری کردن"
+
+#
+msgid "Slideshow"
+msgstr "نمایش اسلایدها"
+
+#
+msgid "Options"
+msgstr "گزینه ها"
+
+#
+msgid "Stop show"
+msgstr "متوقف سازی نمایش "
+
+#
+msgid "Abort"
+msgstr "نتیجه ای در بر نداشت"
+
+#
+msgid "Start download: %d of %d"
+msgstr ""
+
+#
+msgid "No files found!"
+msgstr "هیچ فایل یافت نشد"
+
+#
+msgid "Stop slideshow, please!"
+msgstr "متوقف سازی نمایش اسلایدها و لطفا !"
+
+#
+msgid "Download pictures, please!"
+msgstr "بارگذاری تصاویر و لطفا !"
+
+#
+msgid "Prepare..."
+msgstr "آمادی سازی کردن ..."
+
+#
+msgid "viewer of meteo pictures"
+msgstr " meteo نمایشگر تصاویر"
+
+#
+msgid "view czech storm pictures"
+msgstr ""
+
+#
+msgid "%s of %s  -  %s"
+msgstr ""
+
+#
+msgid "LT"
+msgstr ""
+
+#
+msgid "UTC"
+msgstr ""
+
+#
+msgid "Parallels and meridians"
+msgstr ""
+
+#
+msgid "On exit delete files"
+msgstr "خارج شدن از فایل های حذف شده"
+
+#
+msgid "Directory for download"
+msgstr "دایرکتوری برای بارگذاری شده ها"
+
+#
+msgid "MeteoViewer Setup"
+msgstr "Meteo راه انداری نمایشگر"
+
+#
+msgid "MeteoViewer"
+msgstr "Meteo نمایشگر"
+
+#
+msgid "Location for MeteoViewer"
+msgstr "Meteo مکانی برای نمایشگر"
+
+#
+msgid "Synaptic"
+msgstr ""
+
+#
+msgid "Save"
+msgstr "ذخیره سازی کردن "
+
+#
+msgid "Cancel"
+msgstr "لغو کردن"
+
+#
+msgid "Download:"
+msgstr "بارگذاری کردن"
+
+#
+msgid "Buienradar interval"
+msgstr ""
+
+#
+msgid "Delay of last frame on Buienradar (min)"
+msgstr ""
+
+#
+msgid "After download \"All\" switch to"
+msgstr ""
+
+#
+msgid "last"
+msgstr "آخرین"
+
+#
+msgid "Select wanted meteo type:"
+msgstr "meteo انتخاب نوع انتخاب شده"
+
+#
+msgid "Erase files..."
+msgstr "پاک کردن فایل ها ..."
+
+#
+msgid "Display"
+msgstr "نمایش"
+
+#
+msgid "Slideshow begins from"
+msgstr "شروع نمایش بصورت اسلایدوار از ...."
+
+#
+msgid "begin"
+msgstr "شروع کردن"
+
+#
+msgid "actual position"
+msgstr "جایگاه واقعی"
+
+#
+msgid "downloaded interval"
+msgstr "بارگذاری بازه زمانی"
+
+#
+msgid "all frames"
+msgstr "همه فریم ها"
+
+#
+msgid "none"
+msgstr "هیچ کدام"
+
+#
+msgid "no"
+msgstr "نه"
+
+#
+msgid "current type"
+msgstr "نوع فعلی"
+
+#
+msgid "all types"
+msgstr "همه نوع ها"
+
+#
+msgid "older than downloaded interval"
+msgstr "قدیمی تر از بازه زمانی بارگذاری"
+
+#
+msgid "older than max. interval"
+msgstr "قدیمی تر از بازه زمانی نهایی"
+
+#
+msgid "info"
+msgstr "اطلاعات"
+
+#
+msgid "info and progress bar"
+msgstr "اطلاعات و نوار پیشرفت کار "
+
+#
+msgid "progress bar"
+msgstr "نوار پیشرفت کار"
+
+#
+msgid "Select destination:"
+msgstr "انتخاب مقصد"
+
+#
+msgid "Are You sure delete this frame?"
+msgstr "آیا واقعا می خواهید این فریم را حذف کنید ؟"
+
+#
+msgid "exit plugin"
+msgstr "خارج شدن از پلاگین"
+
+#
+msgid "play/stop slideshow"
+msgstr "نمایش / متوقف ساختن نمایش اسلایدها"
+
+#
+msgid "run/abort download"
+msgstr "اجرا یا لغو بارگذاری های بی نتیجه"
+
+#
+msgid "options"
+msgstr "گزینه ها"
+
+#
+msgid "go to last frame"
+msgstr "رفتن به آخرین فریم"
+
+#
+msgid "go to next frame"
+msgstr "رفتن به فریم بعدی"
+
+#
+msgid "go to previous frame"
+msgstr "رفتن به فریم قبلی"
+
+#
+msgid "switch to next meteo type"
+msgstr "meteo  سوئیچ کردن به نوع بعدی"
+
+#
+msgid "switch to previous meteo type"
+msgstr "meteo  سوئیچ کردن به نوع قبلی"
+
+#
+msgid "stop slideshow/synaptic map"
+msgstr " synaptic map / متوقف ساختن نمایش اسلایدها"
+
+#
+msgid "menu"
+msgstr "منو"
+
+#
+msgid "delete current frame"
+msgstr "حذف فریم های موجود"
+
+#
+msgid "go to first downloaded frame"
+msgstr "رفتن به اولین فریم بارگذاری شده"
+
+#
+msgid "go to last downloaded frame"
+msgstr "رفتن به آخرین فریم بارگذاری شده"
+
+#
+msgid "Refresh slideshow"
+msgstr "بازآوری نمایش اسلایدها"
+
+#
+msgid "refresh..."
+msgstr "بازآوری کردن ..."
+
