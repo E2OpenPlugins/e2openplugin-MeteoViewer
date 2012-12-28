@@ -15,9 +15,9 @@
 #
 
 from Plugins.Plugin import PluginDescriptor
-import ui
 
 def main(session, **kwargs):
+	import ui
 	session.open(ui.meteoViewer)
 
 def Plugins(path,**kwargs):
