@@ -782,8 +782,10 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def redrawBorder(self):
 		if self.isSynaptic:
-			#clear border and mer
-			self.borderLoad.startDecode(PPATH + MER[len(TYPE)-1])
+			if TYPE[self.typ] != "csr":
+				self.borderLoad.startDecode(PPATH + MER[len(TYPE)-1])
+			else:
+				self.picload.startDecode(PPATH + BACKGROUND[len(BACKGROUND)-1])
 			self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
 		else:
 			if TYPE[self.typ] == "csr":
@@ -845,8 +847,9 @@ class meteoViewer(Screen, HelpableScreen):
 			if self.isReading:
 				self.isReading = False
 			else:	# if is not slideshow with STOP button:
-				self.displaySynoptic()
+				self.isSynaptic = True
 				self.redrawBorder()
+				self.displaySynoptic()
 
 	def slideShowEvent(self):
 		if self.filesOK:
