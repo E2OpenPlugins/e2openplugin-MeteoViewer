@@ -359,6 +359,7 @@ class meteoViewer(Screen, HelpableScreen):
 		self.midx = 0
 		self.maxMap = 0
 		self.selection = 0
+		self.firstSynaptic = False
 
 		self.Limited = LimitedDownloader(5) # limit for parallel downloading
 
@@ -650,8 +651,14 @@ class meteoViewer(Screen, HelpableScreen):
 		self.idx = self.startIdx
 
 	def afterCfg(self, data=True):
-		self.displayMeteoType()
+		if self.isSynaptic:
+			self.displaySynoptic(True)
+			self.displayInfo(self.idx+1,self.maxFrames,self.frame[self.idx])
+			if cfg.display.value > "1":
+				self["slide"].show()
+			return
 
+		self.displayMeteoType()
 		if self.lastdir != cfg.tmpdir.value:
 			self.readFiles(delay=0.5)
 			if self.filesOK:
@@ -787,6 +794,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else:
 				self.picload.startDecode(PPATH + BACKGROUND[len(BACKGROUND)-1])
 			self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
+			self.firstSynaptic = False
 		else:
 			if TYPE[self.typ] == "csr":
 				self.picload.startDecode(PPATH + BACKGROUND[self.typ])
@@ -847,8 +855,11 @@ class meteoViewer(Screen, HelpableScreen):
 			if self.isReading:
 				self.isReading = False
 			else:	# if is not slideshow with STOP button:
+				if not self.isSynaptic:
+					self.firstSynaptic = True
 				self.isSynaptic = True
-				self.redrawBorder()
+				if self.firstSynaptic:
+					self.redrawBorder()
 				self.displaySynoptic()
 
 	def slideShowEvent(self):
@@ -892,8 +903,10 @@ class meteoViewer(Screen, HelpableScreen):
 				self.map.append(x[0][0][:-4])
 				self.maxMap += 1
 			
-	def displaySynoptic(self):
+	def displaySynoptic(self, decrease=False):
 		if self.maxMap > 0:
+			if decrease: # for return from config only
+				self.midx -= 1
 			self.isSynaptic = True			
 			path = TMPDIR + SUBDIR + "/" +  self.map[self.midx] + ".gif"
 			if fileExists(path):
@@ -903,7 +916,6 @@ class meteoViewer(Screen, HelpableScreen):
 				self.midx += 1
 			else:
 				self.midx = 0
-
 
 	def timeFormat(self, name):
 		epochTimeUTC = mktime(strptime(name,'%Y%m%d%H%M'))
@@ -1556,8 +1568,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 			
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
-		self["description"] = Label("")
-		self["statusbar"] = Label("ims (c) 2012. v1.71")
+		self["statusbar"] = Label("ims (c) 2012. v1.72")
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"green": self.save,
