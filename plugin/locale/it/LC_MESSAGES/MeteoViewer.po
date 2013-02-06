@@ -1,0 +1,318 @@
+# Signed-off-by: Dario Croci <spaeleus@croci.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2 OpenPLi - MeteoViewer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-05 22:50+0100\n"
+"PO-Revision-Date: 2013-02-06 17:54+0100\n"
+"Last-Translator: Spaeleus <spaeleus@croci.org>\n"
+"Language-Team: www.linsat.net <spaeleus@croci.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: Italy\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer\n"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:126
+msgid "downloaded interval"
+msgstr "Intervallo considerato"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:126
+msgid "all frames"
+msgstr "Tutti i frame"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:127
+msgid "last"
+msgstr "Ultimo"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:131
+msgid "begin"
+msgstr "Inizio"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:131
+msgid "actual position"
+msgstr "Posizione attuale"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:141
+msgid "none"
+msgstr "Nessuno"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:141
+msgid "info"
+msgstr "info"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:141
+msgid "progress bar"
+msgstr "Barra di progressione"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:141
+msgid "info and progress bar"
+msgstr "Info e barra di progressione"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:143
+msgid "no"
+msgstr "No"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:143
+msgid "current type"
+msgstr "Tipo corrente"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:143
+msgid "all types"
+msgstr "Tutti"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:144
+msgid "older than max. interval"
+msgstr "Più vecchi dell'intervallo max"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:144
+msgid "older than downloaded interval"
+msgstr "Più vecchi dell'intervallo considerato"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:289
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:406
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:527
+msgid "MeteoViewer"
+msgstr "MeteoViewer"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:293
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:304
+msgid "exit plugin"
+msgstr "Uscire"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:294
+msgid "go to last frame"
+msgstr "Andare all'ultimo frame"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:299
+msgid "menu"
+msgstr "Menu"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:300
+msgid "go to previous frame"
+msgstr "Andare al frame precedente"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:301
+msgid "go to next frame"
+msgstr "Andare al frame successivo"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:302
+msgid "switch to next meteo type"
+msgstr "Passare al tipo successivo"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:303
+msgid "switch to previous meteo type"
+msgstr "Passare al tipo precedente"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:305
+msgid "play/stop slideshow"
+msgstr "Proiezione: Play/Stop"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:306
+msgid "run/abort download"
+msgstr "Download: Avvio/Arresto"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:307
+msgid "options"
+msgstr "Opzioni"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:308
+msgid "stop slideshow/synaptic map"
+msgstr "Arrestare proiezione/Mappa sinottica"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:309
+msgid "delete current frame"
+msgstr "Rimuovere il frame corrente"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:310
+msgid "go to first downloaded frame"
+msgstr "Andare al primo frame scaricato"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:311
+msgid "go to last downloaded frame"
+msgstr "Andare all'iltimo frame scaricato"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:331
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:550
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:576
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1570
+msgid "Cancel"
+msgstr "Annullare"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:333
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:578
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:841
+msgid "Download"
+msgstr "Download"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:334
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:579
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:842
+msgid "Options"
+msgstr "Impostazioni"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:425
+msgid "Select wanted meteo type:"
+msgstr "Selezionare il tipo desiderato:"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:474
+msgid "Select destination:"
+msgstr "Selezionare la destinazione:"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:537
+msgid "Prepare..."
+msgstr "Preparazione..."
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:552
+msgid "Abort"
+msgstr "Annullare"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:557
+msgid "Download:"
+msgstr "Download:"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:564
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:766
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:786
+msgid "Stop slideshow, please!"
+msgstr "Arrestare la proiezione"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:577
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:623
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:840
+msgid "Slideshow"
+msgstr "Proiezione"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:586
+msgid "refresh..."
+msgstr "Aggiornamento..."
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:635
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:768
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:788
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:850
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:885
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:939
+msgid "No files found!"
+msgstr "Nessun file trovato."
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:674
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:726
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:748
+msgid "Download pictures, please!"
+msgstr "Scaricare le immagini."
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:830
+msgid "Stop Show"
+msgstr "Stop"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:889
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:893
+#, python-format
+msgid "%s of %s  -  %s"
+msgstr "%s di %s  -  %s"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:925
+msgid "LT"
+msgstr "LT"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:927
+msgid "UTC"
+msgstr "UTC"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:937
+msgid "Are You sure delete this frame?"
+msgstr "Rimuovere il frame?"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:971
+msgid "Erase files..."
+msgstr "Rimuovere file..."
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1567
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1619
+msgid "MeteoViewer Setup"
+msgstr "Impostazioni MeteoViewer"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1569
+msgid "Save"
+msgstr "Salvare"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1580
+msgid "Directory for download"
+msgstr "Directory per il download"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1583
+msgid "Downloaded interval"
+msgstr "Intervallo considerato"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1584
+msgid "Display"
+msgstr "Mostrare"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1585
+msgid "Buienradar interval"
+msgstr "Intervallo radar meteo"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1586
+msgid "Delay of last frame on Buienradar (min)"
+msgstr "Ritardo ultimo frame su radar meteo (min)"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1587
+msgid "Slideshow's step"
+msgstr "Passo proiezione"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1588
+msgid "Refresh slideshow"
+msgstr "Aggiornare la proiezione"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1589
+msgid "Slideshow begins from"
+msgstr "Iniziare la proiezione da"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1590
+msgid "Download info on plugin's start"
+msgstr "Download info all'avvio del plugin"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1591
+msgid "Type of meteo info on start"
+msgstr "Tipologia info meteo all'avvio"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1592
+msgid "After download \"All\" switch to"
+msgstr "Su download completo, passare a"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1593
+msgid "Delete old files before download"
+msgstr "Rim. vecchi file prima del download"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1594
+msgid "On exit delete files"
+msgstr "Rimuovere files all'uscita"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1595
+msgid "Frames info"
+msgstr "Info frame"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1596
+msgid "Local time in info"
+msgstr "Ora locale nelle info"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1597
+msgid "Parallels and meridians"
+msgstr "Paralleli e meridiani"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/ui.py:1626
+msgid "Location for MeteoViewer"
+msgstr "Località per MeteoViewer"
+
+#: /home/dario/OpenPLi/openpli-oe-core/build-dm7020hd/tmp/sysroots/dm7020hd/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/plugin.py:24
+msgid "viewer of meteo pictures"
+msgstr "Visualizzatore per immagini meteo"
+
