@@ -240,6 +240,14 @@ msgstr "Rimuovere file..."
 msgid "MeteoViewer Setup"
 msgstr "Impostazioni MeteoViewer"
 
+#
+msgid "Synaptic"
+msgstr "Sinottica"
+
+#
+msgid "synaptic maps"
+msgstr "Mappa sinottica"
+
 #: .../Extensions/MeteoViewer/ui.py:1569
 msgid "Save"
 msgstr "Salvare"

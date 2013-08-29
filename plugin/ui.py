@@ -303,9 +303,11 @@ class meteoViewer(Screen, HelpableScreen):
 			"down": (self.decrease_typ,_("switch to previous meteo type")),
 			"red": (self.end, _("exit plugin")),
 			"green": (self.slideButton, _("play/stop slideshow")),
+			"play": (self.runSlideShow, _("play slideshow")),
 			"yellow": (self.download_delayed,_("run/abort download")),
 			"blue": (self.callCfg, _("options")),
 			"stop": (self.stopSlideShow,_("stop slideshow/synaptic map")),
+			"tv": (self.displaySynaptic,_("synaptic maps")),
 			"8": (self.deleteFrame,_("delete current frame")),
 			"previous": (self.firstFrame,_("go to first downloaded frame")),
 			"next": (self.lastFrame,_("go to last downloaded frame")),
@@ -405,6 +407,10 @@ class meteoViewer(Screen, HelpableScreen):
 	def setWindowTitle(self):
 		self.setTitle(_("MeteoViewer"))
 
+	def runSlideShow(self):
+		if not self.isShow:
+			self.slideShow()
+	
 	def slideButton(self):
 		if self.isShow:
 			self.stopSlideShow()
@@ -851,16 +857,19 @@ class meteoViewer(Screen, HelpableScreen):
 			import time
 			time.sleep(1.0)
 			self.isShow = False
-		else:
-			if self.isReading:
-				self.isReading = False
-			else:	# if is not slideshow with STOP button:
-				if not self.isSynaptic:
-					self.firstSynaptic = True
-				self.isSynaptic = True
-				if self.firstSynaptic:
-					self.redrawBorder()
-				self.displaySynoptic()
+
+	def displaySynaptic(self):
+		if self.isShow:
+			self.stopSlideShow()
+		if self.isReading:
+			self.isReading = False
+		else:	# if is not slideshow with STOP button:
+			if not self.isSynaptic:
+				self.firstSynaptic = True
+			self.isSynaptic = True
+			if self.firstSynaptic:
+				self.redrawBorder()
+			self.displaySynoptic()
 
 	def slideShowEvent(self):
 		if self.filesOK:
@@ -1568,7 +1577,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 			
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
-		self["statusbar"] = Label("ims (c) 2012. v1.72")
+		self["statusbar"] = Label("ims (c) 2012. v1.73")
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"green": self.save,

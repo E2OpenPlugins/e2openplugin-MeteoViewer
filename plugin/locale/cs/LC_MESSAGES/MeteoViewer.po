@@ -135,6 +135,10 @@ msgid "Synaptic"
 msgstr "Synaptická mapa"
 
 #
+msgid "synaptic maps"
+msgstr "synaptické mapy"
+
+#
 msgid "Save"
 msgstr "Uložit"
 

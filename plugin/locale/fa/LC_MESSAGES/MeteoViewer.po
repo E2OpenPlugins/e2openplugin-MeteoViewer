@@ -129,6 +129,10 @@ msgid "Synaptic"
 msgstr ""
 
 #
+msgid "synaptic maps"
+msgstr ""
+
+#
 msgid "Save"
 msgstr "ذخیره سازی کردن "
 

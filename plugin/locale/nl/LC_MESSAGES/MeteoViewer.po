@@ -135,6 +135,10 @@ msgid "Synaptic"
 msgstr "Synoptisch"
 
 #
+msgid "synaptic maps"
+msgstr "synoptische kaarten"
+
+#
 msgid "Save"
 msgstr "Opslaan"
 
