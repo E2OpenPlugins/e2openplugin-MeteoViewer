@@ -9,6 +9,7 @@
 	<key id="KEY_RIGHT" mapto="right" flags="mr" />
 
 	<key id="KEY_TV" mapto="tv" flags="m" />
+	<key id="KEY_TV2" mapto="tv" flags="m" />
 	<key id="KEY_PLAYPAUSE" mapto="green" flags="m" />
 	<key id="KEY_PLAY" mapto="play" flags="m" />
 	<key id="KEY_STOP" mapto="stop" flags="m" />
