@@ -49,21 +49,27 @@ IBUIENIR = ["Great Britain IR","Scandinavia IR","Baltic Area IR","Russia IR","Ne
 		"Germany IR","Poland IR","Spain IR","France IR","Alps IR",
 		"Hungary IR","Italy IR","Balkans IR","Greece IR","South East Evrope IR",
 		"Turkey IR","Europe IR"]
-IAUSTRALIA = ["Australia","Australia extended", "Australia IR", "Austraia IR Colored", "Australia (radar + sat)"]
-IANIMATED = ["Nederland - animated", "Germany - radar", "Great Britain - radar", "Nederland - radar"]
+IAUSTRALIA = ["Australia", "Australia extended", "Australia IR"]
+
+#IANIMATED = ["Nederland - animated", "Germany - radar", "Great Britain - radar", "Nederland - radar"]
+IANIMATED = ["Nederland - radar", "Germany - radar", "Great Britain - radar"]
 IGLOBE = ["Europe/Africa", "Asia/Oceania", "North/South America"]
 IWO = ["Europe WO",
 	"Great Britain WO", "France WO", "Iberia WO", "Italia WO", "Germany WO", "Scandinavia WO",
-	"Ukraine/Romania WO", "Poland WO", "Near-East WO", "Russia WO", "Greece", "Iceland WO", "Canary Islands  WO", "Baltic States WO", "Turkey WO" ]
+	"Ukraine/Romania WO", "Poland WO", "Near-East WO", "Russia WO", "Greece WO", "Iceland WO", "Canary Islands  WO", "Baltic States WO", "Turkey WO" ]
+IWOi = ["Europe WO Infra",
+	"Great Britain WO Infra", "France WO Infra", "Iberia WO Infra", "Italia WO Infra", "Germany WO Infra", "Scandinavia WO Infra",
+	"Ukraine/Romania WO Infra", "Poland WO Infra", "Near-East WO Infra", "Russia WO Infra", "Greece WO Infra", "Iceland WO Infra", "Canary Islands  WO Infra", "Baltic States WO Infra", "Turkey WO Infra" ]
 IWE = ["VIS United Kingdom","IR United Kingdom","VIS Western Europe","IR Western Europe"]
 INFO = ["IR Central Europe","VIS-IR Czech Republic","IR BT Czech Republic","24h-MF Czech Republic", "Czech Storm", "Czech Radar"]
 
-INFO += IWE
+#INFO += IWE
 INFO += IWO
+INFO += IWOi
 INFO += IANIMATED
-INFO += IGLOBE
-INFO += IBUIEN
-INFO += IBUIENIR
+#INFO += IGLOBE
+#INFO += IBUIEN
+#INFO += IBUIENIR
 INFO += IAUSTRALIA
 INFO += INA
 INFO +=	["All"]
@@ -79,22 +85,27 @@ BUIENIR = ["gbi", "scani", "bci", "rui", "nli",
 		"dei", "pli", "spi", "fri", "alpsi",
 		"hui", "iti", "bai", "gri", "sei",
 		"tui", "eui"]
-AUSTRALIA = ["aus", "ause", "ausi", "ausc", "ausr"]
-ANIMATED = ["nla", "dea", "uka", "nla1"]
+AUSTRALIA = ["aus", "ause", "ausi"]
+#ANIMATED = ["nla", "dea", "uka", "nla1"]
+ANIMATED = ["nla1", "dea", "uka"]
 GLOBE = ["gle","glo","gla"]
 WO = ["im00",
 	"im01","im02","im03","im04","im05","im06",
 	"im08","im09","im10","im11","im12","im13","im14","im15","im16"]
+WOi = ["vm00",
+	"vm01","vm02","vm03","vm04","vm05","vm06",
+	"vm08","vm09","vm10","vm11","vm12","vm13","vm14","vm15","vm16"]
 WE = ["ukvis", "uk", "wevis", "we"]
 
 TYPE = ["ir", "vis", "bt", "24m", "storm", "csr"]
 
-TYPE += WE
+#TYPE += WE
 TYPE += WO
+TYPE += WOi
 TYPE += ANIMATED
-TYPE += GLOBE
-TYPE += BUIEN
-TYPE += BUIENIR
+#TYPE += GLOBE
+#TYPE += BUIEN
+#TYPE += BUIENIR
 TYPE += AUSTRALIA
 TYPE += NA
 TYPE += ["all"]
@@ -314,7 +325,8 @@ class meteoViewer(Screen, HelpableScreen):
 			#"1": (self.refreshFrames, _("refresh last frame")),
 			}, -2)
 
-		self.MAINMENU = ["Czech meteo","Animated","Globus","Western Europe","BuienRadar IR","Australia","Weather Online","BuienRadar VIS","North America","All update"]
+#		self.MAINMENU = ["Czech meteo","Animated","Globus","Western Europe","BuienRadar IR","Australia","Weather Online","BuienRadar VIS","North America","All update"]
+		self.MAINMENU = ["Czech meteo","Animated","Australia","Weather Online","Weather Online Infra","North America","All update"]
 
 		self["frames"] = Pixmap()
 		self.picload = enigma.ePicLoad()
@@ -450,6 +462,7 @@ class meteoViewer(Screen, HelpableScreen):
 			self.subMenu(choice[1])
 
 	def subMenu(self, item):
+		#"Czech meteo","Animated","Australia","Weather Online","Weather Online Infra","North America","All update"
 		submenu = []
 		if item == "0":		# CZ
 			for i in range(0,6):
@@ -457,25 +470,31 @@ class meteoViewer(Screen, HelpableScreen):
 		elif item == "1":	# ANIMATED
 			for i in range(len(ANIMATED)):
 				submenu.append((IANIMATED[i], ANIMATED[i]))
-		elif item == "2":	# GLOBE
+		elif item == "102":	# GLOBE
 			for i in range(len(GLOBE)):
 				submenu.append((IGLOBE[i], GLOBE[i]))
-		elif item == "3":	# WESTERN EUROPE
+		elif item == "103":	# WESTERN EUROPE
 			for i in range(len(WE)):
 				submenu.append((IWE[i], WE[i]))
-		elif item == "4":	# BUIEN IR
+		elif item == "104":	# BUIEN IR
 			for i in range(0,len(BUIENIR)):
 				submenu.append((IBUIENIR[i], BUIENIR[i]))
-		elif item == "5":	# AUSTRALIA
+#		elif item == "5":	# AUSTRALIA
+		elif item == "2":	# AUSTRALIA
 			for i in range(0,len(AUSTRALIA)):
 				submenu.append((IAUSTRALIA[i], AUSTRALIA[i]))
-		elif item == "6":	# WEATHER ONLINE
+#		elif item == "6":	# WEATHER ONLINE
+		elif item == "3":	# WEATHER ONLINE
 			for i in range(0,len(WO)):
 				submenu.append((IWO[i], WO[i]))
-		elif item == "7":	# BUIEN VIS
+		elif item == "4":	# WEATHER ONLINE Infra
+			for i in range(0,len(WOi)):
+				submenu.append((IWOi[i], WOi[i]))
+		elif item == "107":	# BUIEN VIS
 			for i in range(0,len(BUIEN)):
 				submenu.append((IBUIEN[i], BUIEN[i]))
-		elif item == "8":	# BUIEN VIS
+#		elif item == "8":	# BUIEN VIS
+		elif item == "5":	# BUIEN VIS
 			for i in range(0,len(NA)):
 				submenu.append((INA[i], NA[i]))
 		self.session.openWithCallback(self.submenuCallback, ChoiceBox, title=_("Select destination:"), list=submenu)
@@ -491,7 +510,7 @@ class meteoViewer(Screen, HelpableScreen):
 			self.download_delayed()
 		else:
 			self.readFiles(green=False)
- 			if not self.filesOK:
+			if not self.filesOK:
 				self.download_delayed()
 
 	def increase_typ(self):
@@ -1002,30 +1021,33 @@ class meteoViewer(Screen, HelpableScreen):
 		if typ in ("storm"):
 			if not self.stopRead:
 				self.downloadStorm(typ)
-		if WE.count(typ) or typ == "all":
-			if not self.stopRead:
-				self.downloadHourly(typ)
-		if GLOBE.count(typ) or typ == "all":
-			if not self.stopRead:
-				self.downloadEarth(typ)
+#		if WE.count(typ) or typ == "all":
+#			if not self.stopRead:
+#				self.downloadHourly(typ)
+#		if GLOBE.count(typ) or typ == "all":
+#			if not self.stopRead:
+#				self.downloadEarth(typ)
 		if AUSTRALIA.count(typ) or typ == "all":
 			if not self.stopRead:
 				self.downloadHourly30(typ)
-		if typ in ("nla","all"):
-			if not self.stopRead:
-				self.downloadBuienradarAnime(typ)
+#		if typ in ("nla","all"):
+#			if not self.stopRead:
+#				self.downloadBuienradarAnime(typ)
 		if WO.count(typ) or typ == "all":
+			if not self.stopRead:
+				self.downloadWO(typ)
+		if WOi.count(typ) or typ == "all":
 			if not self.stopRead:
 				self.downloadWO(typ)
 		if NA.count(typ) or typ == "all":
 			if not self.stopRead:
 				self.download30(typ)
-		if BUIENIR.count(typ) or typ == "all":
-			if not self.stopRead:
-				self.downloadBuienradarIR(typ)
-		if BUIEN.count(typ) or typ == "all":
-			if not self.stopRead:
-				self.downloadBuienradar(typ)
+#		if BUIENIR.count(typ) or typ == "all":
+#			if not self.stopRead:
+#				self.downloadBuienradarIR(typ)
+#		if BUIEN.count(typ) or typ == "all":
+#			if not self.stopRead:
+#				self.downloadBuienradar(typ)
 
 		if self.typ == len(TYPE)-1: # from ALL after start of plugin set typ "After All"
 			self.typ = int(cfg.typeafterall.value)
@@ -1276,30 +1298,18 @@ class meteoViewer(Screen, HelpableScreen):
 			frDate = strftime("%Y%m%d", gmtime(i))	#utc
 			frTime = strftime("%H%M", gmtime(i))	#utc
 			if typ == "aus" or typ == "all":
-				url = "http://www.bom.gov.au/gms/IDE00035.radar.%s%s.jpg" % (frDate, frTime)
+				url = "http://www.bom.gov.au/gms/IDE00135.radar.%s%s.jpg" % (frDate, frTime)
 				path= "%s%s%s.jpg" % (self.getDir(TYPE.index("aus")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
 			if typ == "ause" or typ == "all":
-				url =  "http://www.bom.gov.au/gms/IDE00035.%s%s.jpg" % (frDate, frTime)
+				url =  "http://www.bom.gov.au/gms/IDE00135.%s%s.jpg" % (frDate, frTime)
 				path="%s%s%s.jpg" % (self.getDir(TYPE.index("ause")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
 			if typ == "ausi" or typ == "all":
 				url =  "http://www.bom.gov.au/gms/IDE00005.%s%s.gif" % (frDate, frTime)
 				path="%s%s%s.gif" % (self.getDir(TYPE.index("ausi")), frDate, frTime)
-				if not self.downloadFrame(url,path):
-					break
-			if typ == "ausc" or typ == "all":
-				url =  "http://data.theweatherchaser.com/images/satellite/mtsat/IR1C/med2/%s/%s/IR1C.%s_%s.25.-600_0.900_1800.jpg" % (frDate[:4],frDate[4:6], frDate, frTime[:2])
-				path="%s%s%s.jpg" % (self.getDir(TYPE.index("ausc")), frDate, frTime)
-				if not self.downloadFrame(url,path):
-					break
-			if typ == "ausr" or typ == "all":
-				frDate = strftime("%Y%m%d", gmtime(i + 1800))	#utc
-				frTime = strftime("%H%M", gmtime(i + 1800))	#utc
-				url = "http://data.theweatherchaser.com/images/radar/AusSat/%s/%s/AusSat.%s_%s00.jpg" % (frDate[:4],frDate[4:6], frDate, frTime[:2])
-				path="%s%s%s.jpg" % (self.getDir(TYPE.index("ausr")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
 
@@ -1526,6 +1536,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else:
 				url = "http://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (typ,name[:-8],name[4:-6],name[6:-4], name[8:])
 				path= "%s%s.jpg" % (self.getDir(TYPE.index(typ)), name)
+				print url, path
 				if not self.downloadFrame(url,path):
 					break
 			if self.stopRead:
@@ -1575,7 +1586,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		self.session = session
 		self.skin = meteoViewerCfg.skin
 		self.setup_title = _("MeteoViewer Setup")
-		self.version = "ims (c) 2012-2018 v1.74"
+		self.version = "ims (c) 2012-2018 v1.75"
 			
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
