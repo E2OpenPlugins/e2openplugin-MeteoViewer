@@ -3,7 +3,7 @@ from . import _
 #
 #  Meteo Viewer - Plugin E2
 #
-#  by ims (c) 2011
+#  by ims (c) 2011-2018
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -425,7 +425,8 @@ class meteoViewer(Screen, HelpableScreen):
 		for i in range(0,len(self.MAINMENU)-1):
 			menu.append((self.MAINMENU[i],"%d" % (j)))
 			j +=1
-		if cfg.tmpdir.value != "/tmp/":
+		# "Download all" means big size. Do not show this item in menu, if tmpdir is placed in /tmp
+		if not cfg.tmpdir.value.startswith('/tmp/'):
 			menu.append((self.MAINMENU[len(self.MAINMENU)-1],len(self.MAINMENU)-1))
 
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select wanted meteo type:"), list=menu, selection = self.selection)
@@ -550,8 +551,8 @@ class meteoViewer(Screen, HelpableScreen):
 		if self.isShow:
 			self.stopSlideShow()
 		if not self.isShow:
-			if cfg.tmpdir.value == "/tmp/":
-				self.typ = int(cfg.typeafterall.value)
+#			if cfg.tmpdir.value.startswith('/tmp/'):
+#				self.typ = int(cfg.typeafterall.value)
 
 			self["key_red"].setText(_("Cancel"))
 			self["key_green"].setText("")
@@ -873,7 +874,7 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def slideShowEvent(self):
 		if self.filesOK:
-		  	if self.isShow:
+			if self.isShow:
 				if self.idx < self.maxFrames:
 					path = self.getDir(self.typ) + self.frame[self.idx] + self.EXT
 					if fileExists(path):
@@ -1102,13 +1103,13 @@ class meteoViewer(Screen, HelpableScreen):
 		for i in xrange(start, stop, step):
 			frDate = strftime("%Y%m%d", gmtime(i))	#utc
 			frTime = strftime("%H%M", gmtime(i))	#utc
-		        if typ == "ir" or typ == "all":
+			if typ == "ir" or typ == "all":
 				url = "http://www.chmi.cz/files/portal/docs/meteo/sat/msg_hrit/img-msgce-ir/msgce.ir.%s.%s.0.jpg" % (frDate, frTime)
 				path= "%s%s%s.jpg" % (self.getDir(TYPE.index("ir")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
 
-          		if typ == "vis" or typ == "all":
+			if typ == "vis" or typ == "all":
 				url = "http://www.chmi.cz/files/portal/docs/meteo/sat/msg_hrit/img-msgcz-vis-ir/msgcz.vis-ir.%s.%s.0.jpg" % (frDate, frTime)
 				path= "%s%s%s.jpg" % (self.getDir(TYPE.index("vis")), frDate, frTime)
 				if not self.downloadFrame(url,path):
@@ -1120,7 +1121,7 @@ class meteoViewer(Screen, HelpableScreen):
 				if not self.downloadFrame(url,path):
 					break
 				
-            		if typ == "24m" or typ == "all":
+			if typ == "24m" or typ == "all":
 				url = "http://www.chmi.cz/files/portal/docs/meteo/sat/msg_hrit/img-msgcz-24M/msgcz.24M.%s.%s.0.jpg" % (frDate, frTime)
 				path= "%s%s%s.jpg" % (self.getDir(TYPE.index("24m")), frDate, frTime)
 				if not self.downloadFrame(url,path):
@@ -1574,10 +1575,11 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		self.session = session
 		self.skin = meteoViewerCfg.skin
 		self.setup_title = _("MeteoViewer Setup")
+		self.version = "ims (c) 2012-2018 v1.74"
 			
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
-		self["statusbar"] = Label("ims (c) 2012. v1.73")
+		self["statusbar"] = Label(self.version)
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"green": self.save,
@@ -1616,6 +1618,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 	def changedEntry(self):
 		for x in self.onChangedEntry:
 			x()
+		self["statusbar"].setText(self.version)
 	def getCurrentEntry(self):
 		return self["config"].getCurrent()[0]
 	def getCurrentValue(self):
@@ -1643,12 +1646,17 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 			cfg.tmpdir.value = res
 		else:
 			cfg.tmpdir.value = self.old_dir
+		self["statusbar"].setText(self.version)
 
 	def save(self):
 		global TMPDIR
 		if TMPDIR != cfg.tmpdir.value:
 			os.system("rm -r %s >/dev/null 2>&1" % (TMPDIR + SUBDIR))
 		TMPDIR = cfg.tmpdir.value
+		if INFO[int(cfg.type.value)] == 'All' and cfg.tmpdir.value.startswith('/tmp/'):
+			text =  _("!!! '%s' as 'All' cannot be used with '/tmp/' !!!") % _("Type of meteo info on start")
+			self["statusbar"].setText(text)
+			return
 		self.keySave()
 
 	def exit(self):

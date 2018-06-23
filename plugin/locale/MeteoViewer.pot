@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-23 12:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "viewer of meteo pictures"
+msgstr ""
+
+msgid "downloaded interval"
+msgstr ""
+
+msgid "all frames"
+msgstr ""
+
+msgid "last"
+msgstr ""
+
+msgid "begin"
+msgstr ""
+
+msgid "actual position"
+msgstr ""
+
+msgid "none"
+msgstr ""
+
+msgid "info"
+msgstr ""
+
+msgid "progress bar"
+msgstr ""
+
+msgid "info and progress bar"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "current type"
+msgstr ""
+
+msgid "all types"
+msgstr ""
+
+msgid "older than max. interval"
+msgstr ""
+
+msgid "older than downloaded interval"
+msgstr ""
+
+msgid "MeteoViewer"
+msgstr ""
+
+msgid "exit plugin"
+msgstr ""
+
+msgid "go to last frame"
+msgstr ""
+
+msgid "menu"
+msgstr ""
+
+msgid "go to previous frame"
+msgstr ""
+
+msgid "go to next frame"
+msgstr ""
+
+msgid "switch to next meteo type"
+msgstr ""
+
+msgid "switch to previous meteo type"
+msgstr ""
+
+msgid "play/stop slideshow"
+msgstr ""
+
+msgid "play slideshow"
+msgstr ""
+
+msgid "run/abort download"
+msgstr ""
+
+msgid "options"
+msgstr ""
+
+msgid "stop slideshow/synaptic map"
+msgstr ""
+
+msgid "synaptic maps"
+msgstr ""
+
+msgid "delete current frame"
+msgstr ""
+
+msgid "go to first downloaded frame"
+msgstr ""
+
+msgid "go to last downloaded frame"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Select wanted meteo type:"
+msgstr ""
+
+msgid "Select destination:"
+msgstr ""
+
+msgid "Prepare..."
+msgstr ""
+
+msgid "Abort"
+msgstr ""
+
+msgid "Download:"
+msgstr ""
+
+msgid "Stop slideshow, please!"
+msgstr ""
+
+msgid "Slideshow"
+msgstr ""
+
+msgid "refresh..."
+msgstr ""
+
+msgid "No files found!"
+msgstr ""
+
+msgid "Download pictures, please!"
+msgstr ""
+
+msgid "Stop Show"
+msgstr ""
+
+#, python-format
+msgid "%s of %s  -  %s"
+msgstr ""
+
+msgid "LT"
+msgstr ""
+
+msgid "UTC"
+msgstr ""
+
+msgid "Are You sure delete this frame?"
+msgstr ""
+
+msgid "Erase files..."
+msgstr ""
+
+msgid "MeteoViewer Setup"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Directory for download"
+msgstr ""
+
+msgid "Downloaded interval"
+msgstr ""
+
+msgid "Display"
+msgstr ""
+
+msgid "Buienradar interval"
+msgstr ""
+
+msgid "Delay of last frame on Buienradar (min)"
+msgstr ""
+
+msgid "Slideshow's step"
+msgstr ""
+
+msgid "Refresh slideshow"
+msgstr ""
+
+msgid "Slideshow begins from"
+msgstr ""
+
+msgid "Download info on plugin's start"
+msgstr ""
+
+msgid "Type of meteo info on start"
+msgstr ""
+
+msgid "After download \"All\" switch to"
+msgstr ""
+
+msgid "Delete old files before download"
+msgstr ""
+
+msgid "On exit delete files"
+msgstr ""
+
+msgid "Frames info"
+msgstr ""
+
+msgid "Local time in info"
+msgstr ""
+
+msgid "Parallels and meridians"
+msgstr ""
+
+msgid "Location for MeteoViewer"
+msgstr ""
+
+#, python-format
+msgid "!!! '%s' as 'All' cannot be used with '/tmp/' !!!"
+msgstr ""
