@@ -35,6 +35,7 @@ import enigma
 from Tools.Directories import resolveFilename, fileExists, createDir, pathExists
 from Screens.ChoiceBox import ChoiceBox
 from Components.ProgressBar import ProgressBar
+import requests
 
 TMPDIR = "/tmp/"
 SUBDIR = "meteo"
@@ -1068,7 +1069,6 @@ class meteoViewer(Screen, HelpableScreen):
 			return
 
 	def downloadHttpsPicture(self, url, path):
-		import requests
 		res = requests.get(url)
 		if res.status_code == 200:
 			with open(path, 'wb') as f:
