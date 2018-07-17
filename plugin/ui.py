@@ -41,79 +41,57 @@ SUBDIR = "meteo"
 
 # LIST OF USED NAMES IN MENU,OPTIONS AS INFO ("All" must be at last)
 INA = ["North America"]
-IBUIEN = ["Great Britain","Scandinavia","Baltic Area","Russia","Nederland",
-		"Germany","Poland","Spain","France","Alps",
-		"Hungary","Italy","Balkans","Greece","South East Evrope",
-		"Turkey","Europe"]
-IBUIENIR = ["Great Britain IR","Scandinavia IR","Baltic Area IR","Russia IR","Nederland IR",
-		"Germany IR","Poland IR","Spain IR","France IR","Alps IR",
-		"Hungary IR","Italy IR","Balkans IR","Greece IR","South East Evrope IR",
-		"Turkey IR","Europe IR"]
 IAUSTRALIA = ["Australia", "Australia extended", "Australia IR"]
-
-#IANIMATED = ["Nederland - animated", "Germany - radar", "Great Britain - radar", "Nederland - radar"]
 IANIMATED = ["Nederland - radar", "Germany - radar", "Great Britain - radar"]
-IGLOBE = ["Europe/Africa", "Asia/Oceania", "North/South America"]
-IWO = ["Europe WO",
-	"Great Britain WO", "France WO", "Iberia WO", "Italia WO", "Germany WO", "Scandinavia WO",
-	"Ukraine/Romania WO", "Poland WO", "Near-East WO", "Russia WO", "Greece WO", "Iceland WO", "Canary Islands  WO", "Baltic States WO", "Turkey WO" ]
-IWOi = ["Europe WO Infra",
-	"Great Britain WO Infra", "France WO Infra", "Iberia WO Infra", "Italia WO Infra", "Germany WO Infra", "Scandinavia WO Infra",
-	"Ukraine/Romania WO Infra", "Poland WO Infra", "Near-East WO Infra", "Russia WO Infra", "Greece WO Infra", "Iceland WO Infra", "Canary Islands  WO Infra", "Baltic States WO Infra", "Turkey WO Infra" ]
-IWE = ["VIS United Kingdom","IR United Kingdom","VIS Western Europe","IR Western Europe"]
-INFO = ["IR Central Europe","VIS-IR Czech Republic","IR BT Czech Republic","24h-MF Czech Republic", "Czech Storm", "Czech Radar"]
+IWO =	[
+	"Europe WO", "Great Britain WO", "France WO", "Iberia WO",
+	"Italia WO", "Germany WO", "Scandinavia WO", "Ukraine/Romania WO",
+	"Poland WO", "Near-East WO", "Russia WO", "Greece WO",
+	"Iceland WO", "Canary Islands  WO", "Baltic States WO", "Turkey WO"
+	]
+IWOi =	[
+	"Europe WO Infra", "Great Britain WO Infra", "France WO Infra", "Iberia WO Infra",
+	"Italia WO Infra", "Germany WO Infra", "Scandinavia WO Infra", "Ukraine/Romania WO Infra",
+	"Poland WO Infra", "Near-East WO Infra", "Russia WO Infra", "Greece WO Infra",
+	"Iceland WO Infra", "Canary Islands  WO Infra", "Baltic States WO Infra", "Turkey WO Infra"
+	]
 
-#INFO += IWE
+INFO = ["IR Central Europe","VIS-IR Czech Republic","IR BT Czech Republic","24h-MF Czech Republic", "Czech Storm", "Czech Radar"]
 INFO += IWO
 INFO += IWOi
 INFO += IANIMATED
-#INFO += IGLOBE
-#INFO += IBUIEN
-#INFO += IBUIENIR
 INFO += IAUSTRALIA
 INFO += INA
-#INFO +=	["All"]
-
+INFO += ["All"]
 
 # LIST OF USED INDEX NAMES AS TYPES: ("all" must be at last")
 NA = ["na"]
-BUIEN = ["gb", "scan", "bc", "ru", "nl",
-		"de", "pl", "sp", "fr", "alps",
-		"hu", "it", "ba", "gr", "se",
-		"tu", "eu"]
-BUIENIR = ["gbi", "scani", "bci", "rui", "nli",
-		"dei", "pli", "spi", "fri", "alpsi",
-		"hui", "iti", "bai", "gri", "sei",
-		"tui", "eui"]
 AUSTRALIA = ["aus", "ause", "ausi"]
-#ANIMATED = ["nla", "dea", "uka", "nla1"]
 ANIMATED = ["nla1", "dea", "uka"]
-GLOBE = ["gle","glo","gla"]
-WO = ["im00",
-	"im01","im02","im03","im04","im05","im06",
-	"im08","im09","im10","im11","im12","im13","im14","im15","im16"]
-WOi = ["vm00",
-	"vm01","vm02","vm03","vm04","vm05","vm06",
-	"vm08","vm09","vm10","vm11","vm12","vm13","vm14","vm15","vm16"]
-WE = ["ukvis", "uk", "wevis", "we"]
+WO =	[
+	"im00", "im01", "im02", "im03",
+	"im04", "im05", "im06", "im08",
+	"im09", "im10", "im11", "im12",
+	"im13", "im14", "im15", "im16"
+	]
+WOi =	[
+	"vm00", "vm01", "vm02", "vm03",
+	"vm04", "vm05", "vm06", "vm08",
+	"vm09", "vm10", "vm11", "vm12",
+	"vm13", "vm14", "vm15", "vm16"
+	]
 
 TYPE = ["ir", "vis", "bt", "24m", "storm", "csr"]
-
-#TYPE += WE
 TYPE += WO
 TYPE += WOi
 TYPE += ANIMATED
-#TYPE += GLOBE
-#TYPE += BUIEN
-#TYPE += BUIENIR
 TYPE += AUSTRALIA
 TYPE += NA
-#TYPE += ["all"]
-
+TYPE += ["all"]
 
 PPATH = "/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/pictures/"
 
-last_item = 73 # = max config.plugins.meteoviewer.type
+last_item = len(TYPE) # = max config.plugins.meteoviewer.type
 
 HD = False
 if getDesktop(0).size().width() >= 1280:
@@ -135,8 +113,6 @@ del last_item
 config.plugins.meteoviewer = ConfigSubsection()
 config.plugins.meteoviewer.nr = ConfigSelection(default = "8", choices = [("4","1h"),("8","2h"),("12","3h"),("24","6h"),("48","12h"),("96","24h"),("192","48h")])
 config.plugins.meteoviewer.frames = ConfigSelection(default = "0", choices = [("0",_("downloaded interval")),("1",_("all frames"))])
-config.plugins.meteoviewer.buien = ConfigSelection(default = "8", choices = [("1",_("last")),("4","1h"),("8","2h"),("9","max")])
-config.plugins.meteoviewer.delaybuien = ConfigSelection(default = "22", choices = [("6","6"),("10","10"),("12","12"),("14","14"),("16","16"),("18","18"),("20","20"),("22","22"),("24","24"),("25","25"),("30","30")])
 config.plugins.meteoviewer.time = ConfigSelection(default = "750", choices = [("400","400 ms"),("500","500 ms"),("600","600 ms"),("750","750 ms"),("1000","1s"),("2000","2s"),("5000","5s"),("10000","10s")])
 config.plugins.meteoviewer.refresh = ConfigSelection(default = "0", choices = [("0","no"),("1","1"),("2","2"),("3","3"),("4","4"),("5","5"),("10","10"),("15","15")])
 config.plugins.meteoviewer.slidetype = ConfigSelection(default = "0", choices = [("0",_("begin")),("1",_("actual position"))])
@@ -145,10 +121,10 @@ config.plugins.meteoviewer.download = ConfigYesNo(default = False)
 choicelist = []
 for i in range(0, len(INFO)):
 	choicelist.append(("%d" % i, "%s" % INFO[i]))
-config.plugins.meteoviewer.type = ConfigSelection(default = "29", choices = choicelist)
+config.plugins.meteoviewer.type = ConfigSelection(default = "7", choices = choicelist)
 
 # CHOICES FOR AFTER "ALL" (WITHOUT "ALL"):
-config.plugins.meteoviewer.typeafterall = ConfigSelection(default = "29", choices = config.plugins.meteoviewer.type.choices[:-1])
+config.plugins.meteoviewer.typeafterall = ConfigSelection(default = "7", choices = config.plugins.meteoviewer.type.choices[:-1])
 config.plugins.meteoviewer.display =  ConfigSelection(default = "3", choices = [("0",_("none")),("1",_("info")),("2",_("progress bar")),("3",_("info and progress bar"))])
 config.plugins.meteoviewer.localtime = ConfigYesNo(default = False)
 config.plugins.meteoviewer.delete = ConfigSelection(default = "4", choices = [("0",_("no")),("1",_("current type")),("2",_("all types")),
@@ -160,7 +136,6 @@ cfg = config.plugins.meteoviewer
 
 TMPDIR = cfg.tmpdir.value
 
-
 from twisted.internet.defer import DeferredSemaphore
 from twisted.web.client import downloadPage
 class LimitedDownloader:
@@ -169,7 +144,7 @@ class LimitedDownloader:
 
 	def downloadPage(self, *a, **kw):
 		return self._semaphore.run(downloadPage, *a, **kw)
-	
+
 class meteoViewer(Screen, HelpableScreen):
 
 	if HD:
@@ -291,7 +266,6 @@ class meteoViewer(Screen, HelpableScreen):
 				down_x, down_y, 
 				slide_x, slide_y)
 
-
 	def __init__(self, session):
 		self.skin = meteoViewer.skin
 		Screen.__init__(self, session)
@@ -324,8 +298,7 @@ class meteoViewer(Screen, HelpableScreen):
 			#"1": (self.refreshFrames, _("refresh last frame")),
 			}, -2)
 
-#		self.MAINMENU = ["Czech meteo","Animated","Globus","Western Europe","BuienRadar IR","Australia","Weather Online","BuienRadar VIS","North America","All update"]
-		self.MAINMENU = ["Czech meteo","Animated","Australia","Weather Online","Weather Online Infra","North America","All update"]
+		self.MAINMENU = ["Czech meteo","Animated","Weather Online","Weather Online Infra","Australia","North America","All update"]
 
 		self["frames"] = Pixmap()
 		self.picload = enigma.ePicLoad()
@@ -418,7 +391,6 @@ class meteoViewer(Screen, HelpableScreen):
 	def getDir(self, num_typ):
 		return TMPDIR + SUBDIR + "/" + TYPE[num_typ] + "/"
 
-
 	def setWindowTitle(self):
 		self.setTitle(_("MeteoViewer"))
 
@@ -441,8 +413,8 @@ class meteoViewer(Screen, HelpableScreen):
 			menu.append((self.MAINMENU[i],"%d" % (j)))
 			j +=1
 		# "Download all" means big size. Do not show this item in menu, if tmpdir is placed in /tmp
-#		if not cfg.tmpdir.value.startswith('/tmp/'):
-#			menu.append((self.MAINMENU[len(self.MAINMENU)-1],len(self.MAINMENU)-1))
+		if not cfg.tmpdir.value.startswith('/tmp/'):
+			menu.append((self.MAINMENU[len(self.MAINMENU)-1],len(self.MAINMENU)-1))
 
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select wanted meteo type:"), list=menu, selection = self.selection)
 
@@ -465,7 +437,7 @@ class meteoViewer(Screen, HelpableScreen):
 			self.subMenu(choice[1])
 
 	def subMenu(self, item):
-		#"Czech meteo","Animated","Australia","Weather Online","Weather Online Infra","North America","All update"
+		#"Czech meteo", "Animated", "Weather Online", "Weather Online Infra", "Australia", "North America", "All update"
 		submenu = []
 		if item == "0":		# CZ
 			for i in range(0,6):
@@ -473,31 +445,16 @@ class meteoViewer(Screen, HelpableScreen):
 		elif item == "1":	# ANIMATED
 			for i in range(len(ANIMATED)):
 				submenu.append((IANIMATED[i], ANIMATED[i]))
-		elif item == "102":	# GLOBE
-			for i in range(len(GLOBE)):
-				submenu.append((IGLOBE[i], GLOBE[i]))
-		elif item == "103":	# WESTERN EUROPE
-			for i in range(len(WE)):
-				submenu.append((IWE[i], WE[i]))
-		elif item == "104":	# BUIEN IR
-			for i in range(0,len(BUIENIR)):
-				submenu.append((IBUIENIR[i], BUIENIR[i]))
-#		elif item == "5":	# AUSTRALIA
-		elif item == "2":	# AUSTRALIA
-			for i in range(0,len(AUSTRALIA)):
-				submenu.append((IAUSTRALIA[i], AUSTRALIA[i]))
-#		elif item == "6":	# WEATHER ONLINE
-		elif item == "3":	# WEATHER ONLINE
+		elif item == "2":	# WEATHER ONLINE
 			for i in range(0,len(WO)):
 				submenu.append((IWO[i], WO[i]))
-		elif item == "4":	# WEATHER ONLINE Infra
+		elif item == "3":	# WEATHER ONLINE Infra
 			for i in range(0,len(WOi)):
 				submenu.append((IWOi[i], WOi[i]))
-		elif item == "107":	# BUIEN VIS
-			for i in range(0,len(BUIEN)):
-				submenu.append((IBUIEN[i], BUIEN[i]))
-#		elif item == "8":	# BUIEN VIS
-		elif item == "5":	# BUIEN VIS
+		elif item == "4":	# AUSTRALIA
+			for i in range(0,len(AUSTRALIA)):
+				submenu.append((IAUSTRALIA[i], AUSTRALIA[i]))
+		elif item == "5":	# NA
 			for i in range(0,len(NA)):
 				submenu.append((INA[i], NA[i]))
 		self.session.openWithCallback(self.submenuCallback, ChoiceBox, title=_("Select destination:"), list=submenu)
@@ -581,6 +538,7 @@ class meteoViewer(Screen, HelpableScreen):
 			self["key_yellow"].setText(_("Abort"))
 			self["key_blue"].setText("")
 
+			print "[MeteoViewer] download - type: %s" % TYPE[self.typ]
 			self.downloadFiles(TYPE[self.typ])
 
 			self.displayMsg(_("Download:"))
@@ -594,7 +552,7 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def waitingFiles(self):
 		if self.dlFrame:
-			#print "[MeteoViewer] NR: %d" % self.dlFrame
+			print "[MeteoViewer] NR: %d" % self.dlFrame
 			self["download"].setValue(int(100.0*(self.x-self.dlFrame)/self.x+0.25))
 			self.Wait.start(100, True)
 		else:
@@ -722,7 +680,7 @@ class meteoViewer(Screen, HelpableScreen):
 				self["slide"].show()
 
 	def setExtension(self):
-		if BUIEN.count(TYPE[self.typ]) or BUIENIR.count(TYPE[self.typ]) or TYPE[self.typ] in ("nla","dea","uka","nla1","ausi","ausv"):
+		if TYPE[self.typ] in ("nla","dea","uka","nla1","ausi","ausv"):
 			self.EXT = ".gif"
 		elif TYPE[self.typ] in ("storm", "csr"):
 			self.EXT = ".png"
@@ -999,7 +957,6 @@ class meteoViewer(Screen, HelpableScreen):
 		self.isReading = True
 		self.x = self.dlFrame = self.errFrame = 0
 
-
 		if cfg.delete.value == "1" or cfg.delete.value == "2":
 			self.displayMsg(_("Erase files..."))
 			if typ == "all" or cfg.delete.value == "2":
@@ -1022,21 +979,12 @@ class meteoViewer(Screen, HelpableScreen):
 		if typ in ("ir","vis","bt","24m","csr","dea","uka","nla1","all"):
 			if not self.stopRead:
 				self.downloadMain(typ)
-		if typ in ("storm"):
+		if typ in ("storm", "all"):
 			if not self.stopRead:
 				self.downloadStorm(typ)
-#		if WE.count(typ) or typ == "all":
-#			if not self.stopRead:
-#				self.downloadHourly(typ)
-#		if GLOBE.count(typ) or typ == "all":
-#			if not self.stopRead:
-#				self.downloadEarth(typ)
 		if AUSTRALIA.count(typ) or typ == "all":
 			if not self.stopRead:
 				self.downloadHourly30(typ)
-#		if typ in ("nla","all"):
-#			if not self.stopRead:
-#				self.downloadBuienradarAnime(typ)
 		if WO.count(typ) or typ == "all":
 			if not self.stopRead:
 				self.downloadWO(typ)
@@ -1046,13 +994,6 @@ class meteoViewer(Screen, HelpableScreen):
 		if NA.count(typ) or typ == "all":
 			if not self.stopRead:
 				self.download30(typ)
-#		if BUIENIR.count(typ) or typ == "all":
-#			if not self.stopRead:
-#				self.downloadBuienradarIR(typ)
-#		if BUIEN.count(typ) or typ == "all":
-#			if not self.stopRead:
-#				self.downloadBuienradar(typ)
-
 		if self.typ == len(TYPE)-1: # from ALL after start of plugin set typ "After All"
 			self.typ = int(cfg.typeafterall.value)
 
@@ -1099,7 +1040,7 @@ class meteoViewer(Screen, HelpableScreen):
 		path = "%s01synoptic.gif" % (TMPDIR + SUBDIR+ "/")
 		self.downloadFrame(url,path)
 
-	def downloadFrame(self,url, path):
+	def downloadFrame(self, url, path):
 		if self.stopRead:
 			self.dlFrame = 0
 			return False
@@ -1134,10 +1075,14 @@ class meteoViewer(Screen, HelpableScreen):
 				f.write(res.content)
 				self.dlFrame -= 1
 				if len(self.queue):
-					self.waitHTTPS.start(10, True)
+					self.waitHTTPS.start(20, True)
 		else:
+			print "[MeteoViewer] download failed for:", url, path
 			self.dlFrame -= 1
 			self.errFrame +=1
+			self.x -= 1
+			if len(self.queue):
+				self.waitHTTPS.start(20, True)
 
 	def downloadMain(self, typ):
 		#print "[MeteoViewer] >>>Main>>>", typ,  TYPE.index(typ)
@@ -1185,6 +1130,7 @@ class meteoViewer(Screen, HelpableScreen):
 				path= "%s%s%s.jpg" % (self.getDir(TYPE.index("24m")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
+
 			if typ == "dea" or typ == "all":
 				url = "https://www.weatheronline.co.uk/daten/radar/dwddg/%s/%s/%s/%s.gif" % (frDate[:-4],frDate[4:-2],frDate[6:], frTime)
 				path= "%s%s%s.gif" % (self.getDir(TYPE.index("dea")), frDate, frTime)
@@ -1195,12 +1141,12 @@ class meteoViewer(Screen, HelpableScreen):
 				path= "%s%s%s.gif" % (self.getDir(TYPE.index("uka")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
-
 			if typ == "nla1" or typ == "all":
 				url = "https://www.weatheronline.co.uk/daten/radar/ddlnw/%s/%s/%s/%s.gif" % (frDate[:-4],frDate[4:-2],frDate[6:], frTime)
 				path= "%s%s%s.gif" % (self.getDir(TYPE.index("nla1")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
+
 			if typ == "csr" or typ == "all":
 				url = "http://portal.chmi.cz/files/portal/docs/meteo/rad/data_tr_png_1km/pacz23.z_max3d.%s.%s.0.png" % (frDate, frTime)
 				#url = "http://www.chmi.cz/files/portal/docs/meteo/rad/data/%s%s.gif" % (frDate[2:], frTime)
@@ -1235,7 +1181,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if not self.downloadFrame(url,path):
 				break
 
-	def downloadHourly(self, typ): # for download each 1h
+	def downloadHourly(self, typ): # for download each 1h - !!! IS NOT USED IN THIS TIME !!!
 		#print "[MeteoViewer] >>>Hourly>>>", typ,  TYPE.index(typ)
 		country = WE
 		interval = int(cfg.nr.value) * 900
@@ -1304,7 +1250,7 @@ class meteoViewer(Screen, HelpableScreen):
 			frDate = strftime("%Y%m%d", gmtime(i))	#utc
 			frTime = strftime("%H%M", gmtime(i))	#utc
 			if typ == "na" or typ == "all":
-				url = "http://www.ssec.wisc.edu/data/us_comp/image%s.jpg" % (j)
+				url = "https://www.ssec.wisc.edu/data/us_comp/image%s.jpg" % (j)
 				path= "%s%s%s.jpg" % (self.getDir(TYPE.index("na")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
@@ -1348,185 +1294,6 @@ class meteoViewer(Screen, HelpableScreen):
 				path="%s%s%s.gif" % (self.getDir(TYPE.index("ausi")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
-
-	def downloadEarth(self, typ): # frame each 3h => download 24h
-		#print "[MeteoViewer] >>>Earth>>>", typ,  TYPE.index(typ)
-		country = GLOBE
-		interval = 24 * 3600
-		step = 3600
-		now = int(time())		# LT
-		now1H = (now // step) * step 	# last x min
-		start = now1H - interval
-		stop = now1H + step
-
-		
-		if cfg.delete.value == "3" or cfg.delete.value == "4":
-			startDel = start
-			if typ == "all":
-				for i in country:
-					self.deleteOldFiles(i, gmtime(startDel))
-			else :
-				self.deleteOldFiles(typ, gmtime(startDel))
-
-		for i in xrange(start, stop, step):
-			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
-			if typ == "gle" or typ == "all":
-				url =  "http://www.metoffice.gov.uk/weather/images/eurafrglob_sat_%s.jpg" % (name)
-				path="%s%s.jpg" % (self.getDir(TYPE.index("gle")), name)
-				if not self.downloadFrame(url,path):
-					break
-			if typ == "glo" or typ == "all":
-				url =  "http://www.metoffice.gov.uk/weather/images/aisaust_sat_%s.jpg" % (name)
-				path="%s%s.jpg" % (self.getDir(TYPE.index("glo")), name)
-				if not self.downloadFrame(url,path):
-					break
-			if typ == "gla" or typ == "all":
-				url =  "http://www.metoffice.gov.uk/weather/images/namsam_sat_%s.jpg" % (name)
-				path="%s%s.jpg" % (self.getDir(TYPE.index("gla")), name)
-				if not self.downloadFrame(url,path):
-					break
-
-	def downloadBuienradar(self, typ):
-		#print "[MeteoViewer] >>>Buien>>>", typ, TYPE.index(typ), BUIEN.count(typ)
-		country = BUIEN
-		interval = int(cfg.buien.value) * 900
-		step = 900			# 15 minut
-		now = int(time())		# LT
-		now15 = (now // step) * step 	# last x min
-		start = now15 - interval
-		stop = now15 + step
-
-		rest = (now % step)
-		delay = int(cfg.delaybuien.value) * 60 # new frame on server is after x minuts ... ussually 14 - 24 min
-
-		if delay > step: 
-			if rest <  delay - step:
-				stop = now15-step
-			else:
-				stop = now15
-		else:
-			if rest < delay:
-				stop = now15
-			else:
-				now15 + step
-
-		if cfg.delete.value == "3" or cfg.delete.value == "4":
-			startDel = start
-			if cfg.delete.value == "3":
-				startDel = now15 - int(cfg.buien.choices[len(cfg.buien.choices)-1]) * 900
-			if typ == "all":
-				for i in country:
-					self.deleteOldFiles(i, gmtime(startDel))
-			else :
-				self.deleteOldFiles(typ, gmtime(startDel))
-
-		for i in xrange(start, stop, step):
-			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
-			if typ == "all":
-				for j in country:
-					url = "http://wolken.buienradar.nl/image2.ashx?region=%s&time=%s" % (j,name)
-					path= "%s%s.gif" % (self.getDir(TYPE.index(j)), name)
-					if not self.downloadFrame(url,path):
-						break
-			else:
-				url = "http://wolken.buienradar.nl/image2.ashx?region=%s&time=%s" % (typ, name)
-				path= "%s%s.gif" % (self.getDir(TYPE.index(typ)), name)
-				if not self.downloadFrame(url,path):
-					break
-			if self.stopRead:
-				break
-
-	def downloadBuienradarIR(self, typ):
-		#print "[MeteoViewer] >>>BuienIr>>>", typ, TYPE.index(typ), BUIENIR.count(typ), typ[:-1]
-		country = BUIENIR
-		interval = int(cfg.buien.value) * 900
-		step = 900			# 15 minut
-		now = int(time())		# LT
-		now15 = (now // step) * step 	# last x min
-		start = now15 - interval
-		stop = now15 + step
-
-		rest = (now % step)
-		delay = int(cfg.delaybuien.value) * 60 # new frame on server is after x minuts ... ussually 14 - 24 min
-
-		if delay > step: 
-			if rest <  delay - step:
-				stop = now15-step
-			else:
-				stop = now15
-		else:
-			if rest < delay:
-				stop = now15
-			else:
-				now15 + step
-
-		if cfg.delete.value == "3" or cfg.delete.value == "4":
-			startDel = start
-			if cfg.delete.value == "3":
-				startDel = now15 - int(cfg.buien.choices[len(cfg.buien.choices)-1]) * 900
-			if typ == "all":
-				for i in country:
-					self.deleteOldFiles(i, gmtime(startDel))
-			else :
-				self.deleteOldFiles(typ, gmtime(startDel))
-
-		for i in xrange(start, stop, step):
-			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
-			if typ == "all":
-				for j in country:
-					url =  "http://wolken.buienradar.nl/image2.ashx?region=%s&time=%s&ir=true" % (j[:-1],name)
-					path = "%s%s.gif" % (self.getDir(TYPE.index(j)), name)
-					if not self.downloadFrame(url,path):
-						break
-					if self.stopRead:
-						return
-			else:
-				url =  "http://wolken.buienradar.nl/image2.ashx?region=%s&time=%s&ir=true" % (typ[:-1],name)
-				path= "%s%s.gif" % (self.getDir(TYPE.index(typ)), name)
-				if not self.downloadFrame(url,path):
-					break
-			if self.stopRead:
-				break
-
-	def downloadBuienradarAnime(self, typ):
-		#print "[MeteoViewer] >>>BuienIrA>>>", typ, TYPE.index(typ)
-		interval = int(cfg.buien.value) * 900
-		step = 300			# 5 minut
-		now = int(time())		# LT
-		now5 = (now // step) * step 	# last x min
-		start = now5 - interval
-		stop = now5 + step
-
-		rest = (now % step)
-		delay = 6 * 60
-		if delay > step: 
-			if rest <  delay - step:
-				stop = now5-step
-			else:
-				stop = now5
-		else:
-			if rest < delay:
-				stop = now5
-			else:
-				now5 + step
-
-		if cfg.delete.value == "3" or cfg.delete.value == "4":
-			startDel = start
-			if cfg.delete.value == "3":
-				startDel = now5 - int(cfg.buien.choices[len(cfg.buien.choices)-1]) * 900
-			if typ == "all":
-				for i in ("nla",):
-					self.deleteOldFiles(i, gmtime(startDel))
-			else :
-				self.deleteOldFiles(typ, gmtime(startDel))
-
-		for i in xrange(start, stop, step):
-			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
-			t =  localtime(i)
-			url = "http://www.buienradar.nl/images.aspx?soort=1x1&tijdid=%s&jaar=%s&maand=%02d&dag=%02d&minuut=%02d&uur=%02d&bliksem=1" % (name,t[0],t[1],t[2],t[4],t[3])
-			path = "%s%s.gif" % (self.getDir(TYPE.index("nla")), name)
-			if not self.downloadFrame(url,path):
-				break
 
 	def downloadWO(self, typ):
 		#print "[MeteoViewer] >>>WO>>", typ,  TYPE.index(typ)
@@ -1572,7 +1339,6 @@ class meteoViewer(Screen, HelpableScreen):
 			else:
 				url = "https://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (typ,name[:-8],name[4:-6],name[6:-4], name[8:])
 				path= "%s%s.jpg" % (self.getDir(TYPE.index(typ)), name)
-				print url, path
 				if not self.downloadFrame(url,path):
 					break
 			if self.stopRead:
@@ -1622,7 +1388,6 @@ class meteoViewer(Screen, HelpableScreen):
 			else:
 				url = "https://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (typ,name[:-8],name[4:-6],name[6:-4], name[8:])
 				path= "%s%s.jpg" % (self.getDir(TYPE.index(typ)), name)
-				print url, path
 				if not self.downloadFrame(url,path):
 					break
 			if self.stopRead:
@@ -1673,7 +1438,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		self.skin = meteoViewerCfg.skin
 		self.setup_title = _("MeteoViewer Setup")
 		self.version = "ims (c) 2012-2018 v1.76"
-			
+
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
 		self["statusbar"] = Label(self.version)
@@ -1690,14 +1455,12 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		meteoViewerCfglist = []
 		meteoViewerCfglist.append(getConfigListEntry(_("Downloaded interval"), cfg.nr))
 		meteoViewerCfglist.append(getConfigListEntry(_("Display"), cfg.frames))
-		meteoViewerCfglist.append(getConfigListEntry(_("Buienradar interval"), cfg.buien))
-		meteoViewerCfglist.append(getConfigListEntry(_("Delay of last frame on Buienradar (min)"), cfg.delaybuien))
 		meteoViewerCfglist.append(getConfigListEntry(_("Slideshow's step"), cfg.time))
 		meteoViewerCfglist.append(getConfigListEntry(_("Refresh slideshow"), cfg.refresh))
 		meteoViewerCfglist.append(getConfigListEntry(_("Slideshow begins from"), cfg.slidetype))
 		meteoViewerCfglist.append(getConfigListEntry(_("Download info on plugin's start"), cfg.download))
 		meteoViewerCfglist.append(getConfigListEntry(_("Type of meteo info on start"), cfg.type))
-#		meteoViewerCfglist.append(getConfigListEntry(_("After download \"All\" switch to"), cfg.typeafterall))
+		meteoViewerCfglist.append(getConfigListEntry(_("After download \"All\" switch to"), cfg.typeafterall))
 		meteoViewerCfglist.append(getConfigListEntry(_("Delete old files before download"), cfg.delete))
 		meteoViewerCfglist.append(getConfigListEntry(_("On exit delete files"), cfg.delend))
 		meteoViewerCfglist.append(getConfigListEntry(_("Frames info"), cfg.display))
@@ -1759,4 +1522,3 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 	def exit(self):
 		cfg.tmpdir.value = self.old_dir
 		self.keyCancel()
-
