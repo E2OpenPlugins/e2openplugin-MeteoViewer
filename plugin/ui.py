@@ -72,7 +72,7 @@ INFO += IANIMATED
 #INFO += IBUIENIR
 INFO += IAUSTRALIA
 INFO += INA
-INFO +=	["All"]
+#INFO +=	["All"]
 
 
 # LIST OF USED INDEX NAMES AS TYPES: ("all" must be at last")
@@ -108,7 +108,7 @@ TYPE += ANIMATED
 #TYPE += BUIENIR
 TYPE += AUSTRALIA
 TYPE += NA
-TYPE += ["all"]
+#TYPE += ["all"]
 
 
 PPATH = "/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/pictures/"
@@ -169,7 +169,6 @@ class LimitedDownloader:
 
 	def downloadPage(self, *a, **kw):
 		return self._semaphore.run(downloadPage, *a, **kw)
-
 	
 class meteoViewer(Screen, HelpableScreen):
 
@@ -375,6 +374,10 @@ class meteoViewer(Screen, HelpableScreen):
 		self.selection = 0
 		self.firstSynaptic = False
 
+		self.queue = []
+		self.waitHTTPS = eTimer()
+		self.waitHTTPS.timeout.get().append(self.httpsRun)
+
 		self.Limited = LimitedDownloader(5) # limit for parallel downloading
 
 		if cfg.download.value:
@@ -438,8 +441,8 @@ class meteoViewer(Screen, HelpableScreen):
 			menu.append((self.MAINMENU[i],"%d" % (j)))
 			j +=1
 		# "Download all" means big size. Do not show this item in menu, if tmpdir is placed in /tmp
-		if not cfg.tmpdir.value.startswith('/tmp/'):
-			menu.append((self.MAINMENU[len(self.MAINMENU)-1],len(self.MAINMENU)-1))
+#		if not cfg.tmpdir.value.startswith('/tmp/'):
+#			menu.append((self.MAINMENU[len(self.MAINMENU)-1],len(self.MAINMENU)-1))
 
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select wanted meteo type:"), list=menu, selection = self.selection)
 
@@ -591,8 +594,9 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def waitingFiles(self):
 		if self.dlFrame:
+			#print "[MeteoViewer] NR: %d" % self.dlFrame
 			self["download"].setValue(int(100.0*(self.x-self.dlFrame)/self.x+0.25))
-			self.Wait.start(500, True)
+			self.Wait.start(100, True)
 		else:
 			self["download"].setValue(self.x)
 			self["download"].hide()
@@ -1038,7 +1042,7 @@ class meteoViewer(Screen, HelpableScreen):
 				self.downloadWO(typ)
 		if WOi.count(typ) or typ == "all":
 			if not self.stopRead:
-				self.downloadWO(typ)
+				self.downloadWOi(typ)
 		if NA.count(typ) or typ == "all":
 			if not self.stopRead:
 				self.download30(typ)
@@ -1055,6 +1059,7 @@ class meteoViewer(Screen, HelpableScreen):
 		self.stopRead=False
 
 	def downloadFail(self, failure):
+		print "[MeteoViewer]", failure
 		self.dlFrame -= 1
 		self.errFrame +=1
 
@@ -1096,11 +1101,43 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def downloadFrame(self,url, path):
 		if self.stopRead:
+			self.dlFrame = 0
 			return False
 		if not os.path.isfile(path):
-			self.increment()
-			self.Limited.downloadPage(url, path).addCallbacks(self.afterDownload, self.downloadFail)
+			if url.startswith('https'):
+				self.increment()
+				self.queue.append((url, path))
+				if not self.waitHTTPS.isActive():
+					self.waitHTTPS.start(500, True)
+			else:
+				self.increment()
+				self.Limited.downloadPage(url, path).addCallbacks(self.afterDownload).addErrback(self.downloadFail)
 		return True
+
+	def download(self):
+		if len(self.queue):
+			(url, path) = self.queue.pop(0)
+			self.downloadHttpsPicture(url, path)
+
+	def httpsRun(self):
+		self.download()
+		if self.stopRead:
+			self.waitHTTPS.stop()
+			self.dlFrame = 0
+			return
+
+	def downloadHttpsPicture(self, url, path):
+		import requests
+		res = requests.get(url)
+		if res.status_code == 200:
+			with open(path, 'wb') as f:
+				f.write(res.content)
+				self.dlFrame -= 1
+				if len(self.queue):
+					self.waitHTTPS.start(10, True)
+		else:
+			self.dlFrame -= 1
+			self.errFrame +=1
 
 	def downloadMain(self, typ):
 		#print "[MeteoViewer] >>>Main>>>", typ,  TYPE.index(typ)
@@ -1149,18 +1186,18 @@ class meteoViewer(Screen, HelpableScreen):
 				if not self.downloadFrame(url,path):
 					break
 			if typ == "dea" or typ == "all":
-				url = "http://www.weatheronline.co.uk/daten/radar/dwddg/%s/%s/%s/%s.gif" % (frDate[:-4],frDate[4:-2],frDate[6:], frTime)
+				url = "https://www.weatheronline.co.uk/daten/radar/dwddg/%s/%s/%s/%s.gif" % (frDate[:-4],frDate[4:-2],frDate[6:], frTime)
 				path= "%s%s%s.gif" % (self.getDir(TYPE.index("dea")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
 			if typ == "uka" or typ == "all":
-				url = "http://www.weatheronline.co.uk/daten/radar/ukuk/%s/%s/%s/%s.gif" % (frDate[:-4],frDate[4:-2],frDate[6:], frTime)
+				url = "https://www.weatheronline.co.uk/daten/radar/ukuk/%s/%s/%s/%s.gif" % (frDate[:-4],frDate[4:-2],frDate[6:], frTime)
 				path= "%s%s%s.gif" % (self.getDir(TYPE.index("uka")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
 
 			if typ == "nla1" or typ == "all":
-				url = "http://www.weatheronline.co.uk/daten/radar/ddlnw/%s/%s/%s/%s.gif" % (frDate[:-4],frDate[4:-2],frDate[6:], frTime)
+				url = "https://www.weatheronline.co.uk/daten/radar/ddlnw/%s/%s/%s/%s.gif" % (frDate[:-4],frDate[4:-2],frDate[6:], frTime)
 				path= "%s%s%s.gif" % (self.getDir(TYPE.index("nla1")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
@@ -1170,7 +1207,6 @@ class meteoViewer(Screen, HelpableScreen):
 				path= "%s%s%s.png" % (self.getDir(TYPE.index("csr")), frDate, frTime)
 				if not self.downloadFrame(url,path):
 					break
-
 
 	def downloadStorm(self, typ):
 		#print "[MeteoViewer] >>>Storm>>>", typ, TYPE.index(typ)
@@ -1483,7 +1519,7 @@ class meteoViewer(Screen, HelpableScreen):
 					self.deleteOldFiles(i, gmtime(startDel))
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
-		
+
 		for i in xrange(start, stop, step):
 			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
 			t =  localtime(i)
@@ -1504,7 +1540,7 @@ class meteoViewer(Screen, HelpableScreen):
 
 		rest = (now % step)
 		delay = 20 * 60
-		if delay > step: 
+		if delay > step:
 			if rest <  delay - step:
 				stop = now15-step
 			else:
@@ -1524,17 +1560,67 @@ class meteoViewer(Screen, HelpableScreen):
 					self.deleteOldFiles(i, gmtime(startDel))
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
-		
+
 		for i in xrange(start, stop, step):
 			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
 			if typ == "all":
 				for j in country:
-					url = "http://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (j,name[:-8],name[4:-6],name[6:-4], name[8:])
+					url = "https://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (j,name[:-8],name[4:-6],name[6:-4], name[8:])
 					path= "%s%s.jpg" % (self.getDir(TYPE.index(j)), name)
 					if not self.downloadFrame(url,path):
 						break
 			else:
-				url = "http://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (typ,name[:-8],name[4:-6],name[6:-4], name[8:])
+				url = "https://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (typ,name[:-8],name[4:-6],name[6:-4], name[8:])
+				path= "%s%s.jpg" % (self.getDir(TYPE.index(typ)), name)
+				print url, path
+				if not self.downloadFrame(url,path):
+					break
+			if self.stopRead:
+				break
+
+	def downloadWOi(self, typ):
+		#print "[MeteoViewer] >>>WOi>>", typ,  TYPE.index(typ)
+		country = WOi
+		interval = int(cfg.nr.value) * 900
+		step = 900			# 15 minut
+		now = int(time())		# LT
+		now15 = (now // step) * step 	# last x min
+		start = now15 - interval
+		stop = now15 + step
+
+		rest = (now % step)
+		delay = 20 * 60
+		if delay > step:
+			if rest <  delay - step:
+				stop = now15-step
+			else:
+				stop = now15
+		else:
+			if rest < delay:
+				stop = now15
+			else:
+				now15 + step
+
+		if cfg.delete.value == "3" or cfg.delete.value == "4":
+			startDel = start
+			if cfg.delete.value == "3":
+				startDel = now15 - int(cfg.nr.choices[len(cfg.nr.choices)-1]) * 900
+			if typ == "all":
+				for i in country:
+					self.deleteOldFiles(i, gmtime(startDel))
+			else :
+				self.deleteOldFiles(typ, gmtime(startDel))
+
+		for i in xrange(start, stop, step):
+			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
+			if typ == "all":
+				for j in country:
+					url = "https://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (j,name[:-8],name[4:-6],name[6:-4], name[8:])
+					path= "%s%s.jpg" % (self.getDir(TYPE.index(j)), name)
+					if not self.downloadFrame(url,path):
+						break
+			else:
+				url = "https://www.weatheronline.co.uk/cgi-bin/getpicture?/daten/sat/%s/%s/%s/%s/%s.jpg" % (typ,name[:-8],name[4:-6],name[6:-4], name[8:])
 				path= "%s%s.jpg" % (self.getDir(TYPE.index(typ)), name)
 				print url, path
 				if not self.downloadFrame(url,path):
@@ -1586,7 +1672,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		self.session = session
 		self.skin = meteoViewerCfg.skin
 		self.setup_title = _("MeteoViewer Setup")
-		self.version = "ims (c) 2012-2018 v1.75"
+		self.version = "ims (c) 2012-2018 v1.76"
 			
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
@@ -1611,7 +1697,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		meteoViewerCfglist.append(getConfigListEntry(_("Slideshow begins from"), cfg.slidetype))
 		meteoViewerCfglist.append(getConfigListEntry(_("Download info on plugin's start"), cfg.download))
 		meteoViewerCfglist.append(getConfigListEntry(_("Type of meteo info on start"), cfg.type))
-		meteoViewerCfglist.append(getConfigListEntry(_("After download \"All\" switch to"), cfg.typeafterall))
+#		meteoViewerCfglist.append(getConfigListEntry(_("After download \"All\" switch to"), cfg.typeafterall))
 		meteoViewerCfglist.append(getConfigListEntry(_("Delete old files before download"), cfg.delete))
 		meteoViewerCfglist.append(getConfigListEntry(_("On exit delete files"), cfg.delend))
 		meteoViewerCfglist.append(getConfigListEntry(_("Frames info"), cfg.display))
