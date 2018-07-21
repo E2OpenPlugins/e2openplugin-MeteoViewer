@@ -32,7 +32,7 @@ from os import system
 from time import gmtime, strftime, localtime, time, mktime, strptime, ctime
 import calendar
 import enigma
-from Tools.Directories import resolveFilename, fileExists, createDir, pathExists
+from Tools.Directories import fileExists
 from Screens.ChoiceBox import ChoiceBox
 from Components.ProgressBar import ProgressBar
 import requests
@@ -91,6 +91,10 @@ TYPE += NA
 TYPE += ["all"]
 
 PPATH = "/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/pictures/"
+MERPATH = "/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/pictures/"
+E2 = "/etc/enigma2/"
+if fileExists(E2 + "merce.png") and fileExists(E2 + "mercz.png"):
+	MERPATH = E2
 
 last_item = len(TYPE) # = max config.plugins.meteoviewer.type
 
@@ -779,10 +783,10 @@ class meteoViewer(Screen, HelpableScreen):
 	def redrawBorder(self):
 		if self.isSynaptic:
 			if TYPE[self.typ] != "csr":
-				self.borderLoad.startDecode(PPATH + MER[len(TYPE)-1])
+				self.borderLoad.startDecode(MERPATH + MER[len(TYPE)-1])
 			else:
 				self.picload.startDecode(PPATH + BACKGROUND[len(BACKGROUND)-1])
-			self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
+			self.merLoad.startDecode(MERPATH + MER[len(TYPE)-1])
 			self.firstSynaptic = False
 		else:
 			if TYPE[self.typ] == "csr":
@@ -791,9 +795,9 @@ class meteoViewer(Screen, HelpableScreen):
 			else:
 				self.borderLoad.startDecode(PPATH + BACKGROUND[self.typ])
 				if cfg.mer.value:
-					self.merLoad.startDecode(PPATH + MER[self.typ])
+					self.merLoad.startDecode(MERPATH + MER[self.typ])
 				else:
-					self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
+					self.merLoad.startDecode(MERPATH + MER[len(TYPE)-1])
 
 	def slideShow(self):
 		self.isSynaptic = False
