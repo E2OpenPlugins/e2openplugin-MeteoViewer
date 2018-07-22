@@ -91,10 +91,7 @@ TYPE += NA
 TYPE += ["all"]
 
 PPATH = "/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/pictures/"
-MERPATH = "/usr/lib/enigma2/python/Plugins/Extensions/MeteoViewer/pictures/"
-E2 = "/etc/enigma2/"
-if fileExists(E2 + "merce.png") and fileExists(E2 + "mercz.png"):
-	MERPATH = E2
+E2PATH = "/etc/enigma2/"
 
 last_item = len(TYPE) # = max config.plugins.meteoviewer.type
 
@@ -106,7 +103,7 @@ if getDesktop(0).size().width() >= 1280:
 BACKGROUND = [ "bg.png", "2bg.png", "2bg.png", "2bg.png", "e.png", "radar.png"]
 for i in range(6,last_item + 1):
 	BACKGROUND.append("e.png")
-MER = [ "merce.png", "mercz.png", "mercz.png", "mercz.png", "e.png"]
+MER = [ "merce.png", "mercz.png", "mercz.png", "mercz.png", "estorm.png"]
 for i in range(5,last_item +1):
 	MER.append("e.png")
 EMPTYFRAME = "e.jpg"
@@ -791,12 +788,15 @@ class meteoViewer(Screen, HelpableScreen):
 		else:
 			if TYPE[self.typ] == "csr":
 				self.picload.startDecode(PPATH + BACKGROUND[self.typ])
-				self.merLoad.startDecode(PPATH + RADAR_MM)
+				if cfg.mer.value and fileExists(E2PATH + RADAR_MM):
+					self.merLoad.startDecode(E2PATH + RADAR_MM)
+				else:
+					self.merLoad.startDecode(PPATH + RADAR_MM)
 			else:
 				self.borderLoad.startDecode(PPATH + BACKGROUND[self.typ])
 				if cfg.mer.value:
-					if TYPE[self.typ] in ("ir", "vis", "bt", "24m"):
-						self.merLoad.startDecode(MERPATH + MER[self.typ])
+					if TYPE[self.typ] in ("ir", "vis", "bt", "24m", "storm") and fileExists(E2PATH + MER[self.typ]):
+						self.merLoad.startDecode(E2PATH + MER[self.typ])
 					else:
 						self.merLoad.startDecode(PPATH + MER[self.typ])
 				else:
