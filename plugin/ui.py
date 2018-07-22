@@ -103,10 +103,10 @@ if getDesktop(0).size().width() >= 1280:
 	HD = True
 
 # position of BACKGROUND and MER must be equal as position of SUBDIR and TYPE. For unused item use e.png
-BACKGROUND = [ "bg.png", "2bg.png", "2bg.png", "2bg.png","e.png", "radar.png"]
+BACKGROUND = [ "bg.png", "2bg.png", "2bg.png", "2bg.png", "e.png", "radar.png"]
 for i in range(6,last_item + 1):
 	BACKGROUND.append("e.png")
-MER = [ "merce.png", "mercz.png", "mercz.png", "mercz.png","e.png"]
+MER = [ "merce.png", "mercz.png", "mercz.png", "mercz.png", "e.png"]
 for i in range(5,last_item +1):
 	MER.append("e.png")
 EMPTYFRAME = "e.jpg"
@@ -783,10 +783,10 @@ class meteoViewer(Screen, HelpableScreen):
 	def redrawBorder(self):
 		if self.isSynaptic:
 			if TYPE[self.typ] != "csr":
-				self.borderLoad.startDecode(MERPATH + MER[len(TYPE)-1])
+				self.borderLoad.startDecode(PPATH + MER[len(TYPE)-1])
 			else:
 				self.picload.startDecode(PPATH + BACKGROUND[len(BACKGROUND)-1])
-			self.merLoad.startDecode(MERPATH + MER[len(TYPE)-1])
+			self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
 			self.firstSynaptic = False
 		else:
 			if TYPE[self.typ] == "csr":
@@ -795,9 +795,12 @@ class meteoViewer(Screen, HelpableScreen):
 			else:
 				self.borderLoad.startDecode(PPATH + BACKGROUND[self.typ])
 				if cfg.mer.value:
-					self.merLoad.startDecode(MERPATH + MER[self.typ])
+					if TYPE[self.typ] in ("ir", "vis", "bt", "24m"):
+						self.merLoad.startDecode(MERPATH + MER[self.typ])
+					else:
+						self.merLoad.startDecode(PPATH + MER[self.typ])
 				else:
-					self.merLoad.startDecode(MERPATH + MER[len(TYPE)-1])
+					self.merLoad.startDecode(PPATH + MER[len(TYPE)-1])
 
 	def slideShow(self):
 		self.isSynaptic = False
