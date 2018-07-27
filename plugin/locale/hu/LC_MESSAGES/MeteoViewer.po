@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2 OpenPLi - MeteoViewer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-27 22:50+0100\n"
+"PO-Revision-Date: 2018-07-27 17:54+0100\n"
+"Last-Translator: chipcard <github.com/chipcard>\n"
+"Language-Team: cpteam <github.com/chipcard>\n"
+"Language: Hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .../Extensions/MeteoViewer\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Hun\n"
+"X-Poedit-Country: Magyar\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .../Extensions/MeteoViewer\n"
+
+#: ../ui.py:1668
+#, python-format
+msgid "!!! '%s' as 'All' cannot be used with '/tmp/' !!!"
+msgstr "!!! '%s' az 'Összes' nem használható a '/tmp/' !!!"
+
+#: ../ui.py:918 ../ui.py:922
+#, python-format
+msgid "%s of %s  -  %s"
+msgstr "%s of %s  -  %s"
+
+#: ../ui.py:578
+msgid "Abort"
+msgstr "Abort"
+
+#: ../ui.py:1614
+msgid "After download \"All\" switch to"
+msgstr "A letöltés után \"Minden\" váltson"
+
+#: ../ui.py:966
+msgid "Are You sure delete this frame?"
+msgstr "Biztosan törli ezt a képkockát?"
+
+#: ../ui.py:1607
+msgid "Buienradar interval"
+msgstr "Buienradar interval"
+
+#: ../ui.py:345 ../ui.py:576 ../ui.py:602 ../ui.py:1592
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: ../ui.py:1608
+msgid "Delay of last frame on Buienradar (min)"
+msgstr "Az utolsó keret késleltetése a Buienradaron (perc)"
+
+#: ../ui.py:1615
+msgid "Delete old files before download"
+msgstr "Törölje a régi fájlokat letöltés előtt"
+
+#: ../ui.py:1602
+msgid "Directory for download"
+msgstr "Letölthető könyvtár"
+
+#: ../ui.py:1606
+msgid "Display"
+msgstr "Képernyő"
+
+#: ../ui.py:347 ../ui.py:604 ../ui.py:867
+msgid "Download"
+msgstr "Letöltés"
+
+#: ../ui.py:1612
+msgid "Download info on plugin's start"
+msgstr "Töltse le a plugin információit"
+
+#: ../ui.py:700 ../ui.py:752 ../ui.py:774
+msgid "Download pictures, please!"
+msgstr "Képek letöltése, kérem!"
+
+#: ../ui.py:583
+msgid "Download:"
+msgstr "Letöltés:"
+
+#: ../ui.py:1605
+msgid "Downloaded interval"
+msgstr "Letöltött intervallum"
+
+#: ../ui.py:1000
+msgid "Erase files..."
+msgstr "Fájlok törlése ..."
+
+#: ../ui.py:1617
+msgid "Frames info"
+msgstr "Képkocka info"
+
+#: ../ui.py:954
+msgid "LT"
+msgstr "LT"
+
+#: ../ui.py:1618
+msgid "Local time in info"
+msgstr "Helyi idő az info"
+
+#: ../ui.py:1649
+msgid "Location for MeteoViewer"
+msgstr "Hely megadása MeteoViewernek"
+
+#: ../ui.py:300 ../ui.py:420 ../ui.py:553
+msgid "MeteoViewer"
+msgstr "MeteoViewer"
+
+#: ../ui.py:1588 ../ui.py:1642
+msgid "MeteoViewer Setup"
+msgstr "MeteoViewer telepítése"
+
+#: ../ui.py:661 ../ui.py:794 ../ui.py:814 ../ui.py:876 ../ui.py:914
+#: ../ui.py:968
+msgid "No files found!"
+msgstr "Nincsenek fájlok!"
+
+#: ../ui.py:1616
+msgid "On exit delete files"
+msgstr "Kilépéskor törölje a fájlokat"
+
+#: ../ui.py:348 ../ui.py:605 ../ui.py:868
+msgid "Options"
+msgstr "opció"
+
+#: ../ui.py:1619
+msgid "Parallels and meridians"
+msgstr "Párhuzamok és meridiánok"
+
+#: ../ui.py:563
+msgid "Prepare..."
+msgstr "Készít..."
+
+#: ../ui.py:1610
+msgid "Refresh slideshow"
+msgstr "Diavetítés frissítése"
+
+#: ../ui.py:1591
+msgid "Save"
+msgstr "Mentés"
+
+#: ../ui.py:500
+msgid "Select destination:"
+msgstr "Célállomás kiválasztása:"
+
+#: ../ui.py:444
+msgid "Select wanted meteo type:"
+msgstr "Válassza ki a kívánt időjárás típusát:"
+
+#: ../ui.py:603 ../ui.py:649 ../ui.py:866
+msgid "Slideshow"
+msgstr "Diavetítés"
+
+#: ../ui.py:1611
+msgid "Slideshow begins from"
+msgstr "A diavetítés kezdődik"
+
+#: ../ui.py:1609
+msgid "Slideshow's step"
+msgstr "Diavetítés léptetése"
+
+#: ../ui.py:856
+msgid "Stop Show"
+msgstr "Állj meg"
+
+#: ../ui.py:590 ../ui.py:792 ../ui.py:812
+msgid "Stop slideshow, please!"
+msgstr "Állítsa le a diavetítést, kérem!"
+
+#: ../ui.py:1613 ../ui.py:1668
+msgid "Type of meteo info on start"
+msgstr "Kezdés meteo információ típusa"
+
+#: ../ui.py:956
+msgid "UTC"
+msgstr "UTC"
+
+#: ../ui.py:142
+msgid "actual position"
+msgstr "tényleges pozíció"
+
+#: ../ui.py:137
+msgid "all frames"
+msgstr "minden képkocka"
+
+#: ../ui.py:154
+msgid "all types"
+msgstr "minden típus"
+
+#: ../ui.py:142
+msgid "begin"
+msgstr "kezdődik"
+
+#: ../ui.py:154
+msgid "current type"
+msgstr "jelenlegi típus"
+
+#: ../ui.py:322
+msgid "delete current frame"
+msgstr "törölje az aktuális képkockát"
+
+#: ../ui.py:137
+msgid "downloaded interval"
+msgstr "letöltött intervallum"
+
+#: ../ui.py:304 ../ui.py:315
+msgid "exit plugin"
+msgstr "Kilépés a pluginból"
+
+#: ../ui.py:323
+msgid "go to first downloaded frame"
+msgstr "menj az első letöltött képkockára"
+
+#: ../ui.py:324
+msgid "go to last downloaded frame"
+msgstr "menj az utolsó letöltött képkockára"
+
+#: ../ui.py:305
+msgid "go to last frame"
+msgstr "menj az utolsó képkockára"
+
+#: ../ui.py:312
+msgid "go to next frame"
+msgstr "menj a következő képkockára"
+
+#: ../ui.py:311
+msgid "go to previous frame"
+msgstr "ugrás az előző képkockára"
+
+#: ../ui.py:152
+msgid "info"
+msgstr "infó"
+
+#: ../ui.py:152
+msgid "info and progress bar"
+msgstr "info és progress bar"
+
+#: ../ui.py:138
+msgid "last"
+msgstr "utolsó"
+
+#: ../ui.py:310
+msgid "menu"
+msgstr "menü"
+
+#: ../ui.py:154
+msgid "no"
+msgstr "nem"
+
+#: ../ui.py:152
+msgid "none"
+msgstr "egyik sem"
+
+#: ../ui.py:155
+msgid "older than downloaded interval"
+msgstr "régebbi, mint a letöltött intervallum"
+
+#: ../ui.py:155
+msgid "older than max. interval"
+msgstr "régebbi, mint max. intervallum"
+
+#: ../ui.py:319
+msgid "options"
+msgstr "options"
+
+#: ../ui.py:317
+msgid "play slideshow"
+msgstr "diavetítés lejátszása"
+
+#: ../ui.py:316
+msgid "play/stop slideshow"
+msgstr "diavetítés lejátszása/leállítása"
+
+#: ../ui.py:152
+msgid "progress bar"
+msgstr ""
+
+#: ../ui.py:612
+msgid "refresh..."
+msgstr "Frissítés..."
+
+#: ../ui.py:318
+msgid "run/abort download"
+msgstr "futás/megszakítás letöltés"
+
+#: ../ui.py:320
+msgid "stop slideshow/synaptic map"
+msgstr "stop diavetítés / szinaptikus térkép"
+
+#: ../ui.py:313
+msgid "switch to next meteo type"
+msgstr "váltson a következő meteorológiai típusra"
+
+#: ../ui.py:314
+msgid "switch to previous meteo type"
+msgstr "váltson az előző meteorológiai típusra"
+
+#: ../ui.py:321
+msgid "synaptic maps"
+msgstr "szinaptikus térképek"
+
+#: ../plugin.py:24
+msgid "viewer of meteo pictures"
+msgstr "A meteorológiai képek megtekintése"
