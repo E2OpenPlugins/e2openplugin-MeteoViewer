@@ -58,7 +58,7 @@ msgstr "Törölje a régi fájlokat letöltés előtt"
 
 #: ../ui.py:1602
 msgid "Directory for download"
-msgstr "Letölthető könyvtár"
+msgstr "Letöltési könyvtár"
 
 #: ../ui.py:1606
 msgid "Display"
@@ -123,7 +123,7 @@ msgstr "Kilépéskor törölje a fájlokat"
 
 #: ../ui.py:348 ../ui.py:605 ../ui.py:868
 msgid "Options"
-msgstr "opció"
+msgstr "opciók"
 
 #: ../ui.py:1619
 msgid "Parallels and meridians"
@@ -163,7 +163,7 @@ msgstr "Diavetítés léptetése"
 
 #: ../ui.py:856
 msgid "Stop Show"
-msgstr "Állj meg"
+msgstr "Leállítás"
 
 #: ../ui.py:590 ../ui.py:792 ../ui.py:812
 msgid "Stop slideshow, please!"
