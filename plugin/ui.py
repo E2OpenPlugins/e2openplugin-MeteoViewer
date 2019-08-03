@@ -240,13 +240,13 @@ class meteoViewer(Screen, HelpableScreen):
 			<ePixmap position="%s,%s" size="10,18" pixmap="%s%s" zPosition="4" alphatest="on" />
 			<ePixmap position="%s,%s" size="18,10" pixmap="%s%s" zPosition="4" alphatest="on" />
 
-			<ePixmap pixmap="skin_default/div-h.png" position="0,%s" zPosition="4" size="%s,3" transparent="0" />
-			<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="%s,%s" size="14,14" zPosition="4"/>
+			<ePixmap pixmap="div-h.png" position="0,%s" zPosition="4" size="%s,3" transparent="0" />
+			<ePixmap alphatest="on" pixmap="icons/clock.png" position="%s,%s" size="14,14" zPosition="4"/>
 			<widget font="Regular;18" halign="left" position="%s,%s" render="Label" size="55,20" source="global.CurrentTime" transparent="0" valign="center" zPosition="4">
 				<convert type="ClockToText">Default</convert>
 			</widget>
 			<widget name="msg" position="0,%s" zPosition="4" size="%s,20" valign="center" halign="left" font="Regular;18" transparent="0" foregroundColor="white" />
-			<ePixmap pixmap="skin_default/div-h.png" position="0,%s" zPosition="4" size="%s,2" transparent="0" />
+			<ePixmap pixmap="div-h.png" position="0,%s" zPosition="4" size="%s,2" transparent="0" />
 
 			<widget name="download" position="%s,%s" zPosition="5" borderWidth="1" size="100,12" backgroundColor="#0000ff" />
 			<widget name="slide" position="%s,%s" zPosition="5" borderWidth="0" size="210,6" backgroundColor="dark" />
@@ -1421,16 +1421,16 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 	skin = """
 	<screen name="meteoViewerCfg" position="center,center" size="560,380" title="MeteoViewer Setup" backgroundColor="%s" >
 
-		<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-		<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+		<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="buttons/red.png" transparent="1" alphatest="on" />
+		<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="buttons/green.png" transparent="1" alphatest="on" />
 
 		<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" /> 
 		<widget name="key_green" position="140,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
 
 		<widget name="config" position="10,40" size="540,300" zPosition="1" transparent="0" backgroundColor="%s" scrollbarMode="showOnDemand" />
 
-		<ePixmap pixmap="skin_default/div-h.png" position="0,355" zPosition="1" size="560,2" />
-		<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="480,361" size="14,14" zPosition="3"/>
+		<ePixmap pixmap="div-h.png" position="0,355" zPosition="1" size="560,2" />
+		<ePixmap alphatest="on" pixmap="icons/clock.png" position="480,361" size="14,14" zPosition="3"/>
 		<widget font="Regular;18" halign="right" position="495,358" render="Label" size="55,20" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
 			<convert type="ClockToText">Default</convert>
 		</widget>
