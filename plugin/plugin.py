@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 #
 #  Meteo Viewer - Plugin E2
 #
@@ -17,7 +18,7 @@
 from Plugins.Plugin import PluginDescriptor
 
 def main(session, **kwargs):
-	import ui
+	from . import ui
 	session.open(ui.meteoViewer)
 
 def Plugins(path,**kwargs):
