@@ -30,6 +30,7 @@ from Components.config import ConfigSubsection, ConfigYesNo, ConfigText, ConfigD
 from Components.Label import Label
 from Components.ConfigList import ConfigListScreen, ConfigList
 from os import system
+from six.moves import range
 from time import gmtime, strftime, localtime, time, mktime, strptime, ctime
 import calendar
 import enigma
@@ -1112,7 +1113,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
 
-		for i in xrange(start, stop, step):
+		for i in range(start, stop, step):
 			frDate = strftime("%Y%m%d", gmtime(i))	#utc
 			frTime = strftime("%H%M", gmtime(i))	#utc
 			if typ == "ir" or typ == "all":
@@ -1181,7 +1182,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
 
-		for i in xrange(start, stop, step):
+		for i in range(start, stop, step):
 			frDate = strftime("%Y%m%d", gmtime(i))	#utc
 			frTime = strftime("%H%M", gmtime(i))	#utc
 			url = "http://www.chmi.cz/files/portal/docs/meteo/blesk/data/pacz21.blesk.%s.%s.10_9.png" % (frDate, frTime)
@@ -1209,7 +1210,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
 
-		for i in xrange(start, stop, step):
+		for i in range(start, stop, step):
 			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
 			if typ == "we" or typ == "all":
 				url = "http://www.metoffice.gov.uk/weather/images/eurir_sat_%s.jpg" % (name)
@@ -1254,7 +1255,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
 		j = 0
-		for i in xrange(start, stop, step):
+		for i in range(start, stop, step):
 			frDate = strftime("%Y%m%d", gmtime(i))	#utc
 			frTime = strftime("%H%M", gmtime(i))	#utc
 			if typ == "na" or typ == "all":
@@ -1284,7 +1285,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
 
-		for i in xrange(start, stop, step):
+		for i in range(start, stop, step):
 			frDate = strftime("%Y%m%d", gmtime(i))	#utc
 			frTime = strftime("%H%M", gmtime(i))	#utc
 			if typ == "aus" or typ == "all":
@@ -1336,7 +1337,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
 
-		for i in xrange(start, stop, step):
+		for i in range(start, stop, step):
 			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
 			if typ == "all":
 				for j in country:
@@ -1385,7 +1386,7 @@ class meteoViewer(Screen, HelpableScreen):
 			else :
 				self.deleteOldFiles(typ, gmtime(startDel))
 
-		for i in xrange(start, stop, step):
+		for i in range(start, stop, step):
 			name = strftime("%Y%m%d%H%M", gmtime(i)) #utc
 			if typ == "all":
 				for j in country:
