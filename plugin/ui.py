@@ -3,7 +3,7 @@ from . import _
 #
 #  Meteo Viewer - Plugin E2
 #
-#  by ims (c) 2011-2018
+#  by ims (c) 2011-2020
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -134,6 +134,10 @@ config.plugins.meteoviewer.delete = ConfigSelection(default = "4", choices = [("
 config.plugins.meteoviewer.delend = ConfigYesNo(default = True)
 config.plugins.meteoviewer.tmpdir = ConfigDirectory(TMPDIR)
 config.plugins.meteoviewer.mer = ConfigYesNo(default = False)
+choicelist = []
+for i in range(16, 55):
+	choicelist.append(("%d" % i, "%s mins" % (i-15)))
+config.plugins.meteoviewer.wo_releaseframe_delay = ConfigSelection(default = "46", choices = choicelist)
 cfg = config.plugins.meteoviewer
 
 TMPDIR = cfg.tmpdir.value
@@ -1313,7 +1317,7 @@ class meteoViewer(Screen, HelpableScreen):
 		stop = now15 + step
 
 		rest = (now % step)
-		delay = 20 * 60
+		delay = int(cfg.wo_releaseframe_delay.value) * 60
 		if delay > step:
 			if rest <  delay - step:
 				stop = now15-step
@@ -1362,7 +1366,7 @@ class meteoViewer(Screen, HelpableScreen):
 		stop = now15 + step
 
 		rest = (now % step)
-		delay = 20 * 60
+		delay = int(cfg.wo_releaseframe_delay.value) * 60
 		if delay > step:
 			if rest <  delay - step:
 				stop = now15-step
@@ -1444,7 +1448,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		self.session = session
 		self.skin = meteoViewerCfg.skin
 		self.setup_title = _("MeteoViewer Setup")
-		self.version = "ims (c) 2012-2018 v1.76"
+		self.version = "ims (c) 2012-2020 v1.77"
 
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
@@ -1473,6 +1477,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		meteoViewerCfglist.append(getConfigListEntry(_("Frames info"), cfg.display))
 		meteoViewerCfglist.append(getConfigListEntry(_("Local time in info"), cfg.localtime))
 		meteoViewerCfglist.append(getConfigListEntry(_("Parallels and meridians"), cfg.mer))
+		meteoViewerCfglist.append(getConfigListEntry(_("Delay frame release for weatheronline"), cfg.wo_releaseframe_delay))
 
 		meteoViewerCfglist.append(self.tmpdir_entry)
 		ConfigListScreen.__init__(self, meteoViewerCfglist, session, on_change = self.changedEntry)
