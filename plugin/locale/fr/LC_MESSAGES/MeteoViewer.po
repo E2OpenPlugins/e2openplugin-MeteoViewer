@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: e 2openplugin-MeteoViewer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 22:22+0200\n"
+"POT-Creation-Date: 2020-07-01 15:44+0200\n"
 "PO-Revision-Date: 2018-07-15 22:44+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,286 +17,278 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.9\n"
 
-#: ../ui.py:1668
+#: ../ui.py:1529
 #, python-format
 msgid "!!! '%s' as 'All' cannot be used with '/tmp/' !!!"
 msgstr "!!! ‘%s’ avec ‘Tous’ ne peut pas être utilisé avec ‘/tmp/‘ !!!"
 
-#: ../ui.py:918 ../ui.py:922
+#: ../ui.py:892 ../ui.py:896
 #, python-format
 msgid "%s of %s  -  %s"
 msgstr "%s de %s  -  %s"
 
-#: ../ui.py:578
+#: ../ui.py:544
 msgid "Abort"
 msgstr "Abandonner"
 
-#: ../ui.py:1614
+#: ../ui.py:1474
 msgid "After download \"All\" switch to"
 msgstr "Après avoir téléchargé \"Tous\" basculer vers"
 
-#: ../ui.py:966
+#: ../ui.py:940
 msgid "Are You sure delete this frame?"
 msgstr "Voulez-vous supprimer cette trame?"
 
-#: ../ui.py:1607
-msgid "Buienradar interval"
-msgstr "Interval du radar de pluie"
-
-#: ../ui.py:345 ../ui.py:576 ../ui.py:602 ../ui.py:1592
+#: ../ui.py:323 ../ui.py:542 ../ui.py:570 ../ui.py:1454
 msgid "Cancel"
 msgstr "Annuler"
 
-#: ../ui.py:1608
-msgid "Delay of last frame on Buienradar (min)"
-msgstr "Délai de la dernière trame sur le radar de pluie (min)"
+#: ../ui.py:1480
+msgid "Delay frame release for weatheronline"
+msgstr ""
 
-#: ../ui.py:1615
+#: ../ui.py:1475
 msgid "Delete old files before download"
 msgstr "Effacer les anciens fichiers avant de télécharger"
 
-#: ../ui.py:1602
+#: ../ui.py:1464
 msgid "Directory for download"
 msgstr "Répertoire des téléchargements"
 
-#: ../ui.py:1606
+#: ../ui.py:1468
 msgid "Display"
 msgstr "Affichage"
 
-#: ../ui.py:347 ../ui.py:604 ../ui.py:867
+#: ../ui.py:325 ../ui.py:572 ../ui.py:841
 msgid "Download"
 msgstr "Télécharger"
 
-#: ../ui.py:1612
+#: ../ui.py:1472
 msgid "Download info on plugin's start"
 msgstr "Télécharger info au démarrage du plugin"
 
-#: ../ui.py:700 ../ui.py:752 ../ui.py:774
+#: ../ui.py:668 ../ui.py:720 ../ui.py:742
 msgid "Download pictures, please!"
 msgstr "Téléchargement des images, merci de patienter!"
 
-#: ../ui.py:583
+#: ../ui.py:550
 msgid "Download:"
 msgstr "Téléchargement:"
 
-#: ../ui.py:1605
+#: ../ui.py:1467
 msgid "Downloaded interval"
 msgstr "Intervalle de téléchargement"
 
-#: ../ui.py:1000
+#: ../ui.py:973
 msgid "Erase files..."
 msgstr "Effacer les fichiers ..."
 
-#: ../ui.py:1617
+#: ../ui.py:1477
 msgid "Frames info"
 msgstr "Info des trames"
 
-#: ../ui.py:954
+#: ../ui.py:928
 msgid "LT"
 msgstr "LT"
 
-#: ../ui.py:1618
+#: ../ui.py:1478
 msgid "Local time in info"
 msgstr "Heure locale dans info"
 
-#: ../ui.py:1649
+#: ../ui.py:1510
 msgid "Location for MeteoViewer"
 msgstr "Emplacement pour VisionneurMétéo"
 
-#: ../ui.py:300 ../ui.py:420 ../ui.py:553
+#: ../ui.py:279 ../ui.py:401 ../ui.py:519
 msgid "MeteoViewer"
 msgstr "VisionneurMétéo"
 
-#: ../ui.py:1588 ../ui.py:1642
+#: ../ui.py:1450 ../ui.py:1503
 msgid "MeteoViewer Setup"
 msgstr "Configuration VisionneurMétéo"
 
-#: ../ui.py:661 ../ui.py:794 ../ui.py:814 ../ui.py:876 ../ui.py:914
-#: ../ui.py:968
+#: ../ui.py:629 ../ui.py:762 ../ui.py:782 ../ui.py:850 ../ui.py:888
+#: ../ui.py:942
 msgid "No files found!"
 msgstr "Aucun fichier trouvé!"
 
-#: ../ui.py:1616
+#: ../ui.py:1476
 msgid "On exit delete files"
 msgstr "Effacer les fichiers en quittant"
 
-#: ../ui.py:348 ../ui.py:605 ../ui.py:868
+#: ../ui.py:326 ../ui.py:573 ../ui.py:842
 msgid "Options"
 msgstr "Options"
 
-#: ../ui.py:1619
+#: ../ui.py:1479
 msgid "Parallels and meridians"
 msgstr "Parallèles et méridiens"
 
-#: ../ui.py:563
+#: ../ui.py:529
 msgid "Prepare..."
 msgstr "Préparation..."
 
-#: ../ui.py:1610
+#: ../ui.py:1470
 msgid "Refresh slideshow"
 msgstr "Actualiser le diaporama"
 
-#: ../ui.py:1591
+#: ../ui.py:1453
 msgid "Save"
 msgstr "Sauver"
 
-#: ../ui.py:500
+#: ../ui.py:466
 msgid "Select destination:"
 msgstr "Sélectionner une destination:"
 
-#: ../ui.py:444
+#: ../ui.py:425
 msgid "Select wanted meteo type:"
 msgstr "Sélectionnez le type de météo voulu:"
 
-#: ../ui.py:603 ../ui.py:649 ../ui.py:866
+#: ../ui.py:571 ../ui.py:617 ../ui.py:840
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: ../ui.py:1611
+#: ../ui.py:1471
 msgid "Slideshow begins from"
 msgstr "Diaporama commence à partir de"
 
-#: ../ui.py:1609
+#: ../ui.py:1469
 msgid "Slideshow's step"
 msgstr "Étape du diaporama"
 
-#: ../ui.py:856
+#: ../ui.py:830
 msgid "Stop Show"
 msgstr "Arrêter l'affichage"
 
-#: ../ui.py:590 ../ui.py:792 ../ui.py:812
+#: ../ui.py:557 ../ui.py:760 ../ui.py:780
 msgid "Stop slideshow, please!"
 msgstr "Merci d'arrêter le diaporama!"
 
-#: ../ui.py:1613 ../ui.py:1668
+#: ../ui.py:1473 ../ui.py:1529
 msgid "Type of meteo info on start"
 msgstr "Information du type de météo en démarrant"
 
-#: ../ui.py:956
+#: ../ui.py:930
 msgid "UTC"
 msgstr "UTC"
 
-#: ../ui.py:142
+#: ../ui.py:120
 msgid "actual position"
 msgstr "position actuelle"
 
-#: ../ui.py:137
+#: ../ui.py:117
 msgid "all frames"
 msgstr "toutes les trames"
 
-#: ../ui.py:154
+#: ../ui.py:132
 msgid "all types"
 msgstr "tous les types"
 
-#: ../ui.py:142
+#: ../ui.py:120
 msgid "begin"
 msgstr "début"
 
-#: ../ui.py:154
+#: ../ui.py:132
 msgid "current type"
 msgstr "Type actuel"
 
-#: ../ui.py:322
+#: ../ui.py:301
 msgid "delete current frame"
 msgstr "supprimer la trame actuelle"
 
-#: ../ui.py:137
+#: ../ui.py:117
 msgid "downloaded interval"
 msgstr "intervalle de téléchargement"
 
-#: ../ui.py:304 ../ui.py:315
+#: ../ui.py:283 ../ui.py:294
 msgid "exit plugin"
 msgstr "Quitter le plugin"
 
-#: ../ui.py:323
+#: ../ui.py:302
 msgid "go to first downloaded frame"
 msgstr "aller à la première trame téléchargée"
 
-#: ../ui.py:324
+#: ../ui.py:303
 msgid "go to last downloaded frame"
 msgstr "aller à la dernière trame téléchargée"
 
-#: ../ui.py:305
+#: ../ui.py:284
 msgid "go to last frame"
 msgstr "aller à la dernière trame"
 
-#: ../ui.py:312
+#: ../ui.py:291
 msgid "go to next frame"
 msgstr "aller à la trame suivante"
 
-#: ../ui.py:311
+#: ../ui.py:290
 msgid "go to previous frame"
 msgstr "aller à la trame précédente"
 
-#: ../ui.py:152
+#: ../ui.py:130
 msgid "info"
 msgstr "info"
 
-#: ../ui.py:152
+#: ../ui.py:130
 msgid "info and progress bar"
 msgstr "info et barre de progression"
 
-#: ../ui.py:138
-msgid "last"
-msgstr "dernier"
-
-#: ../ui.py:310
+#: ../ui.py:289
 msgid "menu"
 msgstr "menu"
 
-#: ../ui.py:154
+#: ../ui.py:132
 msgid "no"
 msgstr "non"
 
-#: ../ui.py:152
+#: ../ui.py:130
 msgid "none"
 msgstr "aucun"
 
-#: ../ui.py:155
+#: ../ui.py:133
 msgid "older than downloaded interval"
 msgstr "plus ancien que l'intervalle de téléchargement"
 
-#: ../ui.py:155
+#: ../ui.py:133
 msgid "older than max. interval"
 msgstr "plus ancien que l'intervalle max."
 
-#: ../ui.py:319
+#: ../ui.py:298
 msgid "options"
 msgstr "options"
 
-#: ../ui.py:317
+#: ../ui.py:296
 msgid "play slideshow"
 msgstr "jouer le diaporama"
 
-#: ../ui.py:316
+#: ../ui.py:295
 msgid "play/stop slideshow"
 msgstr "jouer/arrêter le diaporama"
 
-#: ../ui.py:152
+#: ../ui.py:130
 msgid "progress bar"
 msgstr "barre de progression"
 
-#: ../ui.py:612
+#: ../ui.py:580
 msgid "refresh..."
 msgstr "rafraîchir..."
 
-#: ../ui.py:318
+#: ../ui.py:297
 msgid "run/abort download"
 msgstr "exécuter/annuler le téléchargement"
 
-#: ../ui.py:320
+#: ../ui.py:299
 msgid "stop slideshow/synaptic map"
 msgstr "arrêter le diaporama/la carte synaptique"
 
-#: ../ui.py:313
+#: ../ui.py:292
 msgid "switch to next meteo type"
 msgstr "passer au type de météo suivant"
 
-#: ../ui.py:314
+#: ../ui.py:293
 msgid "switch to previous meteo type"
 msgstr "passer au type précédent de météo"
 
-#: ../ui.py:321
+#: ../ui.py:300
 msgid "synaptic maps"
 msgstr "cartes synaptiques"
 

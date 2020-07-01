@@ -135,9 +135,9 @@ config.plugins.meteoviewer.delend = ConfigYesNo(default = True)
 config.plugins.meteoviewer.tmpdir = ConfigDirectory(TMPDIR)
 config.plugins.meteoviewer.mer = ConfigYesNo(default = False)
 choicelist = []
-for i in range(16, 55):
-	choicelist.append(("%d" % i, "%s mins" % (i-15)))
-config.plugins.meteoviewer.wo_releaseframe_delay = ConfigSelection(default = "46", choices = choicelist)
+for i in range(16, 65):
+	choicelist.append(("%d" % i, "%s mins" % i))
+config.plugins.meteoviewer.wo_releaseframe_delay = ConfigSelection(default = "47", choices = choicelist)
 cfg = config.plugins.meteoviewer
 
 TMPDIR = cfg.tmpdir.value
@@ -1312,22 +1312,10 @@ class meteoViewer(Screen, HelpableScreen):
 		interval = int(cfg.nr.value) * 900
 		step = 900			# 15 minut
 		now = int(time())		# LT
-		now15 = (now // step) * step 	# last x min
+		now15 = (now // step) * step 	# last multiple min - f.eg. in 14:10 it is 14:00
 		start = now15 - interval
-		stop = now15 + step
-
-		rest = (now % step)
-		delay = int(cfg.wo_releaseframe_delay.value) * 60
-		if delay > step:
-			if rest <  delay - step:
-				stop = now15-step
-			else:
-				stop = now15
-		else:
-			if rest < delay:
-				stop = now15
-			else:
-				now15 + step
+		rest = (now % step)		# f.eg. 14:10 - 14:00 = 10 minuts
+		stop = now15 - int(cfg.wo_releaseframe_delay.value) * 60 + rest
 
 		if cfg.delete.value == "3" or cfg.delete.value == "4":
 			startDel = start
@@ -1363,20 +1351,8 @@ class meteoViewer(Screen, HelpableScreen):
 		now = int(time())		# LT
 		now15 = (now // step) * step 	# last x min
 		start = now15 - interval
-		stop = now15 + step
-
 		rest = (now % step)
-		delay = int(cfg.wo_releaseframe_delay.value) * 60
-		if delay > step:
-			if rest <  delay - step:
-				stop = now15-step
-			else:
-				stop = now15
-		else:
-			if rest < delay:
-				stop = now15
-			else:
-				now15 + step
+		stop = now15 - int(cfg.wo_releaseframe_delay.value) * 60 + rest
 
 		if cfg.delete.value == "3" or cfg.delete.value == "4":
 			startDel = start
