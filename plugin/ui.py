@@ -352,6 +352,7 @@ class meteoViewer(Screen, HelpableScreen):
 		self.maxMap = 0
 		self.selection = 0
 		self.firstSynaptic = False
+		self.mainMenu = False
 
 		self.queue = []
 		self.waitHTTPS = eTimer()
@@ -414,6 +415,7 @@ class meteoViewer(Screen, HelpableScreen):
 		if self.isReading:
 			return
 		menu = []
+		self.mainMenu = True
 		j = 0
 		for i in range(0,len(self.MAINMENU)-1):
 			menu.append((self.MAINMENU[i],"%d" % (j)))
@@ -426,8 +428,10 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def menuCallback(self, choice):
 		if choice is None:
+			self.end()
 			return
 
+		self.mainMenu = False
 		self.displayMeteoType()
 		if choice[1] == len(self.MAINMENU)-1:	# ALL
 			self.typ = len(TYPE)-1 # all
@@ -445,6 +449,7 @@ class meteoViewer(Screen, HelpableScreen):
 	def subMenu(self, item):
 		#"Czech meteo", "Animated", "Weather Online", "Weather Online Infra", "Australia", "North America", "All update"
 		submenu = []
+
 		if item == "0":		# CZ
 			for i in range(0,6):
 				submenu.append((INFO[i], TYPE[i]))
@@ -469,6 +474,7 @@ class meteoViewer(Screen, HelpableScreen):
 		if choice is None:
 			self.showMenu()
 			return
+
 		self.selection = 0
 		self.typ = int(TYPE.index(choice[1]))
 		self.displayMeteoType()
@@ -539,7 +545,7 @@ class meteoViewer(Screen, HelpableScreen):
 #			if cfg.tmpdir.value.startswith('/tmp/'):
 #				self.typ = int(cfg.typeafterall.value)
 
-			self["key_red"].setText(_("Cancel"))
+			self["key_red"].setText(_("Back"))
 			self["key_green"].setText("")
 			self["key_yellow"].setText(_("Abort"))
 			self["key_blue"].setText("")
@@ -567,7 +573,7 @@ class meteoViewer(Screen, HelpableScreen):
 			self.displayMsg("")
 			self.isReading = False
 			self.statistic()
-			self["key_red"].setText(_("Cancel"))
+			self["key_red"].setText(_("Back"))
 			self["key_green"].setText(_("Slideshow"))
 			self["key_yellow"].setText(_("Download"))
 			self["key_blue"].setText(_("Options"))
@@ -932,7 +938,6 @@ class meteoViewer(Screen, HelpableScreen):
 	def emptyFrame(self):
 		if fileExists(PPATH + EMPTYFRAME):
 			self.displayFrame(PPATH + EMPTYFRAME)
-		
 
 	def deleteFrame(self):
 		if not self.isShow and not self.isReading:
@@ -1384,13 +1389,16 @@ class meteoViewer(Screen, HelpableScreen):
 		os.system("rm -r %s >/dev/null 2>&1" % (TMPDIR + SUBDIR))
 
 	def end(self):
-		if self.isReading:
-			self.stopRead = True
-			return
-		if cfg.delend.value:
-			self.eraseAllDirectory()
-			#cfg.delend.value = False
-		self.close()
+		if self.mainMenu:
+			if self.isReading:
+				self.stopRead = True
+				return
+			if cfg.delend.value:
+				self.eraseAllDirectory()
+				#cfg.delend.value = False
+			self.close()
+		else:
+			self.showMenu()
 
 class meteoViewerCfg(Screen, ConfigListScreen):
 
@@ -1424,7 +1432,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		self.session = session
 		self.skin = meteoViewerCfg.skin
 		self.setup_title = _("MeteoViewer Setup")
-		self.version = "ims (c) 2012-2020 v1.77"
+		self.version = "ims (c) 2012-2020 v1.78"
 
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
