@@ -7,302 +7,362 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 MeteoViewer Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-16 23:05+0100\n"
+"POT-Creation-Date: 2020-07-01 15:44+0200\n"
 "PO-Revision-Date: 2011-06-30 13:17+0100\n"
 "Last-Translator: ims\n"
 "Language-Team: ims\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 
-#
-msgid "Downloaded interval"
-msgstr "Downloaded interval"
+#: ../ui.py:1529
+#, python-format
+msgid "!!! '%s' as 'All' cannot be used with '/tmp/' !!!"
+msgstr ""
 
 #
-msgid "Slideshow's step"
-msgstr "Stapgrootte diavoorstelling"
-
-#
-msgid "Download info on plugin's start"
-msgstr "Download info tijdens het starten van de plugin"
-
-#
-msgid "Frames info"
-msgstr "Frames info"
-
-#
-msgid "Local time in info"
-msgstr "Toon lokale tijd"
-
-#
-msgid "Delete old files before download"
-msgstr "Verwijder oude bestanden voor de download"
-
-#
-msgid "Type of meteo info on start"
-msgstr "Type meteo-info bij starten"
-
-#
-msgid "Download"
-msgstr "Download"
-
-#
-msgid "Slideshow"
-msgstr "Diavoorstelling"
-
-#
-msgid "Options"
-msgstr "Opties"
-
-#
-msgid "Stop show"
-msgstr "Stop voorstelling"
-
-#
-msgid "Abort"
-msgstr "Breek af"
-
-#
-msgid "Start download: %d of %d"
-msgstr "Download: %d van %d"
-
-#
-msgid "No files found!"
-msgstr "Geen bestanden gevonden!"
-
-#
-msgid "Stop slideshow, please!"
-msgstr "Stop aub de diavoorstelling"
-
-#
-msgid "Download pictures, please!"
-msgstr "Download aub afbeeldingen"
-
-#
-msgid "Prepare..."
-msgstr "Voorbereiden"
-
-#
-msgid "viewer of meteo pictures"
-msgstr "toon meteo-afbeeldingen"
-
-#
-msgid "view czech storm pictures"
-msgstr "toon Czech storm afbeeldingen"
-
-#
+#: ../ui.py:892 ../ui.py:896
+#, python-format
 msgid "%s of %s  -  %s"
 msgstr "%s van %s  -  %s"
 
 #
-msgid "LT"
-msgstr "Lokale tijd"
+#: ../ui.py:544
+msgid "Abort"
+msgstr "Breek af"
 
 #
-msgid "UTC"
-msgstr "GMT"
-
-#
-msgid "Parallels and meridians"
-msgstr "Parallellen en meridianen"
-
-#
-msgid "On exit delete files"
-msgstr "Verwijder bestanden bij afsluiten"
-
-#
-msgid "Directory for download"
-msgstr "Download map"
-
-#
-msgid "MeteoViewer Setup"
-msgstr "MeteoViewer Instellingen"
-
-#
-msgid "MeteoViewer"
-msgstr "MeteoViewer"
-
-#
-msgid "Location for MeteoViewer"
-msgstr "Lokatie voor MeteoViewer"
-
-#
-msgid "Synaptic"
-msgstr "Synoptisch"
-
-#
-msgid "synaptic maps"
-msgstr "synoptische kaarten"
-
-#
-msgid "Save"
-msgstr "Opslaan"
-
-#
-msgid "Cancel"
-msgstr "Annuleer"
-
-#
-msgid "Download:"
-msgstr "Download:"
-
-#
-msgid "Buienradar interval"
-msgstr "Buienradar interval"
-
-#
-msgid "Delay of last frame on Buienradar (min)"
-msgstr "Vertraging laatste beeld van Buienradar (min)"
-
-#
+#: ../ui.py:1474
 msgid "After download \"All\" switch to"
 msgstr "Na download \"All\" ga naar"
 
 #
-msgid "last"
-msgstr "laatste"
-
-#
-msgid "Select wanted meteo type:"
-msgstr "Selecteer gewenste meteo-informatie"
-
-#
-msgid "Erase files..."
-msgstr "Verwijder bestanden..."
-
-#
-msgid "Display"
-msgstr "Vertoon"
-
-#
-msgid "Slideshow begins from"
-msgstr "Diavoorstelling begint vanaf"
-
-#
-msgid "begin"
-msgstr "begin"
-
-#
-msgid "actual position"
-msgstr "aktuele positie"
-
-#
-msgid "downloaded interval"
-msgstr "download interval"
-
-#
-msgid "all frames"
-msgstr "alle afbeeldingen"
-
-#
-msgid "none"
-msgstr "geen"
-
-#
-msgid "no"
-msgstr "nee"
-
-#
-msgid "current type"
-msgstr "huidige type"
-
-#
-msgid "all types"
-msgstr "alle types"
-
-#
-msgid "older than downloaded interval"
-msgstr "ouder dan download interval"
-
-#
-msgid "older than max. interval"
-msgstr "ouder dan max. interval"
-
-#
-msgid "info"
-msgstr "info"
-
-#
-msgid "info and progress bar"
-msgstr "info en voortgangsbalk"
-
-#
-msgid "progress bar"
-msgstr "voortgangsbalk"
-
-#
-msgid "Select destination:"
-msgstr "Kies bestemming"
-
-#
+#: ../ui.py:940
 msgid "Are You sure delete this frame?"
 msgstr "Deze afbeelding verwijderen?"
 
 #
-msgid "exit plugin"
-msgstr "verlaat plugin"
+#: ../ui.py:323 ../ui.py:542 ../ui.py:570 ../ui.py:1454
+msgid "Cancel"
+msgstr "Annuleer"
+
+#: ../ui.py:1480
+msgid "Delay frame release for weatheronline"
+msgstr ""
 
 #
-msgid "play/stop slideshow"
-msgstr "speel/stop diavoorstelling"
+#: ../ui.py:1475
+msgid "Delete old files before download"
+msgstr "Verwijder oude bestanden voor de download"
 
 #
-msgid "run/abort download"
-msgstr "start/stop download"
+#: ../ui.py:1464
+msgid "Directory for download"
+msgstr "Download map"
 
 #
-msgid "options"
-msgstr "opties"
+#: ../ui.py:1468
+msgid "Display"
+msgstr "Vertoon"
 
 #
-msgid "go to last frame"
-msgstr "ga naar laatste afbeelding"
+#: ../ui.py:325 ../ui.py:572 ../ui.py:841
+msgid "Download"
+msgstr "Download"
 
 #
-msgid "go to next frame"
-msgstr "ga naar volgende afbeelding"
+#: ../ui.py:1472
+msgid "Download info on plugin's start"
+msgstr "Download info tijdens het starten van de plugin"
 
 #
-msgid "go to previous frame"
-msgstr "ga naar vorige afbeelding"
+#: ../ui.py:668 ../ui.py:720 ../ui.py:742
+msgid "Download pictures, please!"
+msgstr "Download aub afbeeldingen"
 
 #
-msgid "switch to next meteo type"
-msgstr "naar het volgende meteo-type"
+#: ../ui.py:550
+msgid "Download:"
+msgstr "Download:"
 
 #
-msgid "switch to previous meteo type"
-msgstr "naar het vorige meteo-type"
+#: ../ui.py:1467
+msgid "Downloaded interval"
+msgstr "Downloaded interval"
 
 #
-msgid "stop slideshow/synaptic map"
-msgstr "stop diavoorstelling/synoptische kaart"
+#: ../ui.py:973
+msgid "Erase files..."
+msgstr "Verwijder bestanden..."
 
 #
-msgid "menu"
-msgstr "menu"
+#: ../ui.py:1477
+msgid "Frames info"
+msgstr "Frames info"
 
 #
-msgid "delete current frame"
-msgstr "verwijder aktuele opname"
+#: ../ui.py:928
+msgid "LT"
+msgstr "Lokale tijd"
 
 #
-msgid "go to first downloaded frame"
-msgstr "ga naar de eerste afbeelding"
+#: ../ui.py:1478
+msgid "Local time in info"
+msgstr "Toon lokale tijd"
 
 #
-msgid "go to last downloaded frame"
-msgstr "ga naar de laatste  afbeelding"
+#: ../ui.py:1510
+msgid "Location for MeteoViewer"
+msgstr "Lokatie voor MeteoViewer"
 
 #
+#: ../ui.py:279 ../ui.py:401 ../ui.py:519
+msgid "MeteoViewer"
+msgstr "MeteoViewer"
+
+#
+#: ../ui.py:1450 ../ui.py:1503
+msgid "MeteoViewer Setup"
+msgstr "MeteoViewer Instellingen"
+
+#
+#: ../ui.py:629 ../ui.py:762 ../ui.py:782 ../ui.py:850 ../ui.py:888
+#: ../ui.py:942
+msgid "No files found!"
+msgstr "Geen bestanden gevonden!"
+
+#
+#: ../ui.py:1476
+msgid "On exit delete files"
+msgstr "Verwijder bestanden bij afsluiten"
+
+#
+#: ../ui.py:326 ../ui.py:573 ../ui.py:842
+msgid "Options"
+msgstr "Opties"
+
+#
+#: ../ui.py:1479
+msgid "Parallels and meridians"
+msgstr "Parallellen en meridianen"
+
+#
+#: ../ui.py:529
+msgid "Prepare..."
+msgstr "Voorbereiden"
+
+#
+#: ../ui.py:1470
 msgid "Refresh slideshow"
 msgstr "Diavoorstelling verversen"
 
 #
+#: ../ui.py:1453
+msgid "Save"
+msgstr "Opslaan"
+
+#
+#: ../ui.py:466
+msgid "Select destination:"
+msgstr "Kies bestemming"
+
+#
+#: ../ui.py:425
+msgid "Select wanted meteo type:"
+msgstr "Selecteer gewenste meteo-informatie"
+
+#
+#: ../ui.py:571 ../ui.py:617 ../ui.py:840
+msgid "Slideshow"
+msgstr "Diavoorstelling"
+
+#
+#: ../ui.py:1471
+msgid "Slideshow begins from"
+msgstr "Diavoorstelling begint vanaf"
+
+#
+#: ../ui.py:1469
+msgid "Slideshow's step"
+msgstr "Stapgrootte diavoorstelling"
+
+#
+#: ../ui.py:830
+#, fuzzy
+msgid "Stop Show"
+msgstr "Stop voorstelling"
+
+#
+#: ../ui.py:557 ../ui.py:760 ../ui.py:780
+msgid "Stop slideshow, please!"
+msgstr "Stop aub de diavoorstelling"
+
+#
+#: ../ui.py:1473 ../ui.py:1529
+msgid "Type of meteo info on start"
+msgstr "Type meteo-info bij starten"
+
+#
+#: ../ui.py:930
+msgid "UTC"
+msgstr "GMT"
+
+#
+#: ../ui.py:120
+msgid "actual position"
+msgstr "aktuele positie"
+
+#
+#: ../ui.py:117
+msgid "all frames"
+msgstr "alle afbeeldingen"
+
+#
+#: ../ui.py:132
+msgid "all types"
+msgstr "alle types"
+
+#
+#: ../ui.py:120
+msgid "begin"
+msgstr "begin"
+
+#
+#: ../ui.py:132
+msgid "current type"
+msgstr "huidige type"
+
+#
+#: ../ui.py:301
+msgid "delete current frame"
+msgstr "verwijder aktuele opname"
+
+#
+#: ../ui.py:117
+msgid "downloaded interval"
+msgstr "download interval"
+
+#
+#: ../ui.py:283 ../ui.py:294
+msgid "exit plugin"
+msgstr "verlaat plugin"
+
+#
+#: ../ui.py:302
+msgid "go to first downloaded frame"
+msgstr "ga naar de eerste afbeelding"
+
+#
+#: ../ui.py:303
+msgid "go to last downloaded frame"
+msgstr "ga naar de laatste  afbeelding"
+
+#
+#: ../ui.py:284
+msgid "go to last frame"
+msgstr "ga naar laatste afbeelding"
+
+#
+#: ../ui.py:291
+msgid "go to next frame"
+msgstr "ga naar volgende afbeelding"
+
+#
+#: ../ui.py:290
+msgid "go to previous frame"
+msgstr "ga naar vorige afbeelding"
+
+#
+#: ../ui.py:130
+msgid "info"
+msgstr "info"
+
+#
+#: ../ui.py:130
+msgid "info and progress bar"
+msgstr "info en voortgangsbalk"
+
+#
+#: ../ui.py:289
+msgid "menu"
+msgstr "menu"
+
+#
+#: ../ui.py:132
+msgid "no"
+msgstr "nee"
+
+#
+#: ../ui.py:130
+msgid "none"
+msgstr "geen"
+
+#
+#: ../ui.py:133
+msgid "older than downloaded interval"
+msgstr "ouder dan download interval"
+
+#
+#: ../ui.py:133
+msgid "older than max. interval"
+msgstr "ouder dan max. interval"
+
+#
+#: ../ui.py:298
+msgid "options"
+msgstr "opties"
+
+#
+#: ../ui.py:296
+#, fuzzy
+msgid "play slideshow"
+msgstr "speel/stop diavoorstelling"
+
+#
+#: ../ui.py:295
+msgid "play/stop slideshow"
+msgstr "speel/stop diavoorstelling"
+
+#
+#: ../ui.py:130
+msgid "progress bar"
+msgstr "voortgangsbalk"
+
+#
+#: ../ui.py:580
 msgid "refresh..."
 msgstr "ververs..."
 
+#
+#: ../ui.py:297
+msgid "run/abort download"
+msgstr "start/stop download"
+
+#
+#: ../ui.py:299
+msgid "stop slideshow/synaptic map"
+msgstr "stop diavoorstelling/synoptische kaart"
+
+#
+#: ../ui.py:292
+msgid "switch to next meteo type"
+msgstr "naar het volgende meteo-type"
+
+#
+#: ../ui.py:293
+msgid "switch to previous meteo type"
+msgstr "naar het vorige meteo-type"
+
+#
+#: ../ui.py:300
+msgid "synaptic maps"
+msgstr "synoptische kaarten"
+
+#
+#: ../plugin.py:24
+msgid "viewer of meteo pictures"
+msgstr "toon meteo-afbeeldingen"

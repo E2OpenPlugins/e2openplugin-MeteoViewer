@@ -4,7 +4,7 @@ from . import _
 #
 #  Meteo Viewer - Plugin E2
 #
-#  by ims (c) 2011-2018
+#  by ims (c) 2011-2020
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -136,6 +136,10 @@ config.plugins.meteoviewer.delete = ConfigSelection(default = "4", choices = [("
 config.plugins.meteoviewer.delend = ConfigYesNo(default = True)
 config.plugins.meteoviewer.tmpdir = ConfigDirectory(TMPDIR)
 config.plugins.meteoviewer.mer = ConfigYesNo(default = False)
+choicelist = []
+for i in range(16, 65):
+	choicelist.append(("%d" % i, "%s mins" % i))
+config.plugins.meteoviewer.wo_releaseframe_delay = ConfigSelection(default = "47", choices = choicelist)
 cfg = config.plugins.meteoviewer
 
 TMPDIR = cfg.tmpdir.value
@@ -350,6 +354,7 @@ class meteoViewer(Screen, HelpableScreen):
 		self.maxMap = 0
 		self.selection = 0
 		self.firstSynaptic = False
+		self.mainMenu = False
 
 		self.queue = []
 		self.waitHTTPS = eTimer()
@@ -412,6 +417,7 @@ class meteoViewer(Screen, HelpableScreen):
 		if self.isReading:
 			return
 		menu = []
+		self.mainMenu = True
 		j = 0
 		for i in range(0, len(self.MAINMENU)-1):
 			menu.append((self.MAINMENU[i], "%d" % (j)))
@@ -424,8 +430,10 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def menuCallback(self, choice):
 		if choice is None:
+			self.end()
 			return
 
+		self.mainMenu = False
 		self.displayMeteoType()
 		if choice[1] == len(self.MAINMENU)-1:	# ALL
 			self.typ = len(TYPE)-1 # all
@@ -443,6 +451,7 @@ class meteoViewer(Screen, HelpableScreen):
 	def subMenu(self, item):
 		#"Czech meteo", "Animated", "Weather Online", "Weather Online Infra", "Australia", "North America", "All update"
 		submenu = []
+
 		if item == "0":		# CZ
 			for i in range(0, 6):
 				submenu.append((INFO[i], TYPE[i]))
@@ -467,6 +476,7 @@ class meteoViewer(Screen, HelpableScreen):
 		if choice is None:
 			self.showMenu()
 			return
+
 		self.selection = 0
 		self.typ = int(TYPE.index(choice[1]))
 		self.displayMeteoType()
@@ -537,7 +547,7 @@ class meteoViewer(Screen, HelpableScreen):
 #			if cfg.tmpdir.value.startswith('/tmp/'):
 #				self.typ = int(cfg.typeafterall.value)
 
-			self["key_red"].setText(_("Cancel"))
+			self["key_red"].setText(_("Back"))
 			self["key_green"].setText("")
 			self["key_yellow"].setText(_("Abort"))
 			self["key_blue"].setText("")
@@ -565,7 +575,7 @@ class meteoViewer(Screen, HelpableScreen):
 			self.displayMsg("")
 			self.isReading = False
 			self.statistic()
-			self["key_red"].setText(_("Cancel"))
+			self["key_red"].setText(_("Back"))
 			self["key_green"].setText(_("Slideshow"))
 			self["key_yellow"].setText(_("Download"))
 			self["key_blue"].setText(_("Options"))
@@ -930,7 +940,6 @@ class meteoViewer(Screen, HelpableScreen):
 	def emptyFrame(self):
 		if fileExists(PPATH + EMPTYFRAME):
 			self.displayFrame(PPATH + EMPTYFRAME)
-		
 
 	def deleteFrame(self):
 		if not self.isShow and not self.isReading:
@@ -1310,22 +1319,10 @@ class meteoViewer(Screen, HelpableScreen):
 		interval = int(cfg.nr.value) * 900
 		step = 900			# 15 minut
 		now = int(time())		# LT
-		now15 = (now // step) * step 	# last x min
+		now15 = (now // step) * step 	# last multiple min - f.eg. in 14:10 it is 14:00
 		start = now15 - interval
-		stop = now15 + step
-
-		rest = (now % step)
-		delay = 20 * 60
-		if delay > step:
-			if rest <  delay - step:
-				stop = now15-step
-			else:
-				stop = now15
-		else:
-			if rest < delay:
-				stop = now15
-			else:
-				now15 + step
+		rest = (now % step)		# f.eg. 14:10 - 14:00 = 10 minuts
+		stop = now15 - int(cfg.wo_releaseframe_delay.value) * 60 + rest
 
 		if cfg.delete.value == "3" or cfg.delete.value == "4":
 			startDel = start
@@ -1361,20 +1358,8 @@ class meteoViewer(Screen, HelpableScreen):
 		now = int(time())		# LT
 		now15 = (now // step) * step 	# last x min
 		start = now15 - interval
-		stop = now15 + step
-
 		rest = (now % step)
-		delay = 20 * 60
-		if delay > step:
-			if rest <  delay - step:
-				stop = now15-step
-			else:
-				stop = now15
-		else:
-			if rest < delay:
-				stop = now15
-			else:
-				now15 + step
+		stop = now15 - int(cfg.wo_releaseframe_delay.value) * 60 + rest
 
 		if cfg.delete.value == "3" or cfg.delete.value == "4":
 			startDel = start
@@ -1406,13 +1391,16 @@ class meteoViewer(Screen, HelpableScreen):
 		os.system("rm -r %s >/dev/null 2>&1" % (TMPDIR + SUBDIR))
 
 	def end(self):
-		if self.isReading:
-			self.stopRead = True
-			return
-		if cfg.delend.value:
-			self.eraseAllDirectory()
-			#cfg.delend.value = False
-		self.close()
+		if self.mainMenu:
+			if self.isReading:
+				self.stopRead = True
+				return
+			if cfg.delend.value:
+				self.eraseAllDirectory()
+				#cfg.delend.value = False
+			self.close()
+		else:
+			self.showMenu()
 
 class meteoViewerCfg(Screen, ConfigListScreen):
 
@@ -1446,7 +1434,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		self.session = session
 		self.skin = meteoViewerCfg.skin
 		self.setup_title = _("MeteoViewer Setup")
-		self.version = "ims (c) 2012-2018 v1.76"
+		self.version = "ims (c) 2012-2020 v1.78"
 
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
@@ -1475,6 +1463,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		meteoViewerCfglist.append(getConfigListEntry(_("Frames info"), cfg.display))
 		meteoViewerCfglist.append(getConfigListEntry(_("Local time in info"), cfg.localtime))
 		meteoViewerCfglist.append(getConfigListEntry(_("Parallels and meridians"), cfg.mer))
+		meteoViewerCfglist.append(getConfigListEntry(_("Delay frame release for weatheronline"), cfg.wo_releaseframe_delay))
 
 		meteoViewerCfglist.append(self.tmpdir_entry)
 		ConfigListScreen.__init__(self, meteoViewerCfglist, session, on_change = self.changedEntry)
