@@ -157,7 +157,7 @@ class LimitedDownloader:
 class meteoViewer(Screen, HelpableScreen):
 
 	if HD:
-		cx = "center"			# x-position of window 
+		cx = "center"			# x-position of window
 		cy = "60"			# y-position of window
 		sx = 800 			# x-size of window
 		sy = 650			# y-size of window
@@ -272,7 +272,7 @@ class meteoViewer(Screen, HelpableScreen):
 				cl_x, cl_y,
 				msg_y, msg_w,
 				div2_y, div_w,
-				down_x, down_y, 
+				down_x, down_y,
 				slide_x, slide_y)
 
 	def __init__(self, session):
@@ -407,7 +407,7 @@ class meteoViewer(Screen, HelpableScreen):
 	def runSlideShow(self):
 		if not self.isShow:
 			self.slideShow()
-	
+
 	def slideButton(self):
 		if self.isShow:
 			self.stopSlideShow()
@@ -607,7 +607,7 @@ class meteoViewer(Screen, HelpableScreen):
 	def setRefreshFlag(self):
 		self.refreshFlag = True
 		self.refreshTimer.start(int(cfg.refresh.value) * 60000, True)
-		
+
 	def readFiles(self, last_frame=True, empty_frame=True, border=False, green=True, delay=0.2):
 		self.setExtension()
 		filelist = FileList(self.getDir(self.typ), matchingPattern=self.EXT)
@@ -884,7 +884,7 @@ class meteoViewer(Screen, HelpableScreen):
 						self.displayInfo(self.idx + 1, self.maxFrames, self.frame[self.idx])
 						self.idx += 1
 					self.slideShowTimer.start(int(cfg.time.value), True)
-				else:   # pozastaveni na konci. Jestlize nechci, tak sloucit a jen zmenit podminku a index 
+				else:   # pozastaveni na konci. Jestlize nechci, tak sloucit a jen zmenit podminku a index
 					if self.refreshFlag:
 						self.refreshFrames()
 						self.refreshFlag = False
@@ -914,12 +914,12 @@ class meteoViewer(Screen, HelpableScreen):
 			if (x[0][1] != True):
 				self.map.append(x[0][0][:-4])
 				self.maxMap += 1
-			
+
 	def displaySynoptic(self, decrease=False):
 		if self.maxMap > 0:
 			if decrease: # for return from config only
 				self.midx -= 1
-			self.isSynaptic = True			
+			self.isSynaptic = True
 			path = TMPDIR + SUBDIR + "/" + self.map[self.midx] + ".gif"
 			if fileExists(path):
 				self.displayFrame(path)
@@ -1143,7 +1143,7 @@ class meteoViewer(Screen, HelpableScreen):
 				path = "%s%s%s.jpg" % (self.getDir(TYPE.index("bt")), frDate, frTime)
 				if not self.downloadFrame(url, path):
 					break
-				
+
 			if typ == "24m" or typ == "all":
 				url = "http://www.chmi.cz/files/portal/docs/meteo/sat/msg_hrit/img-msgcz-24M/msgcz.24M.%s.%s.0.jpg" % (frDate, frTime)
 				path = "%s%s%s.jpg" % (self.getDir(TYPE.index("24m")), frDate, frTime)
@@ -1416,7 +1416,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 		<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 
-		<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" /> 
+		<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
 		<widget name="key_green" position="140,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
 
 		<widget name="config" position="10,40" size="540,300" zPosition="1" transparent="0" backgroundColor="%s" scrollbarMode="showOnDemand" />
