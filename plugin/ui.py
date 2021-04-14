@@ -144,12 +144,15 @@ TMPDIR = cfg.tmpdir.value
 
 from twisted.internet.defer import DeferredSemaphore
 from twisted.web.client import downloadPage
+
+
 class LimitedDownloader:
 	def __init__(self, howMany):
 		self._semaphore = DeferredSemaphore(howMany)
 
 	def downloadPage(self, *a, **kw):
 		return self._semaphore.run(downloadPage, *a, **kw)
+
 
 class meteoViewer(Screen, HelpableScreen):
 
@@ -1400,6 +1403,7 @@ class meteoViewer(Screen, HelpableScreen):
 		else:
 			self.showMenu()
 
+
 class meteoViewerCfg(Screen, ConfigListScreen):
 
 	bgcolor = "#31000000"
@@ -1475,14 +1479,18 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		for x in self.onChangedEntry:
 			x()
 		self["statusbar"].setText(self.version)
+
 	def getCurrentEntry(self):
 		return self["config"].getCurrent()[0]
+
 	def getCurrentValue(self):
 		return str(self["config"].getCurrent()[1].getText())
+
 	def createSummary(self):
 		from Screens.Setup import SetupSummary
 		return SetupSummary
 	###
+
 	def setWindowTitle(self):
 		self.setTitle(_("MeteoViewer Setup"))
 
