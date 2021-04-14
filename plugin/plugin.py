@@ -21,4 +21,4 @@ def main(session, **kwargs):
 	session.open(ui.meteoViewer)
 
 def Plugins(path,**kwargs):
-	return PluginDescriptor(name="Meteo Viewer", description=_("viewer of meteo pictures"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon = "meteo.png", fnc=main)
+	return PluginDescriptor(name="Meteo Viewer", description=_("viewer of meteo pictures"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="meteo.png", fnc=main)

@@ -113,31 +113,31 @@ RADAR_MM = "radar_mm.png"
 del last_item
 
 config.plugins.meteoviewer = ConfigSubsection()
-config.plugins.meteoviewer.nr = ConfigSelection(default = "8", choices = [("4","1h"),("8","2h"),("12","3h"),("24","6h"),("48","12h"),("96","24h"),("192","48h")])
-config.plugins.meteoviewer.frames = ConfigSelection(default = "0", choices = [("0",_("downloaded interval")),("1",_("all frames"))])
-config.plugins.meteoviewer.time = ConfigSelection(default = "750", choices = [("400","400 ms"),("500","500 ms"),("600","600 ms"),("750","750 ms"),("1000","1s"),("2000","2s"),("5000","5s"),("10000","10s")])
-config.plugins.meteoviewer.refresh = ConfigSelection(default = "0", choices = [("0","no"),("1","1"),("2","2"),("3","3"),("4","4"),("5","5"),("10","10"),("15","15")])
-config.plugins.meteoviewer.slidetype = ConfigSelection(default = "0", choices = [("0",_("begin")),("1",_("actual position"))])
-config.plugins.meteoviewer.download = ConfigYesNo(default = False)
+config.plugins.meteoviewer.nr = ConfigSelection(default="8", choices=[("4","1h"),("8","2h"),("12","3h"),("24","6h"),("48","12h"),("96","24h"),("192","48h")])
+config.plugins.meteoviewer.frames = ConfigSelection(default="0", choices=[("0",_("downloaded interval")),("1",_("all frames"))])
+config.plugins.meteoviewer.time = ConfigSelection(default="750", choices=[("400","400 ms"),("500","500 ms"),("600","600 ms"),("750","750 ms"),("1000","1s"),("2000","2s"),("5000","5s"),("10000","10s")])
+config.plugins.meteoviewer.refresh = ConfigSelection(default="0", choices=[("0","no"),("1","1"),("2","2"),("3","3"),("4","4"),("5","5"),("10","10"),("15","15")])
+config.plugins.meteoviewer.slidetype = ConfigSelection(default="0", choices=[("0",_("begin")),("1",_("actual position"))])
+config.plugins.meteoviewer.download = ConfigYesNo(default=False)
 # CHOICES FOR OPTIONS:
 choicelist = []
 for i in range(0, len(INFO)):
 	choicelist.append(("%d" % i, "%s" % INFO[i]))
-config.plugins.meteoviewer.type = ConfigSelection(default = "7", choices = choicelist)
+config.plugins.meteoviewer.type = ConfigSelection(default="7", choices=choicelist)
 
 # CHOICES FOR AFTER "ALL" (WITHOUT "ALL"):
-config.plugins.meteoviewer.typeafterall = ConfigSelection(default = "7", choices = config.plugins.meteoviewer.type.choices[:-1])
-config.plugins.meteoviewer.display =  ConfigSelection(default = "3", choices = [("0",_("none")),("1",_("info")),("2",_("progress bar")),("3",_("info and progress bar"))])
-config.plugins.meteoviewer.localtime = ConfigYesNo(default = False)
-config.plugins.meteoviewer.delete = ConfigSelection(default = "4", choices = [("0",_("no")),("1",_("current type")),("2",_("all types")),
+config.plugins.meteoviewer.typeafterall = ConfigSelection(default="7", choices=config.plugins.meteoviewer.type.choices[:-1])
+config.plugins.meteoviewer.display =  ConfigSelection(default="3", choices=[("0",_("none")),("1",_("info")),("2",_("progress bar")),("3",_("info and progress bar"))])
+config.plugins.meteoviewer.localtime = ConfigYesNo(default=False)
+config.plugins.meteoviewer.delete = ConfigSelection(default="4", choices=[("0",_("no")),("1",_("current type")),("2",_("all types")),
 										("3",_("older than max. interval")),("4",_("older than downloaded interval"))])
-config.plugins.meteoviewer.delend = ConfigYesNo(default = True)
+config.plugins.meteoviewer.delend = ConfigYesNo(default=True)
 config.plugins.meteoviewer.tmpdir = ConfigDirectory(TMPDIR)
-config.plugins.meteoviewer.mer = ConfigYesNo(default = False)
+config.plugins.meteoviewer.mer = ConfigYesNo(default=False)
 choicelist = []
 for i in range(16, 65):
 	choicelist.append(("%d" % i, "%s mins" % i))
-config.plugins.meteoviewer.wo_releaseframe_delay = ConfigSelection(default = "47", choices = choicelist)
+config.plugins.meteoviewer.wo_releaseframe_delay = ConfigSelection(default="47", choices=choicelist)
 cfg = config.plugins.meteoviewer
 
 TMPDIR = cfg.tmpdir.value
@@ -424,7 +424,7 @@ class meteoViewer(Screen, HelpableScreen):
 		if not cfg.tmpdir.value.startswith('/tmp/'):
 			menu.append((self.MAINMENU[len(self.MAINMENU)-1],len(self.MAINMENU)-1))
 
-		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select wanted meteo type:"), list=menu, selection = self.selection)
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select wanted meteo type:"), list=menu, selection=self.selection)
 
 	def menuCallback(self, choice):
 		if choice is None:
@@ -1464,7 +1464,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 		meteoViewerCfglist.append(getConfigListEntry(_("Delay frame release for weatheronline"), cfg.wo_releaseframe_delay))
 
 		meteoViewerCfglist.append(self.tmpdir_entry)
-		ConfigListScreen.__init__(self, meteoViewerCfglist, session, on_change = self.changedEntry)
+		ConfigListScreen.__init__(self, meteoViewerCfglist, session, on_change=self.changedEntry)
 
 		self.onChangedEntry = []
 		self.old_dir = cfg.tmpdir.value
