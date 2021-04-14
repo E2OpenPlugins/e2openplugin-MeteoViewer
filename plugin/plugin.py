@@ -16,9 +16,11 @@
 
 from Plugins.Plugin import PluginDescriptor
 
+
 def main(session, **kwargs):
 	import ui
 	session.open(ui.meteoViewer)
 
-def Plugins(path,**kwargs):
-	return PluginDescriptor(name="Meteo Viewer", description=_("viewer of meteo pictures"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon = "meteo.png", fnc=main)
+
+def Plugins(path, **kwargs):
+	return PluginDescriptor(name="Meteo Viewer", description=_("viewer of meteo pictures"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="meteo.png", fnc=main)
