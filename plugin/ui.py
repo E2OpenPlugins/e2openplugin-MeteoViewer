@@ -100,10 +100,10 @@ if getDesktop(0).size().width() >= 1280:
 	HD = True
 
 # position of BACKGROUND and MER must be equal as position of SUBDIR and TYPE. For unused item use e.png
-BACKGROUND = [ "bg.png", "2bg.png", "2bg.png", "2bg.png", "e.png", "radar.png"]
+BACKGROUND = ["bg.png", "2bg.png", "2bg.png", "2bg.png", "e.png", "radar.png"]
 for i in range(6,last_item + 1):
 	BACKGROUND.append("e.png")
-MER = [ "merce.png", "mercz.png", "mercz.png", "mercz.png", "estorm.png"]
+MER = ["merce.png", "mercz.png", "mercz.png", "mercz.png", "estorm.png"]
 for i in range(5,last_item +1):
 	MER.append("e.png")
 EMPTYFRAME = "e.jpg"
@@ -942,7 +942,7 @@ class meteoViewer(Screen, HelpableScreen):
 	def deleteFrame(self):
 		if not self.isShow and not self.isReading:
 			if self.filesOK:
-				self.session.openWithCallback(self.eraseFrame, MessageBox, _("Are You sure delete this frame?"), MessageBox.TYPE_YESNO, default=False )
+				self.session.openWithCallback(self.eraseFrame, MessageBox, _("Are You sure delete this frame?"), MessageBox.TYPE_YESNO, default=False)
 			else:
 				self.displayMsg(_("No files found!"))
 
@@ -1021,7 +1021,7 @@ class meteoViewer(Screen, HelpableScreen):
 		self.dlFrame -= 1
 		self.errFrame +=1
 
-	def afterDownload(self,result=None ):
+	def afterDownload(self,result=None):
 		self.dlFrame -= 1
 
 	def increment(self):
@@ -1117,7 +1117,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if typ == "all":
 				for i in ("ir","vis","bt","24m","csr","dea","uka","nla1"):
 					self.deleteOldFiles(i, gmtime(startDel))
-			else :
+			else:
 				self.deleteOldFiles(typ, gmtime(startDel))
 
 		for i in xrange(start, stop, step):
@@ -1186,10 +1186,10 @@ class meteoViewer(Screen, HelpableScreen):
 			if typ == "all":
 				for i in ("storm",):
 					self.deleteOldFiles(i, gmtime(startDel))
-			else :
+			else:
 				self.deleteOldFiles(typ, gmtime(startDel))
 
-		for i in xrange(start, stop , step):
+		for i in xrange(start, stop, step):
 			frDate = strftime("%Y%m%d", gmtime(i))	#utc
 			frTime = strftime("%H%M", gmtime(i))	#utc
 			url = "http://www.chmi.cz/files/portal/docs/meteo/blesk/data/pacz21.blesk.%s.%s.10_9.png" % (frDate, frTime)
@@ -1214,7 +1214,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if typ == "all":
 				for i in country:
 					self.deleteOldFiles(i, gmtime(startDel))
-			else :
+			else:
 				self.deleteOldFiles(typ, gmtime(startDel))
 
 		for i in xrange(start, stop, step):
@@ -1259,7 +1259,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if typ == "all":
 				for i in NA:
 					self.deleteOldFiles(i, gmtime(startDel))
-			else :
+			else:
 				self.deleteOldFiles(typ, gmtime(startDel))
 		j = 0
 		for i in xrange(start, stop, step):
@@ -1289,7 +1289,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if typ == "all":
 				for i in country:
 					self.deleteOldFiles(i, gmtime(startDel))
-			else :
+			else:
 				self.deleteOldFiles(typ, gmtime(startDel))
 
 		for i in xrange(start, stop, step):
@@ -1329,7 +1329,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if typ == "all":
 				for i in country:
 					self.deleteOldFiles(i, gmtime(startDel))
-			else :
+			else:
 				self.deleteOldFiles(typ, gmtime(startDel))
 
 		for i in xrange(start, stop, step):
@@ -1366,7 +1366,7 @@ class meteoViewer(Screen, HelpableScreen):
 			if typ == "all":
 				for i in country:
 					self.deleteOldFiles(i, gmtime(startDel))
-			else :
+			else:
 				self.deleteOldFiles(typ, gmtime(startDel))
 
 		for i in xrange(start, stop, step):
@@ -1495,7 +1495,7 @@ class meteoViewerCfg(Screen, ConfigListScreen):
 			inhibitDirs = ["/bin", "/boot", "/dev", "/etc", "/lib", "/proc", "/sbin", "/sys", "/usr"]
 			self.session.openWithCallback(self.dirSelected, LocationBox, text=txt, currDir=cfg.tmpdir.value,
 							bookmarks=config.movielist.videodirs, autoAdd=False, editDir=True,
-							inhibitDirs=inhibitDirs, minFree=400 ) # in MB
+							inhibitDirs=inhibitDirs, minFree=400) # in MB
 
 	def dirSelected(self, res):
 		if res is not None:

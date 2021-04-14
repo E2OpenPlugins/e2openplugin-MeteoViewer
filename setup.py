@@ -2,7 +2,7 @@ from distutils.core import setup
 import setup_translate
 
 pkg = 'Extensions.MeteoViewer'
-setup (name='enigma2-plugin-extensions-meteoviewer',
+setup(name='enigma2-plugin-extensions-meteoviewer',
 	version='1.78',
 	description='meteo pictures viewer',
 	packages=[pkg],
