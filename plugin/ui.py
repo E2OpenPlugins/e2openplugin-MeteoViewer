@@ -728,7 +728,7 @@ class meteoViewer(Screen, HelpableScreen):
 			self.displayMsg(_("Download pictures, please!"))
 
 	def lastFrame(self):
-		#print self.typ, TYPE[self.typ]
+		#print(self.typ, TYPE[self.typ])
 		if self.isSynaptic:
 			self.isSynaptic = False
 
@@ -1031,7 +1031,7 @@ class meteoViewer(Screen, HelpableScreen):
 		self.dlFrame += 1
 
 	def downloadOnce(self, typ): # only, when is choose "Download"
-		#print "[MeteoViewer] >>>Once>>>", typ,  TYPE.index(typ)
+		#print("[MeteoViewer] >>>Once>>>", typ,  TYPE.index(typ))
 		os.system("rm %s/*.* >/dev/null 2>&1" % (TMPDIR + SUBDIR))
 
 		url = "http://portal.chmi.cz/files/portal/docs/meteo/om/evropa/T2m_stredomori.gif"
@@ -1060,6 +1060,7 @@ class meteoViewer(Screen, HelpableScreen):
 		self.downloadFrame(url, path)
 
 	def downloadFrame(self, url, path):
+		#print("[MeteoViewer] >>>downloadFrame>>>", url, path)
 		if self.stopRead:
 			self.dlFrame = 0
 			return False
@@ -1071,7 +1072,7 @@ class meteoViewer(Screen, HelpableScreen):
 					self.waitHTTPS.start(500, True)
 			else:
 				self.increment()
-				self.Limited.downloadPage(url, path).addCallbacks(self.afterDownload).addErrback(self.downloadFail)
+				self.Limited.downloadPage(url.encode('utf-8'), path).addCallbacks(self.afterDownload).addErrback(self.downloadFail)
 		return True
 
 	def download(self):
@@ -1103,7 +1104,7 @@ class meteoViewer(Screen, HelpableScreen):
 				self.waitHTTPS.start(20, True)
 
 	def downloadMain(self, typ):
-		#print "[MeteoViewer] >>>Main>>>", typ,  TYPE.index(typ)
+		#print("[MeteoViewer] >>>Main>>>", typ,  TYPE.index(typ))
 		interval = int(cfg.nr.value) * 900
 		step = 900			# 15 minut
 		now = int(time())		# LT
@@ -1173,7 +1174,7 @@ class meteoViewer(Screen, HelpableScreen):
 					break
 
 	def downloadStorm(self, typ):
-		#print "[MeteoViewer] >>>Storm>>>", typ, TYPE.index(typ)
+		#print("[MeteoViewer] >>>Storm>>>", typ, TYPE.index(typ))
 		interval = int(cfg.nr.value) * 900
 		step = 600			# 10 minut
 		now = int(time())		# LT
@@ -1200,7 +1201,7 @@ class meteoViewer(Screen, HelpableScreen):
 				break
 
 	def downloadHourly(self, typ): # for download each 1h - !!! IS NOT USED IN THIS TIME !!!
-		#print "[MeteoViewer] >>>Hourly>>>", typ,  TYPE.index(typ)
+		#print("[MeteoViewer] >>>Hourly>>>", typ,  TYPE.index(typ))
 		country = WE
 		interval = int(cfg.nr.value) * 900
 		step = 3600			# 1 hour
@@ -1245,7 +1246,7 @@ class meteoViewer(Screen, HelpableScreen):
 					break
 
 	def download30(self, typ): # for download each 1h but in xx.30
-		#print "[MeteoViewer] >>>30>>>", typ,  TYPE.index(typ)
+		#print("[MeteoViewer] >>>30>>>", typ,  TYPE.index(typ))
 		country = NA
 		interval = 4 * 3600
 		step = 1800			# 1 hour
@@ -1275,7 +1276,7 @@ class meteoViewer(Screen, HelpableScreen):
 				j += 1
 
 	def downloadHourly30(self, typ): # for download each 1h but in xx.30
-		#print "[MeteoViewer] >>>Hourly30>>>", typ,  TYPE.index(typ)
+		#print("[MeteoViewer] >>>Hourly30>>>", typ,  TYPE.index(typ))
 		country = AUSTRALIA
 		interval = int(cfg.nr.value) * 900
 		step = 3600			# 1 hour
@@ -1314,7 +1315,7 @@ class meteoViewer(Screen, HelpableScreen):
 					break
 
 	def downloadWO(self, typ):
-		#print "[MeteoViewer] >>>WO>>", typ,  TYPE.index(typ)
+		#print("[MeteoViewer] >>>WO>>", typ,  TYPE.index(typ))
 		country = WO
 		interval = int(cfg.nr.value) * 900
 		step = 900			# 15 minut
@@ -1351,7 +1352,7 @@ class meteoViewer(Screen, HelpableScreen):
 				break
 
 	def downloadWOi(self, typ):
-		#print "[MeteoViewer] >>>WOi>>", typ,  TYPE.index(typ)
+		#print("[MeteoViewer] >>>WOi>>", typ,  TYPE.index(typ))
 		country = WOi
 		interval = int(cfg.nr.value) * 900
 		step = 900			# 15 minut
