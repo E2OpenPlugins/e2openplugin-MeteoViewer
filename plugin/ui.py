@@ -17,6 +17,8 @@ from . import _
 #  GNU General Public License for more details.
 #
 
+# remove FileList by jbleyel
+
 import os
 from os import listdir, system
 from os.path import isdir, join
@@ -28,7 +30,6 @@ from Screens.HelpMenu import HelpableScreen
 from Components.ActionMap import ActionMap, HelpableActionMap
 from Components.Pixmap import Pixmap, MovingPixmap
 from enigma import eTimer
-from Components.FileList import FileList
 from Components.config import ConfigSubsection, ConfigYesNo, ConfigText, ConfigDirectory, ConfigSelection, getConfigListEntry, config
 from Components.Label import Label
 from Components.ConfigList import ConfigListScreen, ConfigList
@@ -623,7 +624,7 @@ class meteoViewer(Screen, HelpableScreen):
 		for x in files:
 			path = join(directory, x)
 			if (matchingPattern is None) or search(matchingPattern, path):
-				result.append(x[:-4])
+				result.append(x)
 		return result
 
 	def readFiles(self, last_frame=True, empty_frame=True, border=False, green=True, delay=0.2):
@@ -633,12 +634,6 @@ class meteoViewer(Screen, HelpableScreen):
 		for x in self.getFilesFromDir(self.getDir(self.typ), self.EXT):
 			self.frame.append(x[:-4])
 			self.maxFrames += 1
-
-#		filelist = FileList(self.getDir(self.typ), matchingPattern=self.EXT)
-#		for x in filelist.getFileList():
-#			if (x[0][1] != True):
-#				self.frame.append(x[0][0][:-4])
-#				self.maxFrames += 1
 
 		self.filesOK = False
 		if self.maxFrames != 0:
@@ -928,14 +923,11 @@ class meteoViewer(Screen, HelpableScreen):
 			self["slide"].setValue(int(100.0 * i / n + 0.25))
 
 	def readMap(self):
-		filelist = FileList(TMPDIR + SUBDIR, matchingPattern=".gif")
-
 		self.maxMap = 0
 		self.map = []
-		for x in filelist.getFileList():
-			if (x[0][1] != True):
-				self.map.append(x[0][0][:-4])
-				self.maxMap += 1
+		for x in self.getFilesFromDir(TMPDIR + SUBDIR, ".gif"):
+			self.map.append(x[:-4])
+			self.maxMap += 1
 
 	def displaySynoptic(self, decrease=False):
 		if self.maxMap > 0:
@@ -988,12 +980,10 @@ class meteoViewer(Screen, HelpableScreen):
 
 	def deleteOldFiles(self, typ, lastUTCTime):
 		self.setExtension()
-		oldlist = FileList(self.getDir(TYPE.index(typ)), matchingPattern=self.EXT)
 		name = strftime("%Y%m%d%H%M", lastUTCTime) + self.EXT
-		for x in oldlist.getFileList():
-			if (x[0][1] != True):
-				if x[0][0] < name:
-					os.unlink("%s%s" % (self.getDir(TYPE.index(typ)), x[0][0]))
+		for x in self.getFilesFromDir(self.getDir(TYPE.index(typ)), self.EXT):
+			if x < name:
+				os.unlink("%s%s" % (self.getDir(TYPE.index(typ)), x))
 
 	def downloadFiles(self, typ):
 		self.isReading = True
