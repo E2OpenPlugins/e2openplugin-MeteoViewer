@@ -616,7 +616,7 @@ class meteoViewer(Screen, HelpableScreen):
 	def getFilesFromDir(self, directory, matchingPattern):
 		result = []
 		try:
-			files = listdir(self.getDir(self.typ))
+			files = listdir(directory)
 		except:
 			files = []
 		files.sort()
