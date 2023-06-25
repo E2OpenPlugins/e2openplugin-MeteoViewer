@@ -4,7 +4,7 @@ from . import _
 #
 #  Meteo Viewer - Plugin E2
 #
-#  by ims (c) 2011-2020
+#  by ims (c) 2011-2023
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -661,9 +661,9 @@ class meteoViewer(Screen, HelpableScreen):
 	def setIndex(self):
 		self.idx = self.startIdx = 0
 		if TYPE[self.typ] == "storm":
-			if self.maxFrames > int(cfg.nr.value) / 4 * 6:
+			if self.maxFrames > int(cfg.nr.value) // 4 * 6:
 				if cfg.frames.value == "0":
-					self.startIdx = self.maxFrames - int(cfg.nr.value) / 4 * 6 - 1
+					self.startIdx = self.maxFrames - int(cfg.nr.value) // 4 * 6 - 1
 		else:
 			if self.maxFrames > int(cfg.nr.value):
 				if cfg.frames.value == "0":

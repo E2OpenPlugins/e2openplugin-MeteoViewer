@@ -2,7 +2,7 @@ from __future__ import absolute_import
 #
 #  Meteo Viewer - Plugin E2
 #
-#  by ims (c) 2011-2018
+#  by ims (c) 2011-2023
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
