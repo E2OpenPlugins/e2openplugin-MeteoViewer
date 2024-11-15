@@ -778,9 +778,9 @@ class meteoViewer(Screen, HelpableScreen):
 		if cfg.localtime.value:
 			utcTime = localtime(epochTimeUTC)
 			localTime = timegm(utcTime)
-			return f"{strftime("%d.%m.%Y %H:%M", localtime(localTime))} {_('LT')}"
+			return f"{strftime('%d.%m.%Y %H:%M', localtime(localTime))} {_('LT')}"
 		else:
-			return f"{strftime("%d.%m.%Y %H:%M", localtime(epochTimeUTC))} {_('UTC')}"
+			return f"{strftime('%d.%m.%Y %H:%M', localtime(epochTimeUTC))} {_('UTC')}"
 
 	def emptyFrame(self):
 		if fileExists(PPATH + EMPTYFRAME):
