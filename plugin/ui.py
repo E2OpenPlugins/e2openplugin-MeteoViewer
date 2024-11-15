@@ -1,6 +1,6 @@
 # Meteo Viewer - Plugin E2
 #
-# by ims (c) 2011-2023
+# by ims (c) 2011-2024
 # 2024 remove FileList by jbleyel@OpenA.TV
 # 2024 completely overworked (skins, downloads, configs, etc. by Mr.Servo@OpenA.TV)
 #
@@ -778,9 +778,9 @@ class meteoViewer(Screen, HelpableScreen):
 		if cfg.localtime.value:
 			utcTime = localtime(epochTimeUTC)
 			localTime = timegm(utcTime)
-			return f"{strftime("%d.%m.%Y %H:%M", localtime(localTime))} {_("LT")}"
+			return f"{strftime("%d.%m.%Y %H:%M", localtime(localTime))} {_('LT')}"
 		else:
-			return f"{strftime("%d.%m.%Y %H:%M", localtime(epochTimeUTC))} {_("UTC")}"
+			return f"{strftime("%d.%m.%Y %H:%M", localtime(epochTimeUTC))} {_('UTC')}"
 
 	def emptyFrame(self):
 		if fileExists(PPATH + EMPTYFRAME):
