@@ -1,0 +1,277 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-15 13:26+0100\n"
+"PO-Revision-Date: 2024-11-15 17:28+0100\n"
+"Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: .\n"
+
+#, python-format
+msgid "%s of %s  -  %s"
+msgstr "%s von %s - %s"
+
+msgid "Abort"
+msgstr "Abbrechen"
+
+msgid "After download All switch to:"
+msgstr "Nach dem Download wechseln zu All:"
+
+msgid "All update"
+msgstr "Alle aktualisieren"
+
+msgid "Are You sure delete this frame?"
+msgstr "Sind Sie sicher, dass Sie diesen Rahmen löschen wollen?"
+
+msgid "Back"
+msgstr "Zurück"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid ""
+"Defines the display type and scope of the additional information in the "
+"slideshow."
+msgstr ""
+"Legt die Anzeigeart und den Umfang der Zusatzinformationen in der Diashow "
+"fest."
+
+msgid "Defines the time delay for weatheronline."
+msgstr "Legt die Zeitverzögerung für weatheronline fest."
+
+msgid "Defines which view is to be called up after downloading the images."
+msgstr ""
+"Legt fest, welche Ansicht nach dem Herunterladen der Bilder aufgerufen "
+"werden soll."
+
+msgid "Defines which view is used when the plugin is started."
+msgstr "Legt fest, welche Ansicht beim Start des Plugins verwendet wird."
+
+msgid "Delay frame release for weatheronline:"
+msgstr "Verzögerte Rahmenfreigabe für weatheronline:"
+
+msgid "Delete old files before download:"
+msgstr "Alte Dateien vor dem Herunterladen löschen:"
+
+msgid ""
+"Determines whether the images should be deleted when leaving the plugin."
+msgstr ""
+"Legt fest, ob die Bilder beim Verlassen des Plugins gelöscht werden sollen."
+
+msgid "Determines whether the old images should be deleted before downloading."
+msgstr ""
+"Legt fest, ob die alten Bilder vor dem Herunterladen gelöscht werden sollen."
+
+msgid "Directory for download:"
+msgstr "Verzeichnis zum Herunterladen:"
+
+msgid "Display:"
+msgstr "Anzeige:"
+
+msgid "Download"
+msgstr "Herunterladen"
+
+msgid "Download info on plugin's start:"
+msgstr "Download-Informationen beim Plugin Start:"
+
+msgid "Download pictures, please!"
+msgstr "Bitte Bilder herunterladen!"
+
+msgid "Download:"
+msgstr "Herunterladen:"
+
+msgid "Downloaded interval:"
+msgstr "Heruntergeladenes Intervall:"
+
+msgid "Erase files..."
+msgstr "Dateien löschen..."
+
+msgid "Frames info:"
+msgstr "Rahmen Info:"
+
+msgid "Frequency of downloading."
+msgstr "Häufigkeit des Herunterladens."
+
+msgid "LT"
+msgstr "LT"
+
+msgid "Local time in info:"
+msgstr "Ortszeit in Info:"
+
+msgid "MeteoViewer"
+msgstr "MeteoViewer"
+
+msgid "No files found!"
+msgstr "Keine Dateien gefunden!"
+
+msgid "On exit delete files:"
+msgstr "Beim Beenden werden die Dateien gelöscht:"
+
+msgid "Options"
+msgstr "Optionen"
+
+msgid "Parallels and meridians:"
+msgstr "Parallelen und Meridiane:"
+
+msgid "Prepare..."
+msgstr "Vorbereiten..."
+
+msgid "Refresh rate for reloading the images."
+msgstr "Aktualisierungsrate für das Nachladen der Bilder."
+
+msgid "Refresh slideshow:"
+msgstr "Diashow aktualisieren:"
+
+msgid "Select destination:"
+msgstr "Zielort auswählen:"
+
+msgid "Select wanted meteo type:"
+msgstr "Wählen Sie den gewünschten Meteo-Typ:"
+
+msgid "Show longitude and latitude in the slideshow."
+msgstr "Längen- und Breitengrad in der Diashow anzeigen."
+
+msgid ""
+"Show only the currently loaded images or all previously available images."
+msgstr ""
+"Zeigen Sie nur die aktuell geladenen Bilder oder alle zuvor verfügbaren "
+"Bilder an."
+
+msgid "Show the local time (box time) in the information."
+msgstr "Zeigen Sie die Ortszeit (Boxzeit) in den Informationen an."
+
+msgid "Slideshow"
+msgstr "Diashow"
+
+msgid "Slideshow begins from:"
+msgstr "Diashow beginnt von:"
+
+msgid "Slideshow's step:"
+msgstr "Einzelschritte der Diashow:"
+
+msgid ""
+"Specifies whether the images should be loaded when the plugin is started."
+msgstr "Gibt an, ob die Bilder beim Start des Plugins geladen werden sollen."
+
+msgid "Speed of the slideshow."
+msgstr "Ablaufgeschwindigkeit der Diashow."
+
+msgid "Start the slideshow from the beginning or from the last position."
+msgstr "Starten Sie die Diashow am Anfang oder an der letzten Position."
+
+msgid "Stop Show"
+msgstr "Show beenden"
+
+msgid "Stop slideshow, please!"
+msgstr "Bitte Diashow anhalten!"
+
+msgid "The downloaded images are stored in this directory."
+msgstr "Die heruntergeladenen Bilder werden in diesem Verzeichnis gespeichert."
+
+msgid "Type of meteo info on start:"
+msgstr "Art der Meteo-Information beim Start:"
+
+msgid "UTC"
+msgstr "UTC"
+
+msgid "actual position"
+msgstr "tatsächliche Position"
+
+msgid "all frames"
+msgstr "alle Rahmen"
+
+msgid "all types"
+msgstr "alle Typen"
+
+msgid "begin"
+msgstr "beginnen"
+
+msgid "current type"
+msgstr "aktueller Typ"
+
+msgid "delete current frame"
+msgstr "aktuelles Bild löschen"
+
+msgid "downloaded interval"
+msgstr "heruntergeladenes Intervall"
+
+msgid "exit plugin"
+msgstr "exit plugin"
+
+msgid "go to first downloaded frame"
+msgstr "Gehe zum ersten heruntergeladenen Frame"
+
+msgid "go to last downloaded frame"
+msgstr "Gehe zum letzten heruntergeladenen Frame"
+
+msgid "go to last frame"
+msgstr "zum letzten Bild gehen"
+
+msgid "go to next frame"
+msgstr "Zum nächsten Bild gehen"
+
+msgid "go to previous frame"
+msgstr "zum vorigen Bild gehen"
+
+msgid "info"
+msgstr "Infos"
+
+msgid "info and progress bar"
+msgstr "Info- und Fortschrittsbalken"
+
+msgid "menu"
+msgstr "Menü"
+
+msgid "meteoViewer Configuration"
+msgstr "meteoViewer Konfiguration"
+
+msgid "no"
+msgstr "Nein"
+
+msgid "none"
+msgstr "keine"
+
+msgid "older than downloaded interval"
+msgstr "älter als das heruntergeladene Intervall"
+
+msgid "older than max. interval"
+msgstr "älter als max. Intervall"
+
+msgid "options"
+msgstr "Optionen"
+
+msgid "play slideshow"
+msgstr "Diashow abspielen"
+
+msgid "play/stop slideshow"
+msgstr "Diashow abspielen/anhalten"
+
+msgid "progress bar"
+msgstr "Fortschrittsbalken"
+
+msgid "refresh..."
+msgstr "aktualisieren..."
+
+msgid "run/abort download"
+msgstr "Download ausführen/abbrechen"
+
+msgid "stop slideshow/synaptic map"
+msgstr "Diashow/Synaptische Karte anhalten"
+
+msgid "switch to next meteo type"
+msgstr "zum nächsten Meteo-Typ wechseln"
+
+msgid "switch to previous meteo type"
+msgstr "Wechsel zum vorherigen Meteo-Typ"
+
+msgid "synaptic maps"
+msgstr "synaptische Karten"
+
+msgid "Viewer of meteo pictures"
+msgstr "Betrachte Meteo-Bilder"

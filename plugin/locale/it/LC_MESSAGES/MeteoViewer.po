@@ -4,299 +4,289 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 OpenPLi - MeteoViewer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-01 15:44+0200\n"
-"PO-Revision-Date: 2013-02-06 17:54+0100\n"
-"Last-Translator: Spaeleus <spaeleus@croci.org>\n"
+"POT-Creation-Date: 2024-11-15 13:26+0100\n"
+"PO-Revision-Date: 2024-11-15 16:07+0100\n"
+"Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
-"Language: \n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: .../Extensions/MeteoViewer\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: Italy\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SearchPath-0: .../Extensions/MeteoViewer\n"
 
-#: ../ui.py:1529
-#, python-format
-msgid "!!! '%s' as 'All' cannot be used with '/tmp/' !!!"
-msgstr ""
-
-#: ../ui.py:892 ../ui.py:896
 #, python-format
 msgid "%s of %s  -  %s"
 msgstr "%s di %s  -  %s"
 
-#: ../ui.py:544
 msgid "Abort"
 msgstr "Annullare"
 
-#: ../ui.py:1474
-msgid "After download \"All\" switch to"
-msgstr "Su download completo, passare a"
+msgid "After download All switch to:"
+msgstr "Dopo il download passare tutti a:"
 
-#: ../ui.py:940
+msgid "All update"
+msgstr "Tutti gli aggiornamenti"
+
 msgid "Are You sure delete this frame?"
 msgstr "Rimuovere il frame?"
 
-#: ../ui.py:323 ../ui.py:542 ../ui.py:570 ../ui.py:1454
+msgid "Back"
+msgstr "Indietro"
+
 msgid "Cancel"
 msgstr "Annullare"
 
-#: ../ui.py:1480
-msgid "Delay frame release for weatheronline"
+msgid ""
+"Defines the display type and scope of the additional information in the "
+"slideshow."
 msgstr ""
+"Definisce il tipo di visualizzazione e l'ambito delle informazioni "
+"aggiuntive nella presentazione."
 
-#: ../ui.py:1475
-msgid "Delete old files before download"
-msgstr "Rim. vecchi file prima del download"
+msgid "Defines the time delay for weatheronline."
+msgstr "Definisce il ritardo per il meteoonline."
 
-#: ../ui.py:1464
-msgid "Directory for download"
-msgstr "Directory per il download"
+msgid "Defines which view is to be called up after downloading the images."
+msgstr ""
+"Definisce quale vista deve essere richiamata dopo il download delle immagini."
 
-#: ../ui.py:1468
-msgid "Display"
-msgstr "Mostrare"
+msgid "Defines which view is used when the plugin is started."
+msgstr "Definisce quale vista viene utilizzata all'avvio del plugin."
 
-#: ../ui.py:325 ../ui.py:572 ../ui.py:841
+msgid "Delay frame release for weatheronline:"
+msgstr "Ritardo nel rilascio dei fotogrammi per weatheronline:"
+
+msgid "Delete old files before download:"
+msgstr "Cancellare i vecchi file prima del download:"
+
+msgid ""
+"Determines whether the images should be deleted when leaving the plugin."
+msgstr ""
+"Determina se le immagini devono essere cancellate quando si lascia il plugin."
+
+msgid "Determines whether the old images should be deleted before downloading."
+msgstr ""
+"Determina se le vecchie immagini devono essere eliminate prima del download."
+
+msgid "Directory for download:"
+msgstr "Directory per il download:"
+
+msgid "Display:"
+msgstr "Display:"
+
 msgid "Download"
 msgstr "Download"
 
-#: ../ui.py:1472
-msgid "Download info on plugin's start"
-msgstr "Download info all'avvio del plugin"
+msgid "Download info on plugin's start:"
+msgstr "Informazioni sul download all'avvio del plugin:"
 
-#: ../ui.py:668 ../ui.py:720 ../ui.py:742
 msgid "Download pictures, please!"
 msgstr "Scaricare le immagini."
 
-#: ../ui.py:550
 msgid "Download:"
 msgstr "Download:"
 
-#: ../ui.py:1467
-msgid "Downloaded interval"
-msgstr "Intervallo considerato"
+msgid "Downloaded interval:"
+msgstr "Intervallo scaricato:"
 
-#: ../ui.py:973
 msgid "Erase files..."
 msgstr "Rimuovere file..."
 
-#: ../ui.py:1477
-msgid "Frames info"
-msgstr "Info frame"
+msgid "Frames info:"
+msgstr "Informazioni sulle cornici:"
 
-#: ../ui.py:928
+msgid "Frequency of downloading."
+msgstr "Frequenza di download."
+
 msgid "LT"
 msgstr "LT"
 
-#: ../ui.py:1478
-msgid "Local time in info"
-msgstr "Ora locale nelle info"
+msgid "Local time in info:"
+msgstr "Ora locale in info:"
 
-#: ../ui.py:1510
-msgid "Location for MeteoViewer"
-msgstr "Località per MeteoViewer"
-
-#: ../ui.py:279 ../ui.py:401 ../ui.py:519
 msgid "MeteoViewer"
 msgstr "MeteoViewer"
 
-#: ../ui.py:1450 ../ui.py:1503
-msgid "MeteoViewer Setup"
-msgstr "Impostazioni MeteoViewer"
-
-#: ../ui.py:629 ../ui.py:762 ../ui.py:782 ../ui.py:850 ../ui.py:888
-#: ../ui.py:942
 msgid "No files found!"
 msgstr "Nessun file trovato."
 
-#: ../ui.py:1476
-msgid "On exit delete files"
-msgstr "Rimuovere files all'uscita"
+msgid "On exit delete files:"
+msgstr "All'uscita cancella i file:"
 
-#: ../ui.py:326 ../ui.py:573 ../ui.py:842
 msgid "Options"
 msgstr "Impostazioni"
 
-#: ../ui.py:1479
-msgid "Parallels and meridians"
-msgstr "Paralleli e meridiani"
+msgid "Parallels and meridians:"
+msgstr "Paralleli e meridiani:"
 
-#: ../ui.py:529
 msgid "Prepare..."
 msgstr "Preparazione..."
 
-#: ../ui.py:1470
-msgid "Refresh slideshow"
-msgstr "Aggiornare la proiezione"
+msgid "Refresh rate for reloading the images."
+msgstr "Frequenza di aggiornamento per ricaricare le immagini."
 
-#: ../ui.py:1453
-msgid "Save"
-msgstr "Salvare"
+msgid "Refresh slideshow:"
+msgstr "Aggiorna la presentazione:"
 
-#: ../ui.py:466
 msgid "Select destination:"
 msgstr "Selezionare la destinazione:"
 
-#: ../ui.py:425
 msgid "Select wanted meteo type:"
 msgstr "Selezionare il tipo desiderato:"
 
-#: ../ui.py:571 ../ui.py:617 ../ui.py:840
+msgid "Show longitude and latitude in the slideshow."
+msgstr "Mostra longitudine e latitudine nella presentazione."
+
+msgid ""
+"Show only the currently loaded images or all previously available images."
+msgstr ""
+"Mostra solo le immagini attualmente caricate o tutte le immagini "
+"precedentemente disponibili."
+
+msgid "Show the local time (box time) in the information."
+msgstr "Mostra l'ora locale (box time) nelle informazioni."
+
 msgid "Slideshow"
 msgstr "Proiezione"
 
-#: ../ui.py:1471
-msgid "Slideshow begins from"
-msgstr "Iniziare la proiezione da"
+msgid "Slideshow begins from:"
+msgstr "Lo slideshow inizia da:"
 
-#: ../ui.py:1469
-msgid "Slideshow's step"
-msgstr "Passo proiezione"
+msgid "Slideshow's step:"
+msgstr "Passo della presentazione:"
 
-#: ../ui.py:830
+msgid ""
+"Specifies whether the images should be loaded when the plugin is started."
+msgstr "Specifica se le immagini devono essere caricate all'avvio del plugin."
+
+msgid "Speed of the slideshow."
+msgstr "Velocità della presentazione."
+
+msgid "Start the slideshow from the beginning or from the last position."
+msgstr "Avviare la presentazione dall'inizio o dall'ultima posizione."
+
 msgid "Stop Show"
 msgstr "Stop"
 
-#: ../ui.py:557 ../ui.py:760 ../ui.py:780
 msgid "Stop slideshow, please!"
 msgstr "Arrestare la proiezione"
 
-#: ../ui.py:1473 ../ui.py:1529
-msgid "Type of meteo info on start"
-msgstr "Tipologia info meteo all'avvio"
+msgid "The downloaded images are stored in this directory."
+msgstr "Le immagini scaricate vengono memorizzate in questa directory."
 
-#: ../ui.py:930
+msgid "Type of meteo info on start:"
+msgstr "Tipo di informazioni meteo all'avvio:"
+
 msgid "UTC"
 msgstr "UTC"
 
-#: ../ui.py:120
 msgid "actual position"
 msgstr "Posizione attuale"
 
-#: ../ui.py:117
 msgid "all frames"
 msgstr "Tutti i frame"
 
-#: ../ui.py:132
 msgid "all types"
 msgstr "Tutti"
 
-#: ../ui.py:120
 msgid "begin"
 msgstr "Inizio"
 
-#: ../ui.py:132
 msgid "current type"
 msgstr "Tipo corrente"
 
-#: ../ui.py:301
 msgid "delete current frame"
 msgstr "Rimuovere il frame corrente"
 
-#: ../ui.py:117
 msgid "downloaded interval"
 msgstr "Intervallo considerato"
 
-#: ../ui.py:283 ../ui.py:294
 msgid "exit plugin"
 msgstr "Uscire"
 
-#: ../ui.py:302
 msgid "go to first downloaded frame"
 msgstr "Andare al primo frame scaricato"
 
-#: ../ui.py:303
 msgid "go to last downloaded frame"
 msgstr "Andare all'iltimo frame scaricato"
 
-#: ../ui.py:284
 msgid "go to last frame"
 msgstr "Andare all'ultimo frame"
 
-#: ../ui.py:291
 msgid "go to next frame"
 msgstr "Andare al frame successivo"
 
-#: ../ui.py:290
 msgid "go to previous frame"
 msgstr "Andare al frame precedente"
 
-#: ../ui.py:130
 msgid "info"
 msgstr "info"
 
-#: ../ui.py:130
 msgid "info and progress bar"
 msgstr "Info e barra di progressione"
 
-#: ../ui.py:289
 msgid "menu"
 msgstr "Menu"
 
-#: ../ui.py:132
+msgid "meteoViewer Configuration"
+msgstr "Configurazione di meteoViewer"
+
 msgid "no"
 msgstr "No"
 
-#: ../ui.py:130
 msgid "none"
 msgstr "Nessuno"
 
-#: ../ui.py:133
 msgid "older than downloaded interval"
 msgstr "Più vecchi dell'intervallo considerato"
 
-#: ../ui.py:133
 msgid "older than max. interval"
 msgstr "Più vecchi dell'intervallo max"
 
-#: ../ui.py:298
 msgid "options"
 msgstr "Opzioni"
 
-#: ../ui.py:296
-#, fuzzy
 msgid "play slideshow"
-msgstr "Proiezione: Play/Stop"
+msgstr "riprodurre la presentazione"
 
-#: ../ui.py:295
 msgid "play/stop slideshow"
 msgstr "Proiezione: Play/Stop"
 
-#: ../ui.py:130
 msgid "progress bar"
 msgstr "Barra di progressione"
 
-#: ../ui.py:580
 msgid "refresh..."
 msgstr "Aggiornamento..."
 
-#: ../ui.py:297
 msgid "run/abort download"
 msgstr "Download: Avvio/Arresto"
 
-#: ../ui.py:299
 msgid "stop slideshow/synaptic map"
 msgstr "Arrestare proiezione/Mappa sinottica"
 
-#: ../ui.py:292
 msgid "switch to next meteo type"
 msgstr "Passare al tipo successivo"
 
-#: ../ui.py:293
 msgid "switch to previous meteo type"
 msgstr "Passare al tipo precedente"
 
 #
-#: ../ui.py:300
 msgid "synaptic maps"
 msgstr "Mappa sinottica"
 
-#: ../plugin.py:24
-msgid "viewer of meteo pictures"
-msgstr "Visualizzatore per immagini meteo"
+msgid "Viewer of meteo pictures"
+msgstr "Visualizzatore di immagini meteo"
+
+#~ msgid "Location for MeteoViewer"
+#~ msgstr "Località per MeteoViewer"
+
+#~ msgid "MeteoViewer Setup"
+#~ msgstr "Impostazioni MeteoViewer"
+
+#~ msgid "Save"
+#~ msgstr "Salvare"

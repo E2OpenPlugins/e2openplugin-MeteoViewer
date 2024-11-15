@@ -1,0 +1,19 @@
+<setupxml>
+	<setup key="meteoViewerConfig" title="meteoViewer Configuration">
+		<item level="0" text="Directory for download:" description="The downloaded images are stored in this directory.">config.plugins.meteoviewer.tmpdir</item>
+		<item level="0" text="Downloaded interval:" description="Frequency of downloading.">config.plugins.meteoviewer.nr</item>
+		<item level="0" text="Display:" description="Show only the currently loaded images or all previously available images.">config.plugins.meteoviewer.frames</item>
+		<item level="0" text="Slideshow's step:" description="Speed of the slideshow.">config.plugins.meteoviewer.time</item>
+		<item level="0" text="Refresh slideshow:" description="Refresh rate for reloading the images.">config.plugins.meteoviewer.refresh</item>
+		<item level="0" text="Slideshow begins from:" description="Start the slideshow from the beginning or from the last position.">config.plugins.meteoviewer.slidetype</item>
+		<item level="0" text="Download info on plugin's start:" description="Specifies whether the images should be loaded when the plugin is started.">config.plugins.meteoviewer.download</item>
+		<item level="0" text="Type of meteo info on start:" description="Defines which view is used when the plugin is started.">config.plugins.meteoviewer.type</item>
+		<item level="0" text="After download All switch to:" description="Defines which view is to be called up after downloading the images.">config.plugins.meteoviewer.typeafterall</item>
+		<item level="0" text="Delete old files before download:" description="Determines whether the old images should be deleted before downloading.">config.plugins.meteoviewer.delete</item>
+		<item level="0" text="On exit delete files:" description="Determines whether the images should be deleted when leaving the plugin.">config.plugins.meteoviewer.delend</item>
+		<item level="0" text="Frames info:" description="Defines the display type and scope of the additional information in the slideshow.">config.plugins.meteoviewer.display</item>
+		<item level="0" text="Local time in info:" description="Show the local time (box time) in the information.">config.plugins.meteoviewer.localtime</item>
+		<item level="0" text="Parallels and meridians:" description="Show longitude and latitude in the slideshow.">config.plugins.meteoviewer.mer</item>
+		<item level="0" text="Delay frame release for weatheronline:" description="Defines the time delay for weatheronline.">config.plugins.meteoviewer.wo_releaseframe_delay</item>
+	</setup>
+</setupxml>

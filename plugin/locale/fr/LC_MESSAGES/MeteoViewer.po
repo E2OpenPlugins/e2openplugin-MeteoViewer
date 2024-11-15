@@ -7,291 +7,288 @@ msgid ""
 msgstr ""
 "Project-Id-Version: e 2openplugin-MeteoViewer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-01 15:44+0200\n"
-"PO-Revision-Date: 2018-07-15 22:44+0200\n"
-"Last-Translator: Automatically generated\n"
+"POT-Creation-Date: 2024-11-15 13:26+0100\n"
+"PO-Revision-Date: 2024-11-15 15:51+0100\n"
+"Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.9\n"
+"X-Generator: Poedit 3.5\n"
 
-#: ../ui.py:1529
-#, python-format
-msgid "!!! '%s' as 'All' cannot be used with '/tmp/' !!!"
-msgstr "!!! ‘%s’ avec ‘Tous’ ne peut pas être utilisé avec ‘/tmp/‘ !!!"
-
-#: ../ui.py:892 ../ui.py:896
 #, python-format
 msgid "%s of %s  -  %s"
-msgstr "%s de %s  -  %s"
+msgstr "%s de %s - %s"
 
-#: ../ui.py:544
 msgid "Abort"
 msgstr "Abandonner"
 
-#: ../ui.py:1474
-msgid "After download \"All\" switch to"
-msgstr "Après avoir téléchargé \"Tous\" basculer vers"
+msgid "After download All switch to:"
+msgstr "After download All switch to:"
 
-#: ../ui.py:940
+msgid "All update"
+msgstr "Toutes les mises à jour"
+
 msgid "Are You sure delete this frame?"
 msgstr "Voulez-vous supprimer cette trame?"
 
-#: ../ui.py:323 ../ui.py:542 ../ui.py:570 ../ui.py:1454
+msgid "Back"
+msgstr "Retour"
+
 msgid "Cancel"
 msgstr "Annuler"
 
-#: ../ui.py:1480
-msgid "Delay frame release for weatheronline"
+msgid ""
+"Defines the display type and scope of the additional information in the "
+"slideshow."
 msgstr ""
+"Définit le type d'affichage et la portée des informations supplémentaires "
+"dans le diaporama."
 
-#: ../ui.py:1475
-msgid "Delete old files before download"
-msgstr "Effacer les anciens fichiers avant de télécharger"
+msgid "Defines the time delay for weatheronline."
+msgstr "Définit le délai d'attente pour weatheronline."
 
-#: ../ui.py:1464
-msgid "Directory for download"
-msgstr "Répertoire des téléchargements"
+msgid "Defines which view is to be called up after downloading the images."
+msgstr "Définit la vue à appeler après le téléchargement des images."
 
-#: ../ui.py:1468
-msgid "Display"
-msgstr "Affichage"
+msgid "Defines which view is used when the plugin is started."
+msgstr "Définit la vue utilisée au démarrage du plugin."
 
-#: ../ui.py:325 ../ui.py:572 ../ui.py:841
+msgid "Delay frame release for weatheronline:"
+msgstr "Retard de la libération du cadre pour weatheronline :"
+
+msgid "Delete old files before download:"
+msgstr "Supprimez les anciens fichiers avant le téléchargement:"
+
+msgid ""
+"Determines whether the images should be deleted when leaving the plugin."
+msgstr ""
+"Détermine si les images doivent être supprimées lorsque l'on quitte le "
+"plugin."
+
+msgid "Determines whether the old images should be deleted before downloading."
+msgstr ""
+"Détermine si les anciennes images doivent être supprimées avant le "
+"téléchargement."
+
+msgid "Directory for download:"
+msgstr "Répertoire à télécharger :"
+
+msgid "Display:"
+msgstr "Affichage :"
+
 msgid "Download"
 msgstr "Télécharger"
 
-#: ../ui.py:1472
-msgid "Download info on plugin's start"
-msgstr "Télécharger info au démarrage du plugin"
+msgid "Download info on plugin's start:"
+msgstr "Informations sur le téléchargement au début du plugin:"
 
-#: ../ui.py:668 ../ui.py:720 ../ui.py:742
 msgid "Download pictures, please!"
 msgstr "Téléchargement des images, merci de patienter!"
 
-#: ../ui.py:550
 msgid "Download:"
 msgstr "Téléchargement:"
 
-#: ../ui.py:1467
-msgid "Downloaded interval"
-msgstr "Intervalle de téléchargement"
+msgid "Downloaded interval:"
+msgstr "Intervalle de téléchargement:"
 
-#: ../ui.py:973
 msgid "Erase files..."
 msgstr "Effacer les fichiers ..."
 
-#: ../ui.py:1477
-msgid "Frames info"
-msgstr "Info des trames"
+msgid "Frames info:"
+msgstr "Informations sur les cadres:"
 
-#: ../ui.py:928
+msgid "Frequency of downloading."
+msgstr "Fréquence de téléchargement."
+
 msgid "LT"
 msgstr "LT"
 
-#: ../ui.py:1478
-msgid "Local time in info"
-msgstr "Heure locale dans info"
+msgid "Local time in info:"
+msgstr "Heure locale en info :"
 
-#: ../ui.py:1510
-msgid "Location for MeteoViewer"
-msgstr "Emplacement pour VisionneurMétéo"
-
-#: ../ui.py:279 ../ui.py:401 ../ui.py:519
 msgid "MeteoViewer"
 msgstr "VisionneurMétéo"
 
-#: ../ui.py:1450 ../ui.py:1503
-msgid "MeteoViewer Setup"
-msgstr "Configuration VisionneurMétéo"
-
-#: ../ui.py:629 ../ui.py:762 ../ui.py:782 ../ui.py:850 ../ui.py:888
-#: ../ui.py:942
 msgid "No files found!"
 msgstr "Aucun fichier trouvé!"
 
-#: ../ui.py:1476
-msgid "On exit delete files"
-msgstr "Effacer les fichiers en quittant"
+msgid "On exit delete files:"
+msgstr "A la sortie, supprimer les fichiers:"
 
-#: ../ui.py:326 ../ui.py:573 ../ui.py:842
 msgid "Options"
 msgstr "Options"
 
-#: ../ui.py:1479
-msgid "Parallels and meridians"
-msgstr "Parallèles et méridiens"
+msgid "Parallels and meridians:"
+msgstr "Parallèles et méridiens:"
 
-#: ../ui.py:529
 msgid "Prepare..."
 msgstr "Préparation..."
 
-#: ../ui.py:1470
-msgid "Refresh slideshow"
-msgstr "Actualiser le diaporama"
+msgid "Refresh rate for reloading the images."
+msgstr "Taux de rafraîchissement des images."
 
-#: ../ui.py:1453
-msgid "Save"
-msgstr "Sauver"
+msgid "Refresh slideshow:"
+msgstr "Actualiser le diaporama:"
 
-#: ../ui.py:466
 msgid "Select destination:"
 msgstr "Sélectionner une destination:"
 
-#: ../ui.py:425
 msgid "Select wanted meteo type:"
 msgstr "Sélectionnez le type de météo voulu:"
 
-#: ../ui.py:571 ../ui.py:617 ../ui.py:840
+msgid "Show longitude and latitude in the slideshow."
+msgstr "Afficher la longitude et la latitude dans le diaporama."
+
+msgid ""
+"Show only the currently loaded images or all previously available images."
+msgstr ""
+"Afficher uniquement les images actuellement chargées ou toutes les images "
+"précédemment disponibles."
+
+msgid "Show the local time (box time) in the information."
+msgstr "Afficher l'heure locale (heure de la boîte) dans les informations."
+
 msgid "Slideshow"
 msgstr "Diaporama"
 
-#: ../ui.py:1471
-msgid "Slideshow begins from"
-msgstr "Diaporama commence à partir de"
+msgid "Slideshow begins from:"
+msgstr "Le diaporama commence à partir de:"
 
-#: ../ui.py:1469
-msgid "Slideshow's step"
-msgstr "Étape du diaporama"
+msgid "Slideshow's step:"
+msgstr "Étape du diaporama:"
 
-#: ../ui.py:830
+msgid ""
+"Specifies whether the images should be loaded when the plugin is started."
+msgstr "Indique si les images doivent être chargées au démarrage du plugin."
+
+msgid "Speed of the slideshow."
+msgstr "Vitesse du diaporama."
+
+msgid "Start the slideshow from the beginning or from the last position."
+msgstr "Démarrer le diaporama depuis le début ou depuis la dernière position."
+
 msgid "Stop Show"
 msgstr "Arrêter l'affichage"
 
-#: ../ui.py:557 ../ui.py:760 ../ui.py:780
 msgid "Stop slideshow, please!"
 msgstr "Merci d'arrêter le diaporama!"
 
-#: ../ui.py:1473 ../ui.py:1529
-msgid "Type of meteo info on start"
-msgstr "Information du type de météo en démarrant"
+msgid "The downloaded images are stored in this directory."
+msgstr "Les images téléchargées sont stockées dans ce répertoire."
 
-#: ../ui.py:930
+msgid "Type of meteo info on start:"
+msgstr "Type d'informations météorologiques au départ:"
+
 msgid "UTC"
 msgstr "UTC"
 
-#: ../ui.py:120
 msgid "actual position"
 msgstr "position actuelle"
 
-#: ../ui.py:117
 msgid "all frames"
 msgstr "toutes les trames"
 
-#: ../ui.py:132
 msgid "all types"
 msgstr "tous les types"
 
-#: ../ui.py:120
 msgid "begin"
 msgstr "début"
 
-#: ../ui.py:132
 msgid "current type"
-msgstr "Type actuel"
+msgstr "type actuel"
 
-#: ../ui.py:301
 msgid "delete current frame"
 msgstr "supprimer la trame actuelle"
 
-#: ../ui.py:117
 msgid "downloaded interval"
 msgstr "intervalle de téléchargement"
 
-#: ../ui.py:283 ../ui.py:294
 msgid "exit plugin"
-msgstr "Quitter le plugin"
+msgstr "quitter le plugin"
 
-#: ../ui.py:302
 msgid "go to first downloaded frame"
 msgstr "aller à la première trame téléchargée"
 
-#: ../ui.py:303
 msgid "go to last downloaded frame"
 msgstr "aller à la dernière trame téléchargée"
 
-#: ../ui.py:284
 msgid "go to last frame"
 msgstr "aller à la dernière trame"
 
-#: ../ui.py:291
 msgid "go to next frame"
 msgstr "aller à la trame suivante"
 
-#: ../ui.py:290
 msgid "go to previous frame"
 msgstr "aller à la trame précédente"
 
-#: ../ui.py:130
 msgid "info"
 msgstr "info"
 
-#: ../ui.py:130
 msgid "info and progress bar"
 msgstr "info et barre de progression"
 
-#: ../ui.py:289
 msgid "menu"
 msgstr "menu"
 
-#: ../ui.py:132
+msgid "meteoViewer Configuration"
+msgstr "meteoViewer Configuration"
+
 msgid "no"
 msgstr "non"
 
-#: ../ui.py:130
 msgid "none"
 msgstr "aucun"
 
-#: ../ui.py:133
 msgid "older than downloaded interval"
 msgstr "plus ancien que l'intervalle de téléchargement"
 
-#: ../ui.py:133
 msgid "older than max. interval"
-msgstr "plus ancien que l'intervalle max."
+msgstr "plus ancien que l'intervalle maximale"
 
-#: ../ui.py:298
 msgid "options"
 msgstr "options"
 
-#: ../ui.py:296
 msgid "play slideshow"
 msgstr "jouer le diaporama"
 
-#: ../ui.py:295
 msgid "play/stop slideshow"
 msgstr "jouer/arrêter le diaporama"
 
-#: ../ui.py:130
 msgid "progress bar"
 msgstr "barre de progression"
 
-#: ../ui.py:580
 msgid "refresh..."
 msgstr "rafraîchir..."
 
-#: ../ui.py:297
 msgid "run/abort download"
 msgstr "exécuter/annuler le téléchargement"
 
-#: ../ui.py:299
 msgid "stop slideshow/synaptic map"
 msgstr "arrêter le diaporama/la carte synaptique"
 
-#: ../ui.py:292
 msgid "switch to next meteo type"
 msgstr "passer au type de météo suivant"
 
-#: ../ui.py:293
 msgid "switch to previous meteo type"
 msgstr "passer au type précédent de météo"
 
-#: ../ui.py:300
 msgid "synaptic maps"
 msgstr "cartes synaptiques"
 
-#: ../plugin.py:24
-msgid "viewer of meteo pictures"
-msgstr "Visionneuse de photos météo"
+msgid "Viewer of meteo pictures"
+msgstr "Visionneuse d'images météo"
+
+#, python-format
+#~ msgid "!!! '%s' as 'All' cannot be used with '/tmp/' !!!"
+#~ msgstr "!!! ‘%s’ avec ‘Tous’ ne peut pas être utilisé avec ‘/tmp/‘ !!!"
+
+#~ msgid "Location for MeteoViewer"
+#~ msgstr "Emplacement pour VisionneurMétéo"
+
+#~ msgid "MeteoViewer Setup"
+#~ msgstr "Configuration VisionneurMétéo"
+
+#~ msgid "Save"
+#~ msgstr "Sauver"

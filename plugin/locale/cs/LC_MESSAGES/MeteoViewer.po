@@ -7,359 +7,334 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 MeteoViewer Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-01 15:44+0200\n"
-"PO-Revision-Date: 2020-07-01 16:28+0200\n"
-"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"POT-Creation-Date: 2024-11-15 13:26+0100\n"
+"PO-Revision-Date: 2024-11-15 15:50+0100\n"
+"Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
 "Language-Team: ims\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
-
-#: ../ui.py:1529
-#, python-format
-msgid "!!! '%s' as 'All' cannot be used with '/tmp/' !!!"
-msgstr "!!! '%s' jako 'All' nelze použít s  '/tmp/' !!!"
+"X-Generator: Poedit 3.5\n"
 
 #
-#: ../ui.py:892 ../ui.py:896
 #, python-format
 msgid "%s of %s  -  %s"
-msgstr "%s z %s  -  %s"
+msgstr "%s z %s - %s"
 
 #
-#: ../ui.py:544
 msgid "Abort"
 msgstr "Přerušit"
 
 #
-#: ../ui.py:1474
-msgid "After download \"All\" switch to"
-msgstr "Po stažení \"All\" přepnout do"
+msgid "After download All switch to:"
+msgstr "Po stažení Vše přepnout na:"
+
+msgid "All update"
+msgstr "Všechny aktualizace"
 
 #
-#: ../ui.py:940
 msgid "Are You sure delete this frame?"
 msgstr "Chcete opravdu smazat tento snímek?"
 
+msgid "Back"
+msgstr "Zpět"
+
 #
-#: ../ui.py:323 ../ui.py:542 ../ui.py:570 ../ui.py:1454
 msgid "Cancel"
 msgstr "Zavřít"
 
-#: ../ui.py:1480
-msgid "Delay frame release for weatheronline"
-msgstr "Zpoždění vydání snímku pro weatheronline"
+msgid ""
+"Defines the display type and scope of the additional information in the "
+"slideshow."
+msgstr "Definuje typ a rozsah zobrazení doplňkových informací v prezentaci."
+
+msgid "Defines the time delay for weatheronline."
+msgstr "Definuje časové zpoždění pro weatheronline."
+
+msgid "Defines which view is to be called up after downloading the images."
+msgstr "Určuje, které zobrazení se má vyvolat po stažení obrázků."
+
+msgid "Defines which view is used when the plugin is started."
+msgstr "Určuje, které zobrazení se použije při spuštění zásuvného modulu."
+
+msgid "Delay frame release for weatheronline:"
+msgstr "Zpoždění uvolnění snímku pro weatheronline:"
 
 #
-#: ../ui.py:1475
-msgid "Delete old files before download"
-msgstr "Před stahováním odstranit soubory"
+msgid "Delete old files before download:"
+msgstr "Před stažením odstraňte staré soubory:"
+
+msgid ""
+"Determines whether the images should be deleted when leaving the plugin."
+msgstr "Určuje, zda se mají obrázky při opuštění zásuvného modulu odstranit."
+
+msgid "Determines whether the old images should be deleted before downloading."
+msgstr "Určuje, zda mají být staré snímky před stažením odstraněny."
 
 #
-#: ../ui.py:1464
-msgid "Directory for download"
-msgstr "Adresář pro ukládání"
+msgid "Directory for download:"
+msgstr "Adresář ke stažení:"
 
 #
-#: ../ui.py:1468
-msgid "Display"
-msgstr "Zobrazovat"
+msgid "Display:"
+msgstr "Zobrazení:"
 
 #
-#: ../ui.py:325 ../ui.py:572 ../ui.py:841
 msgid "Download"
 msgstr "Stáhnout"
 
 #
-#: ../ui.py:1472
-msgid "Download info on plugin's start"
-msgstr "Stahovat informace po spuštění pluginu"
+msgid "Download info on plugin's start:"
+msgstr "Download info on plugin's start:"
 
 #
-#: ../ui.py:668 ../ui.py:720 ../ui.py:742
 msgid "Download pictures, please!"
 msgstr "Stahněte soubory, prosím!"
 
 #
-#: ../ui.py:550
 msgid "Download:"
 msgstr "Stahování:"
 
 #
-#: ../ui.py:1467
-msgid "Downloaded interval"
-msgstr "Stahovaný interval"
+msgid "Downloaded interval:"
+msgstr "Interval stahování:"
 
 #
-#: ../ui.py:973
 msgid "Erase files..."
 msgstr "Mazání souborů..."
 
 #
-#: ../ui.py:1477
-msgid "Frames info"
-msgstr "Zobrazovat informace o snímku"
+msgid "Frames info:"
+msgstr "Informace o rámečcích:"
 
 #
-#: ../ui.py:928
+msgid "Frequency of downloading."
+msgstr "Frekvence stahování."
+
+#
 msgid "LT"
 msgstr "(místní čas)"
 
 #
-#: ../ui.py:1478
-msgid "Local time in info"
-msgstr "Místní čas v info"
+msgid "Local time in info:"
+msgstr "Místní čas v informacích:"
 
 #
-#: ../ui.py:1510
-msgid "Location for MeteoViewer"
-msgstr "Umístění pro MeteoViewer"
-
-#
-#: ../ui.py:279 ../ui.py:401 ../ui.py:519
 msgid "MeteoViewer"
 msgstr "MeteoViewer"
 
 #
-#: ../ui.py:1450 ../ui.py:1503
-msgid "MeteoViewer Setup"
-msgstr "MeteoViewer nastavení"
-
-#
-#: ../ui.py:629 ../ui.py:762 ../ui.py:782 ../ui.py:850 ../ui.py:888
-#: ../ui.py:942
 msgid "No files found!"
 msgstr "Nebyly nalezeny žádné soubory!"
 
 #
-#: ../ui.py:1476
-msgid "On exit delete files"
-msgstr "Smazat soubory po ukončení"
+msgid "On exit delete files:"
+msgstr "Při ukončení odstraňte soubory:"
 
 #
-#: ../ui.py:326 ../ui.py:573 ../ui.py:842
 msgid "Options"
 msgstr "Možnosti"
 
 #
-#: ../ui.py:1479
-msgid "Parallels and meridians"
-msgstr "Zobrazovat rovnoběžky a poledníky"
+msgid "Parallels and meridians:"
+msgstr "Rovnoběžky a poledníky:"
 
 #
-#: ../ui.py:529
 msgid "Prepare..."
 msgstr "Příprava..."
 
-#
-#: ../ui.py:1470
-msgid "Refresh slideshow"
-msgstr "Aktualizace prezentace"
+msgid "Refresh rate for reloading the images."
+msgstr "Obnovovací frekvence pro načítání obrázků."
 
 #
-#: ../ui.py:1453
-msgid "Save"
-msgstr "Uložit"
+msgid "Refresh slideshow:"
+msgstr "Obnovit prezentaci:"
 
 #
-#: ../ui.py:466
 msgid "Select destination:"
 msgstr "Zvolte destinaci:"
 
 #
-#: ../ui.py:425
 msgid "Select wanted meteo type:"
 msgstr "Zvolte požadované meteo informace:"
 
+msgid "Show longitude and latitude in the slideshow."
+msgstr "Zobrazení zeměpisné délky a šířky v prezentaci."
+
+msgid ""
+"Show only the currently loaded images or all previously available images."
+msgstr ""
+"Zobrazit pouze aktuálně načtené obrázky nebo všechny dříve dostupné obrázky."
+
+msgid "Show the local time (box time) in the information."
+msgstr "V informacích zobrazte místní čas (čas ve schránce)."
+
 #
-#: ../ui.py:571 ../ui.py:617 ../ui.py:840
 msgid "Slideshow"
 msgstr "Prezentace"
 
 #
-#: ../ui.py:1471
-msgid "Slideshow begins from"
-msgstr "Prezentace začíná od"
+msgid "Slideshow begins from:"
+msgstr "Slideshow začíná od:"
 
 #
-#: ../ui.py:1469
-msgid "Slideshow's step"
-msgstr "Krok prezentace"
+msgid "Slideshow's step:"
+msgstr "Krok Slideshow:"
+
+msgid ""
+"Specifies whether the images should be loaded when the plugin is started."
+msgstr "Určuje, zda se mají obrázky načíst při spuštění zásuvného modulu."
 
 #
-#: ../ui.py:830
+msgid "Speed of the slideshow."
+msgstr "Rychlost prezentace."
+
+msgid "Start the slideshow from the beginning or from the last position."
+msgstr "Spusťte prezentaci od začátku nebo od poslední pozice."
+
+#
 msgid "Stop Show"
 msgstr "Zastavit"
 
 #
-#: ../ui.py:557 ../ui.py:760 ../ui.py:780
 msgid "Stop slideshow, please!"
 msgstr "Zastavte prezentaci, prosím!"
 
-#
-#: ../ui.py:1473 ../ui.py:1529
-msgid "Type of meteo info on start"
-msgstr "Typ meteo informací po startu"
+msgid "The downloaded images are stored in this directory."
+msgstr "Stažené obrázky jsou uloženy v tomto adresáři."
 
 #
-#: ../ui.py:930
+msgid "Type of meteo info on start:"
+msgstr "Typ meteo informací na začátku:"
+
+#
 msgid "UTC"
 msgstr "UTC"
 
 #
-#: ../ui.py:120
 msgid "actual position"
 msgstr "aktuální pozice"
 
 #
-#: ../ui.py:117
 msgid "all frames"
 msgstr "všechny snímky"
 
 #
-#: ../ui.py:132
 msgid "all types"
 msgstr "všechny typy"
 
 #
-#: ../ui.py:120
 msgid "begin"
 msgstr "začátku"
 
 #
-#: ../ui.py:132
 msgid "current type"
 msgstr "aktuální typ"
 
 #
-#: ../ui.py:301
 msgid "delete current frame"
 msgstr "odstranit aktuální snímek"
 
 #
-#: ../ui.py:117
 msgid "downloaded interval"
 msgstr "stahovaný interval"
 
 #
-#: ../ui.py:283 ../ui.py:294
 msgid "exit plugin"
 msgstr "ukončit plugin"
 
 #
-#: ../ui.py:302
 msgid "go to first downloaded frame"
 msgstr "na první stažený snímek"
 
 #
-#: ../ui.py:303
 msgid "go to last downloaded frame"
 msgstr "na poslední stažený snímek"
 
 #
-#: ../ui.py:284
 msgid "go to last frame"
 msgstr "přejít na poslední snímek"
 
 #
-#: ../ui.py:291
 msgid "go to next frame"
 msgstr "následující snímek"
 
 #
-#: ../ui.py:290
 msgid "go to previous frame"
 msgstr "předchozí snímek"
 
 #
-#: ../ui.py:130
 msgid "info"
 msgstr "informace"
 
 #
-#: ../ui.py:130
 msgid "info and progress bar"
 msgstr "info a průběh prezentace"
 
 #
-#: ../ui.py:289
 msgid "menu"
 msgstr "výběr meteo informací"
 
+msgid "meteoViewer Configuration"
+msgstr "konfigurace prohlížeče meteoViewer"
+
 #
-#: ../ui.py:132
 msgid "no"
 msgstr "ne"
 
 #
-#: ../ui.py:130
 msgid "none"
 msgstr "žádné"
 
 #
-#: ../ui.py:133
 msgid "older than downloaded interval"
 msgstr "starší než stahovaný interval"
 
 #
-#: ../ui.py:133
 msgid "older than max. interval"
 msgstr "starší než max. interval"
 
 #
-#: ../ui.py:298
 msgid "options"
 msgstr "nastavení"
 
 #
-#: ../ui.py:296
 msgid "play slideshow"
 msgstr "spustit prezentaci"
 
 #
-#: ../ui.py:295
 msgid "play/stop slideshow"
 msgstr "přehrát/zastavit prezentaci"
 
 #
-#: ../ui.py:130
 msgid "progress bar"
 msgstr "průběh prezentace"
 
 #
-#: ../ui.py:580
 msgid "refresh..."
 msgstr "refresh..."
 
 #
-#: ../ui.py:297
 msgid "run/abort download"
 msgstr "spustit/přerušit stahování"
 
 #
-#: ../ui.py:299
 msgid "stop slideshow/synaptic map"
 msgstr "zastavit prezentaci/synaptická mapa"
 
 #
-#: ../ui.py:292
 msgid "switch to next meteo type"
 msgstr "přepnout na další meteo typ"
 
 #
-#: ../ui.py:293
 msgid "switch to previous meteo type"
 msgstr "přepnout na předchozí meteo typ"
 
 #
-#: ../ui.py:300
 msgid "synaptic maps"
 msgstr "synaptické mapy"
 
-#
-#: ../plugin.py:24
-msgid "viewer of meteo pictures"
-msgstr "prohlížeč meteo informací"
+msgid "Viewer of meteo pictures"
+msgstr "Prohlížeč meteo obrázků"
